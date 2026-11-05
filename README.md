@@ -46,6 +46,9 @@ K562, ENCODE, Replogle, CTRPv2 or GDSC findings.
 
 ## Versioning and distribution
 
-The archive is suitable for creation of a private GitHub repository. A public
-release must use an actual URL and immutable tag, a rights-reviewed license
-and an audited native-asset manifest. No DOI is assigned by this local package.
+This repository is publicly accessible at
+https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility.
+It is a source-code/manuscript snapshot, NOT a full empirical reproduction release.
+No immutable release tag or DOI has been issued, and no software reuse license
+has been granted. Original producer evidence and third-party data remain absent;
+see `RELEASE_STATUS.json` and `evidence/RELEASE_COVERAGE.csv` for exact scope.
