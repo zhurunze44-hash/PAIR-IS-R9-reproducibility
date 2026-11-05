@@ -8,4 +8,4 @@ REPLOGLE,Native metadata / original query generator / 100k programs,MISSING_NATI
 CTRP,"7-model 10-fold actual frozen predictions, split/weights, scorer",MISSING_NATIVE,Scores/rank reversals reported in paper
 GDSC,Prespecified GDSC1/GDSC2 prediction/target/split inputs,MISSING_NATIVE,Confirmatory persistent outcomes zero
 FIGURE_INPUTS,All plot-generating code and exact plotting numeric inputs,MISSING_NATIVE,Vector PDF outputs present
-release,"GitHub URL, immutable public tag and DOI",NOT_CREATED,Cannot be inferred from local folder
+release,"Public GitHub snapshot, immutable release tag and DOI",PUBLIC_SNAPSHOT_ONLY,"GitHub source snapshot at https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility; no immutable release tag, DOI, or native data release; public code has no reuse license"
