@@ -1,0 +1,17 @@
+name: Constructed and native-verifier software tests
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  source-and-constructed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install -r requirements-verified.txt
+      - run: python scripts/publication_sanity.py
+      - run: bash scripts/run_constructed_checks.sh
+      - run: PYTHONPATH=reproduction python -m unittest discover -s reproduction -p 'test_*.py' -v
