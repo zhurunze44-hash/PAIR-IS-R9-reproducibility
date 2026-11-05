@@ -46,14 +46,29 @@ bash build.sh
 The original figure-generation scripts and all frozen plot inputs are not contained
 in the R9 manuscript archive; the submitted figure PDFs are supplied unchanged.
 
+
+## 2026-11-05 original-scoring replay (source uploaded)
+
+The two **original, byte-identical** independent scoring scripts are now public under
+[reproduction/original_scorers/](reproduction/original_scorers/README.md).
+The author-server audit reran CTRPv2 and GDSC2 from frozen predictions:
+CTRPv2 700/700 numeric fields and GDSC2 420/420 numeric fields matched
+historical results, with matching historical fold-metric TSV bytes.
+See [public rescore receipt](evidence/P2_R9_PUBLIC_RESCORE_RECEIPT.json)
+for source SHA256, result hashes, environment, and claim-by-claim verdicts.
+
+This is a genuine author-server **scorer replay** with frozen predictions.
+The raw CTRPv2/GDSC2 prediction matrices are not redistributed here.
+The historical K562 producer call-trace and GDSC1 predictions remain unavailable
+for independent rerun; no blanket claim of full experimental reproduction is made.
+
 ## Original data and experiments
 
 See `evidence/upstream_data_sources.csv` for citations to source publications, and
 `NATIVE_DATA_REQUIREMENTS.md` for required frozen inputs. The author-server
 export tool is distributed separately with the editor package and never
 alters research source data. Third-party raw observations cannot be assumed
-redistributable. This software snapshot does not independently rerun all
-K562, ENCODE, Replogle, CTRPv2 or GDSC findings.
+redistributable. This public snapshot includes original CTRPv2 and GDSC2 scorer source with a verified author-server replay receipt; the frozen prediction matrices needed for an external rerun and other historical native inputs are not supplied.
 
 ## Versioning and distribution
 

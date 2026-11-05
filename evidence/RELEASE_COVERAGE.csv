@@ -5,7 +5,7 @@ K562_PRODUCER,"K562 fold-0 3125 terminal input, original masks, source RR/RE, ca
 K562_ENCODER,K562 150 masked designs and original derived inputs,MISSING_NATIVE,Reported 2635 composite-only dimensions
 ENCODE,20 frozen masks and aligned native counts,MISSING_NATIVE,Reported 56395 composite-only dimensions
 REPLOGLE,Native metadata / original query generator / 100k programs,MISSING_NATIVE,100k qualified query designs only
-CTRP,"7-model 10-fold actual frozen predictions, split/weights, scorer",MISSING_NATIVE,Scores/rank reversals reported in paper
-GDSC,Prespecified GDSC1/GDSC2 prediction/target/split inputs,MISSING_NATIVE,Confirmatory persistent outcomes zero
+CTRP,"Original independent scorer and frozen 7-model 10-fold predictions","SCORER_PUBLIC_AND_AUTHOR_SERVER_RESCORE_PASS_INPUTS_NOT_PUBLIC","Author-server original CTRPv2 700/700 numerical matching and historical fold TSV byte-identity; input predictions require approved access"
+GDSC,"Original GDSC independent scorer and frozen GDSC1/GDSC2 prediction/target/split inputs","GDSC2_RESCORE_PASS_GDSC1_HOLD_INPUTS_NOT_PUBLIC","GDSC2 420/420 and historical fold TSV byte-identity with 0 persistent pairs; GDSC1 prediction mount absent"
 FIGURE_INPUTS,All plot-generating code and exact plotting numeric inputs,MISSING_NATIVE,Vector PDF outputs present
 release,"Public GitHub snapshot, immutable release tag and DOI",PUBLIC_SNAPSHOT_ONLY,"GitHub source snapshot at https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility; no immutable release tag, DOI, or native data release; public code has no reuse license"

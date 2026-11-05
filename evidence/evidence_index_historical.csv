@@ -6,8 +6,8 @@ E04,K562 conditional replay,349 saved values under inferred TRAIN,max abs error 
 E05,Replogle 2022,100000 dependent Q4 query structures,source gate extra refusals 0,design-only eligibility under declared additive control,100000 measured expression effects / method-specific source filtering,DESIGN_ONLY,P0
 E06,K562 B2,50 outer masks,MSE 0.1905898683 vs 0.1129436318,signal versus zero D3 baseline,PAIR versus fair strong predictor uplift,POSTHOC_CONTROL,P2
 E07,K562 contrast supervision,10 outer masks,calibrated 0.8354 baseline vs 0.8364 Q4 supervision,no demonstrated positive increment,positive comparison-supervision lift,NEGATIVE,P1
-E08,CTRPv2 LDO,7 models 10 folds,median reversals 0.50 nR2 / 0.357 Pearson,task-dependent frozen prediction order,better training algorithm / invalid FULL objective,FROZEN_REPORTED,P1
-E09,GDSC2 confirmation,6 models 10 folds,0 persistent pair-metric results,prespecified persistence failed,external confirmation of persistent reversals,NEGATIVE_PRESPECIFIED,P0
+E08,CTRPv2 LDO,7 models 10 folds,median reversals 0.50 nR2 / 0.357 Pearson,task-dependent frozen prediction order,better training algorithm / invalid FULL objective,AUTHOR_SERVER_RESCORER_PASS_20261105,P1
+E09,GDSC2 confirmation,6 models 10 folds,0 persistent pair-metric results,prespecified persistence failed,external confirmation of persistent reversals,NEGATIVE_PRESPECIFIED_GDSC2_RESCORER_PASS_20261105,P0
 E10,CLASSICAL GRAPH,50 masks plus repeated queries,100% exact structural labels in audited conditions,equivalence of correct graph / row-space test,PAIR-specific legality-accuracy gain,STRONG_BASELINE_EQUIVALENT,P0
 E11,CLASSICAL LP,constructed 7-model comparison,42 exact LP vs revised pairwise 43 calls,correct classic LP at least as efficient on this case,PAIR-specific runtime gain,STRONG_BASELINE_NO_GAIN,P1
 E12,OPERATOR MISMATCH,one constructed reference scenario,z 3 vs 1 / J 0 vs 1,need to bind F to source ledger for nonzero w,measured Q4 biological gain,CONSTRUCTED_EXACT,P1

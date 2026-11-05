@@ -1,21 +1,11 @@
-# Availability statement: factual version before repository deployment
+# Data and code availability (verified public snapshot: 2026-11-05)
 
-Available with this archive now: manuscript LaTeX, compiled vector figures,
-constructed rational verifiers, an input-bound classical comparator, synthetic tests,
-and a historical results-to-evidence index.
+The source repository is available at
+https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility .
+It includes the R9 manuscript and supplementary LaTeX, vector figures, source-qualification and mathematical verification software, 29 frozen input SHA256 pins, the original CTRPv2 and GDSC2 independent scorer scripts, and an execution-receipt summary verified from the original author server.
 
-Not available **in this archive**: original historical query-producer TRAIN mask,
-complete source ledger and call trace, per-query bound native arrays, full
-row-aligned drug-response predictions, independent ENCODE/K562/Replogle pipeline
-inputs, generating programs for all paper plots.
+The 2026-11-05 author-server run reproduced CTRPv2 700/700 and GDSC2 420/420 historical numeric metric fields, including byte-identical fold-level historical TSVs. The scorer source files themselves are byte-identical to the audited originals. See `reproduction/original_scorers/README.md` and `evidence/P2_R9_PUBLIC_RESCORE_RECEIPT.json`.
 
-Third-party datasets were originally accessed through the cited K562 APA,
-ENCODE eCLIP, Replogle Perturb-seq, CTRPv2 and GDSC resources. Their accessions,
-licenses and redistribution policies must be respected; they should be linked,
-not silently copied to a new GitHub repository.
+Original third-party experimental observations and frozen model-prediction matrices are not redistributed in this public repository. Their original providers, licensing, access conditions, and historical model/split bindings are specified in the source/evidence documents. The original K562 producer call trace cannot yet be authenticated, and the GDSC1 prediction mount was unavailable in the 2026-11-05 replay. This distinction is part of the public evidence status.
 
-Once the authors' actual accessible code/data deposit has been verified, the
-Information Sciences manuscript must cite its exact repository link and release
-tag/DOI. Until then an invented URL or assertion of complete open reproduction
-is not acceptable. This document is not a substitute for the journal's specific
-online research-data declaration form.
+The repository has no immutable archive DOI or author-selected open-source license at this time; do not attribute a DOI, unrestricted reuse permission, or full-data reproducibility to the public snapshot. An Editor/Reviewer should use the exact verified commit for any assessed software snapshot.

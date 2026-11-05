@@ -26,7 +26,20 @@
   "public_frozen_asset_sha256_pins": 29,
   "native_artifact_hash_recheck": "REQUIRES_AUTHOR_SERVER_EXECUTION_OF_BOUND_RUNNER",
   "saved_counts_recompute": "REQUIRES_AUTHOR_SERVER_EXECUTION",
-  "original_historical_scorer_code_in_public_repo": false,
+  "original_historical_scorer_code_in_public_repo": true,
   "original_full_frozen_predictions_in_public_repo": false,
-  "scientific_replay_status": "NOT_FULLY_REPRODUCED"
+  "scientific_replay_status": "PARTIAL__CTRPV2_AND_GDSC2_SCORER_PASS__K562_PRODUCER_AND_GDSC1_HOLD",
+  "native_input_byte_checks": "PASS_29_OF_29_AUTHOR_SERVER_20261105",
+  "saved_count_diagnostics": "PASS_SAVED_COUNTS_ONLY_AUTHOR_SERVER_20261105",
+  "ctrpv2_native_rescore": "PASS_700_OF_700_NUMERIC_AND_HISTORICAL_TSV_BYTE_IDENTITY",
+  "gdsc2_native_rescore": "PASS_420_OF_420_NUMERIC_AND_HISTORICAL_TSV_BYTE_IDENTITY__PERSISTENT_PAIRS_0",
+  "gdsc1_native_rescore": "HOLD_UNMOUNTED_PREDICTIONS",
+  "k562_historical_producer": "HOLD_MISSING_AUTHENTICATED_TRAIN_CALL_TRACE",
+  "original_independent_scorers_public": {
+    "ctrpv2": "reproduction/original_scorers/independent_scorer.py",
+    "gdsc": "reproduction/original_scorers/gdsc_independent_scorer.py"
+  },
+  "author_server_rescore_receipt": "evidence/P2_R9_PUBLIC_RESCORE_RECEIPT.json",
+  "full_public_empirical_reproduction": false,
+  "specific_source_review": "Original scoring scripts uploaded byte-identical after hard-coded secret/path and import review"
 }
