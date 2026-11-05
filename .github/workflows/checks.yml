@@ -13,5 +13,7 @@ jobs:
           python-version: '3.13'
       - run: python -m pip install -r requirements-verified.txt
       - run: python scripts/publication_sanity.py
+      - run: python reproduction/original_scorers/verify_scorer_source.py
+      - run: python -m py_compile reproduction/original_scorers/independent_scorer.py reproduction/original_scorers/gdsc_independent_scorer.py reproduction/original_scorers/run_gdsc2_only.py
       - run: bash scripts/run_constructed_checks.sh
       - run: PYTHONPATH=reproduction python -m unittest discover -s reproduction -p 'test_*.py' -v
