@@ -1,20 +1,24 @@
 {
   "artifact": "PAIR-IS-R9",
-  "repository_publication": "NOT_PERFORMED__AUTHOR_SERVER_GH_PUSH_REQUIRED",
-  "repository_url": null,
+  "repository_publication": "PUBLIC_GITHUB_SOURCE_SNAPSHOT_VERIFIED",
+  "repository_url": "https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility",
   "doi": null,
-  "native_reproduction": "NOT_AVAILABLE_IN_R9_ARCHIVE",
+  "public_release_tag": null,
+  "native_reproduction": "NOT_AVAILABLE_IN_PUBLIC_REPOSITORY",
   "constructed_tests": "EXECUTED_PASS_CONSTRUCTED_ONLY",
   "manuscript_compilation": "VERIFIED_20261104_R9_SOURCE",
-  "historical_source_certification": "HOLD",
-  "prepared_on": "2026-11-05",
+  "historical_source_certification": "HOLD_MISSING_NATIVE_PRODUCER_TRACE",
+  "verified_on": "2026-11-05",
   "may_claim_full_public_reproduction": false,
-  "github_plugin_installed": true,
+  "github_public_repository": true,
+  "repo_root_layout": "PASS",
   "editorial_manager_submitted": false,
   "flat_editorial_latex_archives": "PASS_FLAT_COMPILE_ONLY__PDF_TEXT_EXTRACTION_NOT_EXACT_MATCH",
   "flat_pdf_exact_text_match_original": {
     "main": false,
     "supplement": false
   },
-  "private_github_push": "HOLD_GITHUB_AUTH"
+  "private_github_push": "NOT_APPLICABLE_PUBLIC_REPOSITORY_EXISTS",
+  "public_redistribution_license": "NOT_GRANTED",
+  "source_material_note": "Public manuscript and constructed-test snapshot; original K562/ENCODE/Replogle/CTRP/GDSC producer inputs and native proofs are not included; no full empirical reproduction is claimed."
 }
