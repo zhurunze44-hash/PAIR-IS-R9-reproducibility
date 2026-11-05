@@ -14,6 +14,17 @@ molecular screens* (Information Sciences submission candidate, R9).
 - `NATIVE_DATA_REQUIREMENTS.md`: artifact-level description of original experiment inputs required for full reproduction.
 - `SUBMISSION_SOFTWARE_COVERAGE.md`: exact release contents, without overstated reproducibility.
 
+
+## Run and verify
+
+The repository has executable checks at three clearly separated levels:
+
+1. **Public reproducibility tests** (no original data): run `bash scripts/run_constructed_checks.sh`, `PYTHONPATH=reproduction python -m unittest discover -s reproduction -p 'test_*.py' -v`, or view [GitHub Actions](https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility/actions).
+2. **Frozen original file checks** (on the author machine): `evidence/native_input_pins.json` fixes exact SHA256 identities for 29 original K562/ENCODE/Replogle/CTRPv2/GDSC artifacts. Follow [reproduction/README.md](reproduction/README.md) using the separate **private** locations manifest. No dataset is reconstructed from paper tables.
+3. **Actual empirical replay**: the original scoring/generator programs, pinned predictions, correct source identities and exact invocations must be run independently. The public repository currently does **not** include all those original binaries and inputs, so its CI status is not a claim of complete empirical reproduction.
+
+Please cite the actual repository commit SHA used for any verified run. Original measurements are governed by upstream access and redistribution terms. Do not commit server inventory, credentials, or unreviewed private datasets.
+
 ## Quick local verification
 
 ```bash
