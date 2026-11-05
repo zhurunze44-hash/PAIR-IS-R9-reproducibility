@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Cite the corresponding PAIR manuscript and the exact tagged release when published."
+title: "PAIR: Compiling reference- and source-qualified comparisons from incomplete molecular screens"
+type: software
+authors:
+  - family-names: Zhu
+    given-names: Runze
+  - family-names: Li
+    given-names: Guanfeng
+version: "0.9.0-pre-release"

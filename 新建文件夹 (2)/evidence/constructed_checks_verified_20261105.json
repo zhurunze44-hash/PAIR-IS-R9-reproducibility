@@ -1,0 +1,58 @@
+{
+  "status": "PASS_CONSTRUCTED_ONLY",
+  "no_native_experimental_data": true,
+  "not_a_performance_benchmark": true,
+  "checks": {
+    "completion_source_mismatch": {
+      "z_F1": 3,
+      "z_F2": 1,
+      "J_F1": 0,
+      "J_F2": 1,
+      "type": "constructed_exact"
+    },
+    "strict_Q4_F_independence": {
+      "w_zero": true,
+      "z_both": 2,
+      "declared_source_residual_both": 0,
+      "type": "constructed_exact"
+    },
+    "strict_Q4_nonuniform_source": {
+      "z": 2,
+      "J": 1,
+      "source_refusal": true,
+      "type": "constructed_exact"
+    },
+    "operator_robust_case": {
+      "z_both": 1,
+      "source_residual_both": 0,
+      "condition": true,
+      "type": "constructed_exact"
+    },
+    "completion_robust_theorem_unbound_data": {
+      "derived_criterion": false,
+      "grid_equal": false,
+      "distinct_outputs": 9,
+      "type": "constructed_exact"
+    },
+    "completion_robust_theorem_bound_column_data": {
+      "derived_criterion": true,
+      "grid_equal": true,
+      "distinct_outputs": 1,
+      "type": "constructed_exact"
+    },
+    "scoring_task_change": {
+      "FULL_A": 200,
+      "FULL_B": 2,
+      "IDENT_A": 0,
+      "IDENT_B": 2,
+      "meaning": "different objectives, not predictive uplift",
+      "type": "constructed_exact"
+    },
+    "exact_rowspace_classical_equivalence": {
+      "tested_queries": 3,
+      "matching": 3,
+      "unique_algorithms_proven": 0,
+      "type": "constructed_exact"
+    }
+  }
+}

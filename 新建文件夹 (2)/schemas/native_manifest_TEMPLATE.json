@@ -1,0 +1,49 @@
+{
+  "manifest_version": "PAIR_NATIVE_G0_V1",
+  "data_class": "HOLD_UNTIL_ORIGINAL_PRODUCER_AUTHENTICATED",
+  "producer_id": "",
+  "original_query_inventory_sha256": "",
+  "original_source_evidence": {
+    "historical_train_mask": {
+      "path": "ORIGINAL_RELPATH",
+      "sha256": ""
+    },
+    "historical_source_ledger": {
+      "path": "ORIGINAL_RELPATH",
+      "sha256": ""
+    },
+    "historical_producer_call_trace": {
+      "path": "ORIGINAL_RELPATH",
+      "sha256": ""
+    }
+  },
+  "numeric_tolerances": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "queries": [
+    {
+      "query_id": "ORIGINAL_HISTORICAL_QUERY_ID",
+      "query_type": "Q2_OR_Q4_OR_OTHER_FROM_ORIGINAL",
+      "bound_arrays": {
+        "path": "ORIGINAL_AUTHENTICATED_QUERY_ARRAYS_NPZ",
+        "sha256": ""
+      },
+      "reference_row_ids": [
+        "EXACT_ORDERED_ROW_ID_FROM_NATIVE"
+      ],
+      "request_row_ids": [
+        "EXACT_ORDERED_ROW_ID_FROM_NATIVE"
+      ],
+      "historical_status": null,
+      "historical_value": null,
+      "ordered_source_ids": [
+        "EXACT_SOURCE_ID"
+      ],
+      "original_status_to_standard": {
+        "ORIGINAL_LABEL": "QUALIFIED_OR_REJECT_REFERENCE_OR_REJECT_SOURCE"
+      }
+    }
+  ],
+  "historical_query_count_expected": 3125
+}

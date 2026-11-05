@@ -1,0 +1,202 @@
+% Post-hoc evidence and technical results integrated 2026-11-01.
+% All S10--S15 analyses are retrospective or constructed and do not replace frozen confirmation.
+\clearpage
+\section{Archived native queries, type shortcuts, and reference-version separation}
+\label{supp:native}
+\subsection{Evidence identity is not native re-execution}
+The frozen K562 compilation contained 3,125 requests: 349 recorded as retained and 2,776 refused. An earlier bounded search of 29 available archives and 5,018 extracted members found the matching V5 \texttt{reference\_lift.py} but did not contain all four required native production artifacts. That report concerned only the inspected archive roots. Subsequently, the authors reported that all four historical SHA256 fingerprints had been located on their own server: the original \texttt{QUERY\_RESULTS.parquet}, the archived V1.0.1 compiler, \texttt{identifiability.py}, and the V5 reference helper. The author-side checks included read-only hashes and local unit/cross-check runs. These statements are not proof that the present manuscript-building environment has independently executed the original production jobs. The later 3 November 2026 author-machine execution report records 19/19 W80--W98 archived process replays after correcting Python PATH resolution and installing a missing Parquet dependency. Such execution integrity is not original-producer source authentication or a novel scientific result.
+
+A matching offline copy of the query table was field-audited. Its full SHA256 is \texttt{\seqsplit{31d1a33b84c49df325ef3480fe4ddbb400293c4ff819de03f94100f674502db8}}; its size is 54,259 bytes. It has 3,125 rows, 12 columns, unique \texttt{query\_id} values, and a single fold identity (fold 0). However, its status columns and saved output values cannot substitute for row-aligned $X_R,X_E,F_R,Y_R,Y_E,R_R,R_E$, source atom identities, operator versions, and an independent recomputation of $a^\top X_EN_R$, $a^\top(R_E-X_EF_RR_R)$ and $z_{F_R}(a)$. A later \emph{conditional} replay reconstructed TRAIN membership from the historical Q1 request identities, used \texttt{consensus\_effect} (not the separate D3 \texttt{equal\_weight\_effect}) with an ordinary least-squares reference, and matched all 3,125 saved terminal labels and the 349 accepted numerical values (maximum absolute error approximately $2.3\times10^{-14}$). That agreement verifies the recovered arithmetic, not independent provenance: the original sealed TRAIN mask, historic producer call chain and per-query source maps remain unbound. The verdict is \textbf{archived-field PASS / conditional numerical replay PASS / original native source recertification HOLD}. The earlier suggestion that complete independent native certification had passed was explicitly withdrawn.
+
+\subsection{Query-type shortcut in one frozen table}
+\begin{table}[htbp]
+\centering\small
+\caption{Retrospective K562 fold-0 type distribution. The type pattern is a local label shortcut, not a transportable estimability theorem.}
+\label{tab:native-type}
+\begin{tabularx}{\textwidth}{@{}Xrrl@{}}
+\toprule Query type & Requests & Retained & Frozen eligibility label\\\midrule
+Q1: single cell & 2,744 & 0 & Not identifiable\\
+Q2: same-event contrast & 222 & 222 & Comparative assertable\\
+Q3: same-perturbation contrast & 32 & 0 & Not identifiable\\
+Q4: strict four-cell contrast & 127 & 127 & Comparative assertable\\\midrule
+Total & 3,125 & 349 & 2,776 refusals\\\bottomrule
+\end{tabularx}
+\end{table}
+The input \texttt{query\_type} alone reproduces the saved eligibility labels for all 3,125 entries in this fold. A terminal \texttt{semantic\_type} must not be used as a model input, because it is an output label. Even within the retained Q2 and Q4 groups the completed numerical estimates range from $-2.776$ to $1.590$ and from $-3.195$ to $2.932$, respectively. Types do not recover completion weights, source identities, numerical values or certificates.
+
+For the bipartite reference graph of a two-way additive design, an atomic Q1 requires connectivity between its perturbation and event vertices; same-event Q2 requires connectivity between the two perturbation vertices; same-perturbation Q3 requires connectivity between the two event vertices. A strict Q4 has $a^\top X_E=0$ and is consequently reference-estimable whenever its four responses are requested under the specified additive reference. \emph{Source safety still requires an independent test.} These equivalences are instances of classical row-space estimability.
+
+Applied unchanged to the 50 original K562 outer masks, type-only correctly labels only 24.10\% of 10,182,954 highly overlapping query instances. In these masks the TRAIN support graph is connected, hence all the tested requests are reference-estimable and both accept-all and exact graph/row-space rules attain 100\% structural accuracy. Within these exposures, Q1 contributes 129,000 instances and Q3 7,599,829; both families are structurally estimable on this support. On 200 small constructed designs comprising 7,200 queries, frozen type-only labels agree in 58.40\%, whereas exact null-space, row-space and bipartite-graph criteria agree on all generated cases. These are design-label checks, not newly executed query-source replays.
+
+\subsection{Reference-version measurements are not the production relations}
+Supplementary Section S9 reports 4,032 exploratory query exposures, 1,529 keys and 657 keys repeated across 150 reference versions. Every one of these archived readouts has \texttt{UNBOUND} source status; the explicit per-query completion vector was not saved. These results remain \texttt{MEASUREMENT\_ONLY}. They cannot be counted as any of the 349 source-qualified relations, and the observed within-key value changes do not by themselves imply biological longitudinal or sign instability.
+
+\section{Reference-support stress tests and precision after estimability}
+\label{supp:graph}
+\subsection{Six fixed-response support interventions}
+A series of retrospective support-only interventions starts from the original 12,898 processed K562 pair rows, with 32 regulators and 1,140 events. Each of the 50 saved masks has 10,318 TRAIN and 2,580 TEST pairs. Removing support edges follows predeclared identity/hash rules, not measured values; no biological observation was added. Each condition uses the same 10,182,954 overlapping query instances. Table~\ref{tab:graph-stress-s} reproduces the complete structural verdicts.
+\begin{table}[htbp]
+\centering\small
+\caption{Structural eligibility under six retrospective K562 supports. Correct classical graph connectivity and exact row-space criteria attain 100\% label accuracy in every row.}
+\label{tab:graph-stress-s}
+\begin{tabularx}{\textwidth}{@{}Xrrr@{}}
+\toprule Design condition & Nonestimable requests & Accept-all accuracy & Type-only accuracy\\\midrule
+Original connected support & 0 & 100.00\% & 24.10\%\\
+Remove 18 event-vertex TRAIN edges & 236,877 & 97.67\% & 26.43\%\\
+Remove 4 perturbation-vertex TRAIN edges & 81,042 & 99.20\% & 23.64\%\\
+Remove both edge groups & 317,678 & 96.88\% & 25.96\%\\
+Cut the support into two components & 4,026,705 & 60.46\% & 61.04\%\\
+Retain a single bridge across the cut & 0 & 100.00\% & 24.10\%\\\bottomrule
+\end{tabularx}
+\end{table}
+The cut support places both eligible and ineligible queries inside the same Q1, Q2 or Q3 type, disproving the universality of the single-table shortcut. Independent small-integer null-space checks (9,857 checks across 130 graphs) and 300 real-graph counting cross-checks support the reported structural equivalence. These repeated computations are software evidence, not biological replications. The classical graph criterion is a fully competent competitor; the design experiments demonstrate no exclusive PAIR eligibility algorithm.
+
+\subsection{Effective resistance: admissibility is not precision}
+Assume, in addition to the fixed reference contract, that TRAIN response noise is independent and has covariance $\sigma^2I$. For a structurally estimable atomic design row $x$, the least-squares \emph{reference} variance is
+\begin{equation}
+\operatorname{Var}(x^\top\widehat\theta_R)=\sigma^2 x^\top (X_R^\top X_R)^+x=\sigma^2R_{\mathrm{eff}}(r,e).
+\label{eq:reff-s}
+\end{equation}
+The right-hand graph identity applies to the signed bipartite incidence representation of the two-way additive design. The effective resistance is classical. Adding an independent equal-variance TEST measurement would yield total completed-readout noise variance $\sigma^2(1+R_{\mathrm{eff}})$; the actual K562 R1/R2 channels have not been shown to satisfy all these assumptions.
+
+For the same 129,000 atomic TEST instances, both the original and one-bridge reference graphs make every request estimable. Yet the per-mask median reference variance coefficient increases from 0.07862 to 1.21967; the median of per-mask ratios is 15.53. This is a modeled variance \emph{coefficient} under the declared noise assumption, not a measured 15.53-fold noise increase. Under a common response channel and equal acceptance budgets, 20\%-coverage R1-to-R2 directional disagreements are 18.965\% (magnitude), 18.740\% (magnitude divided by $\sqrt{1+R_{\mathrm{eff}}}$), and 18.767\% (event-degree proxy). At 50\% coverage they are 25.969\%, 25.862\%, and 25.864\%, respectively. These modest changes do not meet a 10\% wrong-direction target and are similar to a cheap classical degree baseline.
+
+\section{Four-cell repeat-direction reliability and selection dependence}
+\label{supp:q4}
+\subsection{Exhaustive rectangles are highly dependent}
+The processed K562 table has 12,898 observed regulator--event pairs, 32 regulators, and 1,140 events. There are 496 distinct regulator pairs. For any two regulators with two jointly observed events, define, for saved processed channels $k=1,2$,
+\[
+q_k=(Y_k(p_1,g_1)-Y_k(p_2,g_1))-(Y_k(p_1,g_2)-Y_k(p_2,g_2)).
+\]
+Enumerating all complete rectangles yields 20,978,446 \emph{overlapping} contrasts. There are 12,813,931 nonzero same-direction cases (61.08\%), 8,164,504 opposite-direction cases (38.92\%), and 11 cases with at least one zero. An equally weighted regulator-pair agreement summary is 66.46\%. A separate Kendall inversion/counting implementation reproduces the raw direction arithmetic. None of these cases is an independent biological experiment. This analysis neither reconstructs the original 349-source contract nor identifies a latent interaction per cell.
+
+\subsection{Retrospective calibration and the wrong conditional guarantee}
+Events were hashed post hoc to 561 TRAIN, 277 CAL, and 302 TEST identities. The TEST set contains 1,510,041 overlapping rectangles. TEST R2 is not used in threshold fitting, but the investigators had previously inspected global directional statistics; thus this is computational isolation within a retrospective program, not a fresh blinded external study. Let $e=q_2-q_1$. If $|e|\le\tau$ were a valid deterministic bound and $|q_1|>\tau$, the directions would agree. However, an empirical residual quantile learned from dependent rectangles is not automatically a population-valid $\tau$.
+\begin{table}[htbp]
+\centering\small
+\caption{Retrospective, event-held-out Q4 selection results. Reported error is wrong direction among accepted TEST rectangles; none of these is a prospective 90\% selective guarantee.}
+\label{tab:q4-selection}
+\begin{tabularx}{\textwidth}{@{}Xrrr@{}}
+\toprule Rule & TEST coverage & Error among accepted & Error fraction over all TEST\\\midrule
+Classical pooled absolute residual & 7.56\% & 11.84\% & 0.894\%\\
+Regulator-scale MAD & 6.65\% & 13.03\% & 0.867\%\\
+Regulator-pair-scale MAD & 7.09\% & 11.30\% & 0.801\%\\
+Regulator-pair local quantile & 6.87\% & 11.55\% & 0.794\%\\\bottomrule
+\end{tabularx}
+\end{table}
+Even under an exchangeability assumption, a marginal bound $\Pr(\mathrm{accept}\cap\mathrm{error})\le\alpha$ does not generally imply $\Pr(\mathrm{error}\mid\mathrm{accept})\le\alpha$. In a matched-coverage sensitivity, the regulator-pair MAD rate of 11.299\% differs only by 0.152 percentage points from a magnitude-only classical rate of 11.451\%, at 7.089\% versus 7.258\% coverage. Both fail the proposed conditional error target. Ordinary split-conformal guarantees require the relevant exchangeability assumptions~\cite{lei2018distribution}; acceptance-conditional error control requires a separate valid design~\cite{geifman2017selective,angelopoulos2024conformalrisk}.
+
+\subsection{Limits of effective sample size and post-selection inference}
+The 1,510,041 TEST rectangles share observations, events and regulators. Within-regulator-pair event-disjoint selection leaves 14,831 TEST contrasts, but these still share regulator or event information across pairs. A fully new-regulator split yields only five TEST regulators. Across-regulator exact event-disjoint selection can produce no more than 151 contrasts; imposing regulator nonreuse also limits the count to 16. Multiple fixed hash partitions and partner allocations rerun the same archive rather than creating experimental replicates. A stringent event-block Bonferroni-style selection can abstain on every TEST query. Statements of zero-error upper confidence bounds under IID sampling cannot be imported into this setting without an appropriate independent-unit argument. The audited conclusion is \texttt{PASS} for archive arithmetic and holdout-threshold isolation, \texttt{STOP} for demonstrated 90\%-conditional correctness, and \texttt{HOLD} for new source-native or external biological reliability.
+
+\section{Source-ledger refinement, nonlinear scales, and GEM dual nuisances}
+\label{supp:sources}
+\subsection{A refinement-stable source rule}
+Let the allowed finest source partition have matrix $M_0$ and define
+\[
+J_0=(R_E^{\mathrm{atom}}-X_EF_RR_R^{\mathrm{atom}})M_0.
+\]
+Every allowed coarser version is assumed to be $J_H=J_0H$, with $H=I$ permitted. Then
+\[
+a^\top X_EN_R=0\quad\text{and}\quad a^\top J_0=0
+\]
+are jointly necessary and sufficient for reference eligibility and source cancellation under \emph{all} allowed aggregations. The second sufficiency follows from $a^\top J_0H=0$; necessity uses the permitted identity. A nominal coarse grouping $H_c$ may satisfy $a^\top J_0H_c=0$ even when $a^\top J_0\ne0$. Splitting a previously merged nonzero atom can expose the failure in one refinement step. The statement depends on the admitted finest ledger and a frozen $F_R$; it cannot be applied to different measurement operators or to allowed versions that exclude the required refinement.
+
+If, independently, a declared source perturbation satisfies $|s_j|\le\rho$ and observation noise satisfies $|\eta_i|\le\varepsilon_i$, set $\lambda=(-a^\top X_EF_R,a^\top)$. Under independent interval uncertainty, the deterministic radius for the fixed readout is
+\begin{equation}
+B=\rho\|a^\top J_0\|_1+\sum_i|\lambda_i|\varepsilon_i.
+\label{eq:source-radius}
+\end{equation}
+The target is then confined to $[z-B,z+B]$. Only a strict nonzero sign interval can certify its direction. This is not a confidence interval, and a numeric sign under a bounded-source assumption does not transform an original \texttt{SOURCE\_UNSAFE} relation into a source-cancelled assertion.
+
+\subsection{Why superseded within-GEM z-scores cannot recover original-scale Q4}
+For a standardized response $z_{bpg}=(x_{bpg}-\mu_{bg})/\sigma_{bg}$, $\sigma_{bg}>0$, a grouped four-cell original-scale response has the form
+\[
+\Psi(\sigma)=\sum_b w_b[\sigma_{bg_1}d_{bg_1}-\sigma_{bg_2}d_{bg_2}],\qquad d_{bg}=z_{bp_1g}-z_{bp_2g}.
+\]
+With unconstrained independently positive scales, all coefficients zero implies an unavoidable tie; nonzero coefficients of one sign give a stable strict direction; mixed-sign coefficients allow opposite signs under two admissible scale assignments. In particular, two standardized gene differences both equal to one can produce $+1$ or $-1$ original-scale Q4 using scales $(2,1)$ and $(1,2)$. Direction stability still does not recover magnitude. An anchored ratio $(z_P-z_A)/(z_B-z_A)$, if three within-group same-gene anchors are justified and $z_B\ne z_A$, is invariant to positive affine scaling. It is a different declared object, not recovery of the original Q4. These are classical scale-invariance facts; the frozen raw-count V3 analysis is not replaced by the rejected V2 proposal.
+
+\subsection{The 128 native-identity two-GEM source stress tests}
+A retrospective metadata program uses 310,385 original cell identities across 48 GEM groups, 2,176 targeted guide identities, 97 non-targeting guide identities, and 8,563 measured genes. It constructs 128 groups of eligible two-GEM cell pools; the approximately 10-GB original H5AD expression matrix was \emph{not read} for this experiment. Under a GEM-by-gene (BG) nuisance declaration, two four-cell constructions can be made from the same pool support, one cancelling BG and one retaining it. This is a source-topology example, not measured biological Q4 amplitude.
+
+Adding GEM-by-perturbation (BP) nuisance gives a sharper statement. Order the four observations as $(p_1g_1,p_1g_2,p_2g_1,p_2g_2)$ with coefficients $(1,-1,-1,1)$. If exactly one GEM is assigned to each cell and both BG and BP must cancel \emph{directly without reference compensation}, BG requires equal GEM identity along each gene's perturbation pair, while BP requires equal GEM identity along each perturbation's gene pair. The connected rectangle propagates these equalities to all four cells; conversely, a single common GEM cancels both. Across 16 possible two-GEM assignments, no genuinely cross-GEM four-cell assignment cancels both nuisance families; several cancel either BG or BP separately. An eight-cell construction using a complete four-cell rectangle within each GEM has a two-dimensional direct-cancellation space spanned by its two within-GEM Q4 contrasts. This theorem applies only to direct cancellation. If a different reference completion $h$ is allowed, it must be checked against the frozen $X_R,F_R$ rather than presumed safe.
+
+A reported median 2.4466\% shared-control sampling-variance fraction for the 128 groups uses an extra independent homoskedastic cell-noise assumption; it is not a measured BG or BP effect. For an explicitly bounded two-GEM target with $|\theta_1-\theta_2|\le H$ and independent variance proxies $\sigma_\Delta^2 u_b$, a classical minimax quadratic weighting objective is
+\[
+\frac{\mathrm{MSE}_{\max}(w)}{\sigma_\Delta^2}
+=w^2u_1+(1-w)^2u_2+h^2(w-\tfrac12)^2,\quad
+w^*=\frac{u_2+h^2/2}{u_1+u_2+h^2},\quad h=H/\sigma_\Delta.
+\]
+The closed form is standard convex optimization; there is no new measured expression effect, calibrated heterogeneity bound, confidence interval, assay savings or independent downstream utility in this retrospective branch.
+
+\section{Decision-only information, bounded domains, and exact LP controls}
+\label{supp:decision}
+\subsection{Exact three-way signs on a full-dimensional open convex domain}
+Let $D\subseteq\mathbb R^n$ be open, convex, nonempty and full-dimensional, and let $\Delta(t)=t^\top Ht+2\ell^\top t+c$ be a real quadratic polynomial. We call $Kt$ sufficient for the exact three-way decision if for every $s,t\in D$, $Ks=Kt$ implies $\operatorname{sgn}\Delta(s)=\operatorname{sgn}\Delta(t)$, with zero a distinct class. If the sign is constant on $D$, rank zero is sufficient. If $\Delta$ splits into real affine factors, only factors whose zero hyperplanes intersect $D$ are active, and the minimum rank equals the dimension spanned by their normals (after proportional factors are collapsed). If it does not split over \emph{the reals} and its sign is not constant, a rank of $\rank([H;\ell^\top])$ is necessary and sufficient under the stated open-domain conditions. These are claims about constructed exact mathematical domains, not assurances that a biological admissible domain has been validated.
+
+\paragraph{Proof sketch.} For real affine factors, a factor with no zero inside connected $D$ has a fixed sign. An active factor has a relative-open smooth piece of its zero hyperplane inside $D$ away from the other factors. Any $v\in\ker K$ must keep every such tie a tie under small perturbation; therefore each active normal annihilates $v$. Conversely, measuring the spanning active normals recovers the three-way sign. If the polynomial is real-irreducible and changes sign in $D$, its internal smooth zero set cannot contain a relatively open hyperplane patch. Tie invariance along $v$ would force $2t^\top Hv+2\ell^\top v=0$ along that patch; if not identically zero this would imply an affine factor, a contradiction. Thus $Hv=0$ and $\ell^\top v=0$. If only one strict sign occurs with an internal tie, semidefiniteness about the minimizer gives the same kernel condition. The complete value is recovered by measuring the row span of $[H;\ell^\top]$.
+
+A necessary software correction concerned the field of factorization. On $(1,2)^2$, $x^2-2y^2=(x-\sqrt2y)(x+\sqrt2y)$ is reducible over $\mathbb R$ but not $\mathbb Q$; the second factor is positive, so one real linear coordinate is enough for the sign. Treating rational irreducibility as real irreducibility would incorrectly claim minimum rank two. Another example is $t_1(2+t_2)$ on $(-1,1)^2$: its exact value depends on two coordinates, but the sign depends only on $t_1$.
+
+\subsection{A limited closed-polytope square-residual theorem}
+For a nonempty compact full-dimensional polytope $P=\{t:Gt\le h\}$ and $\Delta(t)=\|At-b\|_2^2$, let $S=P\cap\{At=b\}$ be its tie set. If $S$ is empty or equals $P$, rank zero is sufficient. Otherwise, let $F$ be the smallest face of $P$ containing $S$, $f=\dim F$ and $s=\dim\operatorname{aff} S$. The minimum exact linear rank needed only to distinguish tie from strict positive is
+\begin{equation}
+ r^*=\begin{cases}n-s,&F=P,\\ f-s+1,&F\subsetneq P.\end{cases}
+\label{eq:polytope-s}
+\end{equation}
+When $F=P$, all unmeasured directions must lie in the affine tangent of $S$. When $F$ is a proper face, one exposing functional identifies membership in $F$, and $f-s$ coordinates identify the square residual inside $F$. The converse uses tangent perturbations in $F$ and an off-face ambiguity if one were to use only $f-s$ measurements. For $P=[0,1]^2$, $\Delta=x^2+y^2$ has a tie only at $(0,0)$ and $x+y$ alone distinguishes it; an interior isolated tie would require two coordinates. This theorem is \emph{not} a formula for arbitrary bounded domains or general indefinite loss differences. The archived prototype executes only bounded-size, at-most-four-dimensional exact instances; limits produce \texttt{NOT\_EXECUTED} rather than an unfounded certificate.
+
+\subsection{Winner sets under the same squared loss: classical strict LP}
+Let $x=(Y_R,Y_E)$ and retain the original reference-bound readout $L=[-BX_EF_R,B]$. All models share the same $W\succeq0$, support, scale, and completed operator. Their losses are
+\[
+\mathcal L_m(x)=(Lx-p_m)^\top W(Lx-p_m)=x^\top L^\top WLx+f_m(x),
+\quad f_m(x)=-2p_m^\top WLx+p_m^\top Wp_m.
+\]
+The full tied winner set is $D(x)=\operatorname*{argmin}_m f_m(x)$. Assume a separately justified rational polytope $P$ for the state and approved channels $K$ observed with deterministic coordinatewise error $\eta\ge0$. Intervals of channel readings can overlap for $x,y\in P$ exactly when $-2\eta\le K(x-y)\le2\eta$. Consequently, \emph{the complete winner set is determined on every observation fiber} if and only if, for all ordered $i\ne j$, the following strictly feasible pair is absent:
+\begin{align*}
+x,y&\in P,\qquad -2\eta\le K(x-y)\le2\eta,\\
+f_i(x)&\le f_k(x)\quad(\forall k),\qquad f_j(y)<f_i(y).
+\end{align*}
+If such a witness exists, $i\in D(x)$ but $i\notin D(y)$ despite compatible observations. Conversely, if two compatible states have different winner sets, select $i$ belonging to the first set but not the second, and a competitor $j$ strictly better at the second state. This gives a witness. The exact feasibility checks are standard LPs with strict inequalities handled by rational witnesses or their appropriate exact symbolic formulation. A finite number of LP calls is not a claim of polynomial overall runtime for the archive's exact Fourier--Motzkin implementation or of physically obtainable channels.
+
+\begin{table}[htbp]
+\centering\small
+\caption{A seven-model constructed instance with the same information budget and a 60-call LP cap. The correct exact classical LP is a matched competitor.}
+\label{tab:lp-benchmark}
+\begin{tabularx}{\textwidth}{@{}XrX@{}}
+\toprule Implementation & LP calls & Recorded outcome\\\midrule
+Earlier winner-set enumeration & stopped at call 61 & NOT EXECUTED\\
+Revised pairwise exact LP & 43 including initialization & PASS\\
+Independent classical exact LP & 42 & PASS\\
+Float LP on near-tie cases & 42 & INCONCLUSIVE\\\bottomrule
+\end{tabularx}
+\end{table}
+A transparent fixture is $P=[-1,1]^2$, $K=(1,0)$, $\eta=0$, with $f_0=x_1$, $f_1=-x_1$ and $f_{2+k}=5+k+(-1)^kx_2/10$ for $k=0,\ldots,4$. The last five models cannot beat the first two. The tie-aware winner sets are $\{0\}$ for $x_1<0$, $\{0,1\}$ at zero, and $\{1\}$ for $x_1>0$. The exact classical LP solves the same task without exclusive PAIR machinery. The code repair is real but the claim of unique algorithmic advantage is \texttt{STOP}.
+
+\subsection{Negative boundaries for source and measurement uncertainty}
+If a source disturbance is unbounded along a direction that changes an affine model-loss difference, no finite restricted observation can certify one fixed winner over all that disturbance. If every available channel has positive error and the state domain includes states arbitrarily close to a tie boundary, an exact tie and an adjacent non-tie can have overlapping observation intervals. An error-free global three-way decision therefore cannot be asserted without more structure. Confidence, assay cost, source validity, and the allowed domain are separate empirical inputs. Decision-sufficient observation, active testing and selective scoring have established close predecessors~\cite{bennouna2025decision,ye2026decisionsufficient,kossen2021activetesting}.
+
+\section{Evidence provenance, negative results, and reproducibility ledger}
+\label{supp:ledger}
+No number of archived audits should be used as a substitute for native, independent experimental replications. We distinguish (a) identity/hash evidence, (b) offline calculations on processed data, (c) exact mathematical and constructed software tests, (d) complete source-bound native replay, and (e) independent biological confirmation. The following ledger is explicitly \emph{not} an assertion that all original experiments were rerun during the current writing revision.
+\begin{longtable}{@{}L{0.22\textwidth}L{0.40\textwidth}L{0.30\textwidth}@{}}
+\caption{Evidence level and blocked inferences, including the 3 November 2026 author-server execution review. Process replay is not independent native-source recertification.}\label{tab:evidence-ledger}\\
+\toprule Research branch & Supported evidence & Not established\\\midrule\endfirsthead
+\toprule Branch & Supported evidence & Not established\\\midrule\endhead
+Historical 3,125/349 query panel & Original query-table identity; all statuses and 349 numerical values reproduced under inferred TRAIN with consensus+OLS to $\approx 2.3\times10^{-14}$; author-reported four SHA identities. & Original sealed TRAIN, producer lineage and complete per-query source arrays: HOLD; no independent source-certificate replay.\\
+4,032 versioned readouts & Saved completion variation over 150 reference versions. & All have UNBOUND source and remain MEASUREMENT ONLY; not a substitute for 349 relations.\\
+Real support graph and precision & Six support interventions, exact graph estimability and conditional effective resistance. & New eligibility algorithm beyond classical graph tests; measured noise inflation.\\
+Q4 direction repeatability & Stored channel agreement, event split and classical coverage-matched controls. & 90\% selection-conditional reliability; independent future validation.\\
+Source refinement & Stability criterion over an approved finest ledger and one-step split counterexample. & Native binding of historical atom ledger; exclusive new method over linear provenance.\\
+Superseded V2 scale & Positive affine ambiguity and its limited direction criterion. & Recovery of original-scale four-term amplitude from z-scores.\\
+Replogle V3 and cross-GEM & 100,000 source-qualified query designs with a non-binding additive source gate; 128 native cell-identity pools and exact dual-nuisance cancellation argument. & H5AD expression estimates and independent biological effect sizes; no incremental source-gate filtering or external utility.\\
+Decision-only information & Exact open-domain and restricted polytope results plus constructed proof checks. & Empirically justified biological state domains and obtainable channels.\\
+Pairwise LP & PAIR implementation 43 calls, independently constructed classical exact LP 42 calls on the matched fixture. & Exclusive complexity or runtime advantage: STOP.\\
+V5 numerical source-gate audit & Constructed source-coordinate/near-dependence counterexamples show tolerance-dependent false acceptance; exact small-matrix tests can reject them. & Historical V1.0.1 producer impact is NOT inferred: V5 was not on the archived 349 production path.\\
+Original drug-response confirmation & CTRPv2 task-dependent reversals and negative GDSC2 persistence result. & Replacing GDSC2 by secondary analysis, Q4 exploratory results, or later HPO.\\\bottomrule
+\end{longtable}
+
+\paragraph{Sources of the retrospective analyses.} Fifteen archived independent audit reports, their complete file names, their corresponding research claims and the location where each result enters the manuscript are recorded in the accompanying \texttt{EVIDENCE\_INDEX.md}. The archived earlier English source release and Chinese integrated manuscript are baseline materials, not new experiments. Only the result scope documented for each audit is used here.
+
+\paragraph{Versioned software-correctness boundary.} Separate V5 reference helper and W97 guard tests exposed false-PASS cases under some exact source reparameterizations and near-dependencies. These constructed correctness tests are not evidence that the historical V1.0.1 producer suffered the same defect: the author-side re-audit found V5 outside the 349 production execution path. A numeric tolerance or agreement between two floating-point rank routines does not by itself certify exact zero, and missing source columns must remain \texttt{HOLD} rather than be treated as a zero ledger. This scope applies only to the reviewed implementation artifacts.
+\paragraph{Frozen-vs-retrospective rule.} Later analytical proofs or metadata experiments cannot retroactively convert the failed GDSC2 persistence test, exploratory four-term supervision, or a non-binding Replogle V3 source gate into positive confirmatory results. The exact original readout term $-BX_EF_RY_R$ is required in every common-operator model comparison. User-reported source discovery is not equivalent to the present delivery directly verifying all original files. The scientific contribution remains a clearly implemented, fail-closed measurement contract with demonstrated example consequences and explicit limitations.

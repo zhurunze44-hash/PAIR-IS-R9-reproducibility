@@ -1,0 +1,6 @@
+source,manuscript_reference,reference_doi,link_type,snapshot_status
+K562 alternative polyadenylation,Kowalski et al. (2024),10.1016/j.cell.2024.06.005,CITED_PUBLICATION,Experimental native snapshot not supplied
+ENCODE RBP/splicing,Van Nostrand et al. (2020),10.1038/s41586-020-2077-3,CITED_PUBLICATION,Original 20-mask snapshots not supplied
+Replogle Perturb-seq,Replogle et al. (2022),10.1016/j.cell.2022.05.013,CITED_PUBLICATION,Native source-aware replay not supplied
+CTRPv2,Rees et al. (2016),10.1038/nchembio.1986,CITED_PUBLICATION,Frozen row-aligned predictions not supplied
+GDSC,Iorio et al. (2016),10.1016/j.cell.2016.06.017,CITED_PUBLICATION,Frozen row-aligned predictions not supplied

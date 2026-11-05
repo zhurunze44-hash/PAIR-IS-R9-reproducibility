@@ -1,0 +1,11 @@
+domain,artifact_required,present_state,interpretation
+manuscript,English LaTeX + references + figures,INCLUDED,Rebuildable document; original figure-generator code absent
+constructed-theory,Symbolic exact checks and synthetic G0/G2,INCLUDED_EXECUTED,"PASS_CONSTRUCTED_ONLY, not empirical benchmark"
+K562_PRODUCER,"K562 fold-0 3125 terminal input, original masks, source RR/RE, call trace",MISSING_NATIVE,349 retained values have conditional numerical reconstruction only
+K562_ENCODER,K562 150 masked designs and original derived inputs,MISSING_NATIVE,Reported 2635 composite-only dimensions
+ENCODE,20 frozen masks and aligned native counts,MISSING_NATIVE,Reported 56395 composite-only dimensions
+REPLOGLE,Native metadata / original query generator / 100k programs,MISSING_NATIVE,100k qualified query designs only
+CTRP,"7-model 10-fold actual frozen predictions, split/weights, scorer",MISSING_NATIVE,Scores/rank reversals reported in paper
+GDSC,Prespecified GDSC1/GDSC2 prediction/target/split inputs,MISSING_NATIVE,Confirmatory persistent outcomes zero
+FIGURE_INPUTS,All plot-generating code and exact plotting numeric inputs,MISSING_NATIVE,Vector PDF outputs present
+release,"GitHub URL, immutable public tag and DOI",NOT_CREATED,Cannot be inferred from local folder

@@ -1,0 +1,20 @@
+{
+  "artifact": "PAIR-IS-R9",
+  "repository_publication": "NOT_PERFORMED__AUTHOR_SERVER_GH_PUSH_REQUIRED",
+  "repository_url": null,
+  "doi": null,
+  "native_reproduction": "NOT_AVAILABLE_IN_R9_ARCHIVE",
+  "constructed_tests": "EXECUTED_PASS_CONSTRUCTED_ONLY",
+  "manuscript_compilation": "VERIFIED_20261104_R9_SOURCE",
+  "historical_source_certification": "HOLD",
+  "prepared_on": "2026-11-05",
+  "may_claim_full_public_reproduction": false,
+  "github_plugin_installed": true,
+  "editorial_manager_submitted": false,
+  "flat_editorial_latex_archives": "PASS_FLAT_COMPILE_ONLY__PDF_TEXT_EXTRACTION_NOT_EXACT_MATCH",
+  "flat_pdf_exact_text_match_original": {
+    "main": false,
+    "supplement": false
+  },
+  "private_github_push": "HOLD_GITHUB_AUTH"
+}
