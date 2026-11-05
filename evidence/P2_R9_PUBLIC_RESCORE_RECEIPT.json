@@ -1,0 +1,58 @@
+{
+  "schema_version": "PAIR_IS_R9_PUBLIC_RESCORE_RECEIPT_V1",
+  "verification_date_utc": "2026-11-05",
+  "author_server_return_sha256": "3878ece16971bdb966fbdae73bd2190b86738172bfdb47704b8becabd608f01a",
+  "native_input_byte_audit": {
+    "status": "PASS_ALL_PINNED_INPUT_BYTES_ONLY",
+    "passed": 29,
+    "checked": 29
+  },
+  "saved_result_count_diagnostics": {
+    "status": "PASS_SAVED_COUNT_DIAGNOSTICS_ONLY",
+    "k562_query_rows": 3125,
+    "k562_saved_comparative_assertable": 349,
+    "k562_saved_not_identifiable": 2776,
+    "encode_composite_rows": 56395,
+    "encode_mask_files": 20,
+    "replogle_q4_design_rows": 100000,
+    "replogle_ntc_guides": 97
+  },
+  "scorers": {
+    "CTRPv2": {
+      "public_source": "reproduction/original_scorers/independent_scorer.py",
+      "source_sha256": "c42ff2c49a1d74952d28a42a031410bfcac587d46ddf3f01db2a58e1934aa83a",
+      "source_git_blob": "bd4e975196a9166641185d59c58eee669991b616",
+      "original_input_parquet_sha256": "db0c046e0b1c2a4f96e363640935deb8ce4e9146fb0a5281da26fe5b24ae7f73",
+      "model_fold_metric_rows": 140,
+      "metric_field_comparisons": "700/700",
+      "historic_tsv_byte_identity": true,
+      "metrics_tsv_sha256": "f0b7dd1dd2a17cb0a6910329e395a43f48bb8263e3bde154cd530be693125a17",
+      "strict_pairs_tsv_sha256": "c8578922f08201fb9e676d8c7fe565c09aeca0cec22c45766796f2a5170adc34",
+      "persistent_pair_metric_outcomes": 5,
+      "summary_detail": "Per-fold TSV byte identical; current G2_SUMMARY.json has extra top-model fields absent in the historic summary."
+    },
+    "GDSC2": {
+      "public_source": "reproduction/original_scorers/gdsc_independent_scorer.py",
+      "source_sha256": "fd218e164737f4f06d2c6e2f30412e749e4a8cc07b85a8bf39d40bcd1c8d3133",
+      "source_git_blob": "45c5bbde1b7c2cb31d54e15ab08534b6f86aa4fe",
+      "frozen_prediction_files_found": 140,
+      "matching_numeric_fields": "420/420",
+      "historic_tsv_byte_identity": true,
+      "metrics_tsv_sha256": "f77fcb24a43a4864a3554148485921a0b676848e0e29e9c04a3733f2820ab292",
+      "persistent_pairs_nR2": 0,
+      "summary_sha256": "1d6980a120b6f737e3953e9b8b89db57d9d62260f4a1330f533b4f15cfdee71e"
+    }
+  },
+  "unresolved": {
+    "GDSC1": "HOLD_MISSING_PREDICTION_BYTES; source predictions symlink target on unmounted /mnt/pair_bulk",
+    "K562_original_producer": "HOLD_MISSING_HISTORICAL_TRAIN_AND_AUTHENTICATED_CALL_TRACE",
+    "original_prediction_files_public": "NOT_RELEASED; distribution rights unresolved",
+    "historical_matched_baseline_increment": "NOT_DEMONSTRATED_BY_SCORER_REPLAY"
+  },
+  "provenance": {
+    "code_review": "Two source files scanned for embedded absolute source paths and hard-coded credentials; both Git blob identities match the author-server originals.",
+    "scope": "Frozen predictions were rescored on author server; this public receipt is an audit record, not itself an original-data reproduction.",
+    "disclosure": "Public author-written source candidates only; no third-party original measurements or private server logs committed.",
+    "license": "No public software reuse license has been granted in the repository."
+  }
+}
