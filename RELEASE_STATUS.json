@@ -20,5 +20,13 @@
   },
   "private_github_push": "NOT_APPLICABLE_PUBLIC_REPOSITORY_EXISTS",
   "public_redistribution_license": "NOT_GRANTED",
-  "source_material_note": "Public manuscript and constructed-test snapshot; original K562/ENCODE/Replogle/CTRP/GDSC producer inputs and native proofs are not included; no full empirical reproduction is claimed."
+  "source_material_note": "Public manuscript and constructed-test snapshot; original K562/ENCODE/Replogle/CTRP/GDSC producer inputs and native proofs are not included; no full empirical reproduction is claimed.",
+  "software_ci": "PASS_GITHUB_ACTIONS_CONSTRUCTED_ONLY_20261105",
+  "software_ci_url": "https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility/actions/runs/41985560048",
+  "public_frozen_asset_sha256_pins": 29,
+  "native_artifact_hash_recheck": "REQUIRES_AUTHOR_SERVER_EXECUTION_OF_BOUND_RUNNER",
+  "saved_counts_recompute": "REQUIRES_AUTHOR_SERVER_EXECUTION",
+  "original_historical_scorer_code_in_public_repo": false,
+  "original_full_frozen_predictions_in_public_repo": false,
+  "scientific_replay_status": "NOT_FULLY_REPRODUCED"
 }
