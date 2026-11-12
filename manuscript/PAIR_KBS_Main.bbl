@@ -1,0 +1,322 @@
+\begin{thebibliography}{40}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Tian and Manley(2017)]{tian2017apa}
+B.~Tian and J.~L. Manley.
+\newblock {Alternative polyadenylation of mRNA precursors}.
+\newblock \emph{Nature Reviews Molecular Cell Biology}, 18:\penalty0 18--30,
+  2017.
+\newblock \doi{10.1038/nrm.2016.116}.
+
+\bibitem[Kowalski et~al.(2024)]{kowalski2024cpa}
+M.~H. Kowalski et~al.
+\newblock {Multiplexed single-cell characterization of alternative
+  polyadenylation regulators}.
+\newblock \emph{Cell}, 187:\penalty0 4408--4425.e23, 2024.
+\newblock \doi{10.1016/j.cell.2024.06.005}.
+
+\bibitem[Hogan et~al.(2021)Hogan, Blomqvist, Cochez, d'Amato, de~Melo,
+  Guti\'errez, et~al.]{hogan2021knowledge}
+Aidan Hogan, Eva Blomqvist, Michael Cochez, Claudia d'Amato, Gerard de~Melo,
+  Claudio Guti\'errez, et~al.
+\newblock Knowledge graphs.
+\newblock \emph{ACM Computing Surveys}, 54\penalty0 (4):\penalty0 71:1--71:37,
+  2021.
+\newblock \doi{10.1145/3447772}.
+
+\bibitem[Unni et~al.(2022)]{unni2022biolink}
+D.~R. Unni et~al.
+\newblock {Biolink Model: A universal schema for knowledge graphs in clinical,
+  biomedical, and translational science}.
+\newblock \emph{Clinical and Translational Science}, 15:\penalty0 1848--1855,
+  2022.
+\newblock \doi{10.1111/cts.13302}.
+
+\bibitem[Shamshiri et~al.(2026)Shamshiri, Javaheri, Fahmideh, and
+  Hur]{shamshiri2026security}
+Samaneh Shamshiri, Danial Javaheri, Mahdi Fahmideh, and Junbeom Hur.
+\newblock A domain-specific knowledge graph for reasoning over {AI} security
+  threats and defenses.
+\newblock \emph{Knowledge-Based Systems}, 350:\penalty0 116492, 2026.
+\newblock \doi{10.1016/j.knosys.2026.116492}.
+
+\bibitem[Mohamed et~al.(2026)Mohamed, Shalaby, Kaladharan, Sen, G{\"u}venilir,
+  and Kodamullil]{mohamed2026orchestra}
+Ahmed~Hossameldin Mohamed, Karim~S. Shalaby, Abish Kaladharan, Sutrishna Sen,
+  Heval~Atas G{\"u}venilir, and Alpha~Tom Kodamullil.
+\newblock {KG-Orchestra}: An open-source multi-agent framework for
+  evidence-based biomedical knowledge graphs enrichment.
+\newblock \emph{Knowledge-Based Systems}, page 117316, 2026.
+\newblock \doi{10.1016/j.knosys.2026.117316}.
+\newblock Available online 4 November 2026.
+
+\bibitem[Green et~al.(2007)Green, Karvounarakis, and
+  Tannen]{green2007provenance}
+Todd~J. Green, Gregory Karvounarakis, and Val Tannen.
+\newblock {Provenance semirings}.
+\newblock In \emph{Proceedings of the 26th ACM SIGMOD-SIGACT-SIGART Symposium
+  on Principles of Database Systems}, pages 31--40, 2007.
+\newblock \doi{10.1145/1265530.1265535}.
+\newblock URL \url{https://web.cs.ucdavis.edu/~green/papers/pods07.pdf}.
+
+\bibitem[Groth and Moreau(2013)]{w3c2013prov}
+Paul Groth and Luc Moreau.
+\newblock {PROV-Overview: An Overview of the PROV Family of Documents}.
+\newblock Working group note, World Wide Web Consortium, 2013.
+\newblock URL \url{https://www.w3.org/TR/prov-overview/}.
+
+\bibitem[Sen et~al.(2026)Sen, Maniu, and Senellart]{sen2026provsql}
+Aryak Sen, Silviu Maniu, and Pierre Senellart.
+\newblock {ProvSQL}: A general system for keeping track of the provenance and
+  probability of data.
+\newblock In \emph{Proceedings of the 42nd IEEE International Conference on
+  Data Engineering (ICDE)}, pages 1252--1265, 2026.
+\newblock \doi{10.1109/ICDE65706.2026.00098}.
+\newblock URL
+  \url{https://pierre.senellart.com/publications/sen2026provsql.pdf}.
+
+\bibitem[Bernett et~al.(2026)]{bernett2026dreval}
+J.~Bernett et~al.
+\newblock {Critical evaluation of drug response prediction models with DrEval}.
+\newblock \emph{Nature Communications}, 17:\penalty0 4238, 2026.
+\newblock \doi{10.1038/s41467-026-72903-w}.
+
+\bibitem[Mazumder et~al.(2010)Mazumder, Hastie, and
+  Tibshirani]{mazumder2010softimpute}
+R.~Mazumder, T.~Hastie, and R.~Tibshirani.
+\newblock {Spectral regularization algorithms for learning large incomplete
+  matrices}.
+\newblock \emph{Journal of Machine Learning Research}, 11:\penalty0 2287--2322,
+  2010.
+\newblock URL \url{https://jmlr.org/papers/v11/mazumder10a.html}.
+
+\bibitem[Vo et~al.(2026)Vo, Dang, Hua, Nguyen, Nguyen, and Huynh]{vo2026pica}
+Tuan~L. Vo, Uyen Dang, Van Hua, Xuan-Hoang Nguyen, Thu Nguyen, and Bao Huynh.
+\newblock {PICA: Interpretable imputation for randomly missing data}.
+\newblock \emph{Information Sciences}, 749:\penalty0 123532, 2026.
+\newblock \doi{10.1016/j.ins.2026.123532}.
+
+\bibitem[Searle(1971)]{searle1971linear}
+S.~R. Searle.
+\newblock \emph{{Linear Models}}.
+\newblock Wiley, 1971.
+
+\bibitem[Rao and Mitra(1971)]{rao1971generalized}
+C.~R. Rao and S.~K. Mitra.
+\newblock \emph{{Generalized Inverse of Matrices and Its Applications}}.
+\newblock Wiley, 1971.
+
+\bibitem[Li et~al.(2026{\natexlab{a}})Li, Bai, Li, and Mi]{li2026clustering}
+Zhao Li, Yu-Zhang Bai, Lei-Jun Li, and Ju-Sheng Mi.
+\newblock {Three-Way clustering based on fuzzy centroids in incomplete
+  information systems with categorical data}.
+\newblock \emph{Knowledge-Based Systems}, 332:\penalty0 114940,
+  2026{\natexlab{a}}.
+\newblock \doi{10.1016/j.knosys.2025.114940}.
+
+\bibitem[Li et~al.(2026{\natexlab{b}})Li, Zhang, Li, Ni, Lu, and
+  Mart{\'i}nez]{li2026incomplete}
+Meijuan Li, Jiarong Zhang, Xufeng Li, Weixin Ni, Jincheng Lu, and Luis
+  Mart{\'i}nez.
+\newblock A three-way decision-making approach for incomplete heterogeneous
+  information systems: enhancing enterprise performance evaluation.
+\newblock \emph{Information Sciences}, 742:\penalty0 122935,
+  2026{\natexlab{b}}.
+\newblock \doi{10.1016/j.ins.2025.122935}.
+
+\bibitem[Zhang et~al.(2026)Zhang, Tu, Wan, Cheng, and Lev]{zhang2026adaptive}
+Jiali Zhang, Yan Tu, Zhongyong Wan, Linqi Cheng, and Benjamin Lev.
+\newblock An adaptive sequential three-way decision-making model via dynamic
+  fusion of incomplete mixed data considering misclassification penalty from
+  holistic and incremental perspectives.
+\newblock \emph{Information Sciences}, 727:\penalty0 122785, 2026.
+\newblock \doi{10.1016/j.ins.2025.122785}.
+
+\bibitem[Freeman(1975)]{freeman1975incomplete}
+G.~H. Freeman.
+\newblock {Analysis of interactions in incomplete two-way tables}.
+\newblock \emph{Journal of the Royal Statistical Society Series C},
+  24:\penalty0 46--55, 1975.
+\newblock \doi{10.2307/2346704}.
+
+\bibitem[Jochmans and Weidner(2019)]{jochmans2019network}
+K.~Jochmans and M.~Weidner.
+\newblock {Fixed-effect regressions on network data}.
+\newblock \emph{Econometrica}, 87:\penalty0 1543--1560, 2019.
+\newblock \doi{10.3982/ECTA14605}.
+
+\bibitem[Chen et~al.(2025)Chen, Xi, and Yu]{chen2025flows}
+Yudong Chen, Xumei Xi, and Christina~Lee Yu.
+\newblock {Entry-specific matrix estimation under arbitrary sampling patterns
+  through the lens of network flows (Extended Abstract)}.
+\newblock In \emph{16th Innovations in Theoretical Computer Science Conference
+  (ITCS 2025)}, volume 325 of \emph{Leibniz International Proceedings in
+  Informatics (LIPIcs)}, pages 36:1--36:2. Schloss Dagstuhl -- Leibniz-Zentrum
+  f{\"u}r Informatik, 2025.
+\newblock \doi{10.4230/LIPIcs.ITCS.2025.36}.
+
+\bibitem[Lenth and Dumelle(2026)]{lenth2026estimability}
+R.~V. Lenth and M.~Dumelle.
+\newblock {{estimability}: Tools for Assessing Estimability of Linear
+  Predictions}, 2026.
+\newblock URL \url{https://rvlenth.github.io/estimability/}.
+\newblock R package version 2.0.0.
+
+\bibitem[Vogt et~al.(2024)Vogt, Kuhn, and Hoehndorf]{vogt2024semanticunits}
+Lars Vogt, Tobias Kuhn, and Robert Hoehndorf.
+\newblock Semantic units: organizing knowledge graphs into semantically
+  meaningful units of representation.
+\newblock \emph{Journal of Biomedical Semantics}, 15:\penalty0 7, 2024.
+\newblock \doi{10.1186/s13326-024-00310-5}.
+
+\bibitem[Vogt(2026)]{vogt2026framework}
+Lars Vogt.
+\newblock {The Semantic Units Framework, a technology-agnostic representational
+  approach to FAIR and CLEAR knowledge infrastructures}.
+\newblock \emph{Scientific Data}, 13:\penalty0 936, 2026.
+\newblock \doi{10.1038/s41597-026-07588-3}.
+
+\bibitem[Purohit et~al.(2025)Purohit, Chudasama, and Vidal]{purohit2025vanilla}
+Disha Purohit, Yashrajsinh Chudasama, and Maria-Esther Vidal.
+\newblock {VANILLA}: Validated knowledge graph completion---a
+  normalization-based framework for integrity, link prediction, and logical
+  accuracy.
+\newblock \emph{Knowledge-Based Systems}, 325:\penalty0 113939, 2025.
+\newblock \doi{10.1016/j.knosys.2025.113939}.
+
+\bibitem[Gu et~al.(2025)Gu, Lanti, Corcoglioniti, Di~Panfilo, Mosca, Calvanese,
+  and Xiao]{gu2025obdf}
+Zhenzhen Gu, Davide Lanti, Francesco Corcoglioniti, Marco Di~Panfilo,
+  Alessandro Mosca, Diego Calvanese, and Guohui Xiao.
+\newblock Ontology-based data federation and query optimization.
+\newblock \emph{Knowledge-Based Systems}, 329:\penalty0 114216, 2025.
+\newblock \doi{10.1016/j.knosys.2025.114216}.
+
+\bibitem[Menotti et~al.(2025)Menotti, Marchesin, Giachelle, and
+  Silvello]{menotti2025provenance}
+Laura Menotti, Stefano Marchesin, Fabio Giachelle, and Gianmaria Silvello.
+\newblock Provenance-driven nanopublications: representing source lineage and
+  trust networks for multi-source assertions.
+\newblock \emph{International Journal on Digital Libraries}, 26:\penalty0 24,
+  2025.
+\newblock \doi{10.1007/s00799-025-00431-x}.
+
+\bibitem[van Waarde et~al.(2020)van Waarde, Eising, Trentelman, and
+  Camlibel]{vanwaarde2020informativity}
+H.~J. van Waarde, J.~Eising, H.~L. Trentelman, and M.~K. Camlibel.
+\newblock {Data informativity: a new perspective on data-driven analysis and
+  control}.
+\newblock \emph{IEEE Transactions on Automatic Control}, 65:\penalty0
+  4753--4768, 2020.
+\newblock \doi{10.1109/TAC.2020.2966717}.
+
+\bibitem[Bennouna et~al.(2025)Bennouna, Bennouna, Amin, and
+  Ozdaglar]{bennouna2025decision}
+Omar Bennouna, Amine Bennouna, Saurabh Amin, and Asuman Ozdaglar.
+\newblock What data enables optimal decisions? an exact characterization for
+  linear optimization.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2025.
+\newblock URL
+  \url{https://papers.nips.cc/paper_files/paper/2025/hash/f2865c76810f9f702f52fd3e4150a296-Abstract-Conference.html}.
+\newblock NeurIPS 2025, Main Conference Track.
+
+\bibitem[Ye et~al.(2026)Ye, Amin, and Ozdaglar]{ye2026decisionsufficient}
+Yuhan Ye, Saurabh Amin, and Asuman Ozdaglar.
+\newblock Learning decision-sufficient representations for linear optimization.
+\newblock In \emph{Proceedings of the Conference on Learning Theory}, volume
+  336 of \emph{Proceedings of Machine Learning Research}, 2026.
+\newblock URL \url{https://proceedings.mlr.press/v336/ye26a.html}.
+
+\bibitem[Shirdel et~al.(2026)Shirdel, Di~Mauro, and Liotta]{shirdel2026metrics}
+Mohammad Shirdel, Mario Di~Mauro, and Antonio Liotta.
+\newblock A framework for binary classification evaluation metrics.
+\newblock \emph{Information Sciences}, 749:\penalty0 123540, 2026.
+\newblock \doi{10.1016/j.ins.2026.123540}.
+
+\bibitem[Ahlmann-Eltze et~al.(2025)Ahlmann-Eltze, Huber, and
+  Anders]{ahlmann2025baselines}
+C.~Ahlmann-Eltze, W.~Huber, and S.~Anders.
+\newblock {Deep-learning-based gene perturbation effect prediction does not yet
+  outperform simple linear baselines}.
+\newblock \emph{Nature Methods}, 22:\penalty0 1657--1661, 2025.
+\newblock \doi{10.1038/s41592-025-02772-6}.
+
+\bibitem[Vi\~nas Torn\'e et~al.(2026)Vi\~nas Torn\'e, Wiatrak, Piran, Fan,
+  Jiang, Teichmann, Nitzan, and Brbi\'{c}]{vinas2026systema}
+Ramon Vi\~nas Torn\'e, Maciej Wiatrak, Zoe Piran, Shuyang Fan, Liangze Jiang,
+  Sarah~A. Teichmann, Mor Nitzan, and Maria Brbi\'{c}.
+\newblock {Systema: a framework for evaluating genetic perturbation response
+  prediction beyond systematic variation}.
+\newblock \emph{Nature Biotechnology}, 44:\penalty0 1050--1059, 2026.
+\newblock \doi{10.1038/s41587-025-02777-8}.
+
+\bibitem[Wu et~al.(2025)Wu, Wershof, Schmon, Nassar, Osi\'{n}ski, Eksi, Yan,
+  Stark, Zhang, and Graepel]{wu2025perturbench}
+Yan Wu, Esther Wershof, Sebastian Schmon, Marcel Nassar, B{\l}a{\.{z}}ej
+  Osi\'{n}ski, Ridvan Eksi, Zichao Yan, Rory Stark, Kun Zhang, and Thore
+  Graepel.
+\newblock {PerturBench: benchmarking machine learning models for cellular
+  perturbation analysis}.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~38, 2025.
+\newblock \doi{10.52202/085713-3225}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2025/hash/8aee537279a66ced96319dfca3c00002-Abstract-Datasets_and_Benchmarks_Track.html}.
+\newblock Datasets and Benchmarks Track.
+
+\bibitem[Wei et~al.(2026)]{wei2026benchmark}
+Z.~Wei et~al.
+\newblock {Benchmarking algorithms for generalizable single-cell perturbation
+  response prediction}.
+\newblock \emph{Nature Methods}, 23:\penalty0 451--464, 2026.
+\newblock \doi{10.1038/s41592-025-02980-0}.
+
+\bibitem[Miller et~al.(2026)Miller, Mejia, Leblanc, Swain, Wang, and
+  de~Lima~Camillo]{miller2026calibrated}
+Henry~E. Miller, Gabriel~M. Mejia, Francis J.~A. Leblanc, Brendan Swain,
+  Bo~Wang, and Lucas~Paulo de~Lima~Camillo.
+\newblock {Deep learning perturbation models can outperform baselines on
+  calibrated metrics}.
+\newblock \emph{Nature Biotechnology}, 2026.
+\newblock \doi{10.1038/s41587-026-03307-w}.
+\newblock Published online 1 October 2026.
+
+\bibitem[Van~Nostrand et~al.(2020)]{vannostrand2020rbp}
+E.~L. Van~Nostrand et~al.
+\newblock {A large-scale binding and functional map of human RNA-binding
+  proteins}.
+\newblock \emph{Nature}, 583:\penalty0 711--719, 2020.
+\newblock \doi{10.1038/s41586-020-2077-3}.
+
+\bibitem[Jagannatha et~al.(2026)]{jagannatha2026rbp}
+P.~Jagannatha et~al.
+\newblock {Large-scale tethered screen of RNA-binding proteins reveals novel
+  regulators of poly(A) site selection}.
+\newblock \emph{Molecular Cell}, 86:\penalty0 2811--2827.e10, 2026.
+\newblock \doi{10.1016/j.molcel.2026.06.011}.
+
+\bibitem[Replogle et~al.(2022)]{replogle2022perturbseq}
+J.~M. Replogle et~al.
+\newblock {Mapping information-rich genotype--phenotype landscapes with
+  genome-scale Perturb-seq}.
+\newblock \emph{Cell}, 185:\penalty0 2559--2575.e28, 2022.
+\newblock \doi{10.1016/j.cell.2022.05.013}.
+
+\bibitem[Rees et~al.(2016)]{rees2016ctrp}
+M.~G. Rees et~al.
+\newblock {Correlating chemical sensitivity and basal gene expression reveals
+  mechanism of action}.
+\newblock \emph{Nature Chemical Biology}, 12:\penalty0 109--116, 2016.
+\newblock \doi{10.1038/nchembio.1986}.
+
+\bibitem[Iorio et~al.(2016)]{iorio2016gdsc}
+F.~Iorio et~al.
+\newblock {A landscape of pharmacogenomic interactions in cancer}.
+\newblock \emph{Cell}, 166:\penalty0 740--754, 2016.
+\newblock \doi{10.1016/j.cell.2016.06.017}.
+
+\end{thebibliography}

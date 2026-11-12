@@ -1,5 +1,5 @@
 domain,artifact_required,present_state,interpretation
-manuscript,English LaTeX + references + figures,INCLUDED,Rebuildable document; original figure-generator code absent
+manuscript,KBS English LaTeX + references + figures,INCLUDED,Rebuildable document; original figure-generator code absent
 constructed-theory,Symbolic exact checks and synthetic G0/G2,INCLUDED_EXECUTED,"PASS_CONSTRUCTED_ONLY, not empirical benchmark"
 K562_PRODUCER,"K562 fold-0 3125 terminal input, original masks, source RR/RE, call trace",MISSING_NATIVE,349 retained values have conditional numerical reconstruction only
 K562_ENCODER,K562 150 masked designs and original derived inputs,MISSING_NATIVE,Reported 2635 composite-only dimensions

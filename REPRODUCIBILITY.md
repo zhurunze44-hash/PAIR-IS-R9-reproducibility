@@ -1,39 +1,44 @@
-# Reproducing Paper2 IS R9
+# Reproducing the KBS companion materials
 
-A fresh clone can compile the manuscript (with TeX dependencies), run exact-algebra and synthetic checks, and audit real frozen asset bytes when those assets are available under the author's authorized access. The available source snapshot currently does not constitute an independent re-execution of every original experiment.
-
-## Public test (available without research data)
+## Public software checks
 
 ```bash
 git clone https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility.git
 cd PAIR-IS-R9-reproducibility
-python -m pip install -r requirements-verified.txt
+python3 -m pip install -r requirements-verified.txt
+python3 scripts/publication_sanity.py
 bash scripts/run_constructed_checks.sh
-PYTHONPATH=reproduction python -m unittest discover -s reproduction -p 'test_*.py' -v
+PYTHONPATH=reproduction python3 -m unittest discover -s reproduction -p 'test_*.py' -v
+python3 reproduction/original_scorers/verify_scorer_source.py
+python3 scripts/verify_kbs_alignment.py
 ```
 
-The results correspond to `PASS_CONSTRUCTED_ONLY`. GitHub Actions repeats the public tests on each push.
+These commands run the existing exact-algebra and synthetic checks, native-input
+verifier tests, scorer-source checksums and current KBS file correspondence.
+The original verification and scoring implementations are unchanged.
 
-## Original frozen-input verification
+## Manuscript build
 
-The public manifest `evidence/native_input_pins.json` fixes 29 SHA256 / byte-size identities from the 2026-11-05 author-server evidence ledger. `evidence/CLAIM_TO_ARTIFACT_MAP.tsv` maps K1-K7 to these pins. The private locations manifest is intentionally absent from GitHub.
+```bash
+bash manuscript/build.sh
+```
 
-Run `python reproduction/verify_native_inputs.py --help`. The author-server execution package supplies private paths and an orchestrator. Passing this check establishes original file **byte identity**, not producer identity or numerical re-execution.
+The main document and supplement build in `output/manuscript-build/` using the
+included BBL files. Install a complete TeX Live distribution with
+`texlive-latex-extra`, `texlive-fonts-recommended` and `texlive-science`.
+The archived PDFs are the original Gemini KBS files; rebuilding in another TeX
+environment can change font rendering, line breaks and PDF metadata.
 
-After a passing byte check, `python reproduction/recompute_frozen_counts.py --help` can perform saved-result count diagnostics. It requires `pyarrow` for Parquet. Do not equate 100,000 Replogle query designs with 100,000 measured biological effects.
+## Original data replay
 
-## Full original-data reproduction gate
+The 29 frozen SHA256/size identities remain in `evidence/native_input_pins.json`;
+their historical claim mapping remains in `evidence/CLAIM_TO_ARTIFACT_MAP.tsv`.
+Follow [reproduction/README.md](reproduction/README.md) for original-byte checks
+and saved-count diagnostics, and the
+[original scorer guide](reproduction/original_scorers/README.md) for CTRPv2/GDSC
+commands on a host with the corresponding original input matrices.
 
-For source-certified original producer claims, a third party needs the actual original TRAIN membership, original producer call trace and aligned RR/RE source ledger, and an unmodified producer executable. The current evidence lacks independent certification of that producer lineage. For CTRPv2/GDSC scorer replay, byte-pinned frozen predictions, target/split bindings, original scoring code and its exact invocation are required. The author-server package stages these assets for bounded review.
-
-No original observations or unapproved redistribution-sensitive files are committed here. See `NATIVE_DATA_REQUIREMENTS.md`, `RIGHTS_NOTICE.md` and `RELEASE_STATUS.json`.
-
-## Repo roles
-
-- `manuscript/`: R9 paper and figures
-- `verification/`: checked theoretical and synthetic methods
-- `reproduction/`: original file identity verifier and saved-count diagnostics
-- `evidence/`: claim-to-asset map and immutable SHA256 pins
-- `.github/workflows/checks.yml`: public automated tests
-
-This repository is not a substitute for original published datasets or their access requirements.
+The recorded author-server replay and its resource-specific availability scope
+are preserved in `evidence/P2_R9_PUBLIC_RESCORE_RECEIPT.json`. Historical version
+names in receipts and source pins identify those original artifacts.
+The KBS alignment does not change their scientific interpretation.

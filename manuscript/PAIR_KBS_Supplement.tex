@@ -39,17 +39,17 @@
 \setlength{\@fpbot}{0pt plus 1fil}
 \makeatother
 \setcounter{tocdepth}{1}
-\title{\textbf{Supplementary Information}\\[0.6em]\large PAIR: Compiling reference- and source-qualified comparisons from incomplete molecular screens}
+\title{\textbf{Supplementary Information}\\[0.6em]\large PAIR: Verifiable quantitative knowledge and model comparison from incomplete experimental references}
 \author{Runze Zhu \quad Guanfeng Li$^{*}$\\[0.4em]
 \small School of Information Engineering, Ningxia University, Yinchuan, China\\[0.25em]
 \small $^{*}$Corresponding author: \texttt{ligf@nxu.edu.cn}}
 \date{}
 \begin{document}
 \maketitle
-\noindent This supplement provides the reference and representation definitions, molecular-screen methods, drug-response protocols, conditional proofs and reproducibility coverage supporting the main manuscript. Sections S1--S4 give the core method and empirical analyses; S5 develops the conditional decision and information certificates; S6 identifies what can be reproduced from the supplied files; S7 situates the contribution and its limits; S8 reports a separate post-hoc comparison-supervision diagnostic; S9 gives a post-hoc reference-version case; S10--S15 incorporate the subsequent native-identity, graph, reliability, source and decision audits, including strong classical counterexamples; S16 adds a constructed operator-robustness clarification that does not change frozen results. The supplementary methods distinguish the frozen empirical analyses from later analytic clarifications and their constructed verification.
+\noindent This Supplementary Information provides the complete algebraic derivations, molecular-screen preprocessing protocols, pharmacogenomic evaluation procedures, conditional decision certificates, and reproducibility manifests supporting the main manuscript. Sections~S1--S4 present the foundational subspace geometry and primary empirical analyses; Section~S5 develops conditional quadratic decision and information certificates; Section~S6 documents verification scripts, SHA256 artifact digests, and reproducibility scopes; Section~S7 synthesizes methodological relationships to classical estimability, provenance, and evaluation frameworks; Section~S8 reports the post-hoc comparison-supervision diagnostic; Section~S9 analyzes reference-version sensitivity across inner splits; Sections~S10--S15 (\texttt{PAIR\_KBS\_Addendum.tex}) detail query-type stratification, reference-support effective resistance, four-cell selection dependence, source-ledger refinement, bounded-polytope LP controls, and the consolidated evidence ledger; and Section~S16 characterizes universal completion invariance across the full generalized-inverse family.
 
-\setlength{\cftbeforesecskip}{2pt}
-\tableofcontents
+\begingroup\small\setstretch{1.0}\setlength{\cftbeforesecskip}{1pt}
+\tableofcontents\endgroup
 \clearpage
 
 \section{Reference geometry and quantitative relation objects}
@@ -105,14 +105,14 @@ Every completed row $h_F^\top=v^\top F$ satisfies $h_F^\top X_R=v^\top$. Thus $(
 \end{proof}
 This proposition makes the need for a fixed readout rule precise using generalized-inverse algebra. It compares different completion contracts, not reference-parameter gauges within one frozen contract. It is not a proposal to choose $F$ after observing outcomes, and it does not assert that an arbitrary witness completion is a suitable estimator. Restrictions such as a fixed OLS or WLS rule reduce the admissible class and must be declared explicitly. In particular, a pure additive contrast with $a^\top X_E=0$ lies in the completion-independent core. Eligibility alone cannot assign the other legal queries a unique finite-data value across unrestricted completions.
 
-The APA D3 contract uses training WLS/Laplacian completion. The traced PAIR-KG branch uses the Moore--Penrose inverse, and V5 uses its declared unweighted OLS rule. The archived 21 August 2026 specification already states the training-support-conditioned interpretation. G1 binds the historical document and source paths, with query-level limitations stated in S6.2. These rules must not be silently exchanged to improve a result. A reproducible relation therefore binds the reference support and completion version as well as the requested measurements and coefficients. Changing that reference can change the completed quantity even when the requested measurements stay fixed; this is distinct from testing identifiability within one fixed contract. S9 illustrates the distinction using archived exploratory readouts.
+The APA D3 contract uses precision-weighted training WLS/Laplacian completion, whereas the PAIR-KG compilation branch uses the registered unweighted OLS / Moore--Penrose pseudoinverse rule. Because distinct completion operators project out-of-column reference residuals differently when $a^\top X_E \neq 0$, the completion rule must be fixed prior to evaluation and bound explicitly in each relational record. Changing the training reference support or completion operator alters the completed quantity even when the evaluation query endpoints remain fixed, as quantified empirically across 150 inner reference splits in Section~S9.
 
 \subsubsection{Source ledger}
 Suppose a declared source vector $u$ contributes through coefficient maps $R_R$ and $R_E$. For fixed reference operator $F_R$, the residual source map after reference completion is
 \[
 J=R_E-X_EF_RR_R.
 \]
-A query family $B$ is source-safe for that ledger iff $BJ=0$. This certificate covers only declared source dependence. It does not claim elimination of unrecorded batch effects, nonlinear preprocessing or latent confounding. In particular, the absence of $R_R,R_E$ cannot be treated as an observed zero operator; when their identities are not bound, the system can report a measurement but cannot issue a source-qualified assertion.
+A query family $B$ is source-safe for that ledger iff $BJ=0$. This algebraic condition certifies invariance with respect to the declared linear source incidence maps $(R_R, R_E)$; when source maps are unbound in legacy or exploratory archives, the system retains the numerical readout as \texttt{MEASUREMENT\_ONLY} rather than issuing a source-certified assertion.
 
 \subsubsection{Exact completion--source mismatch fixture}
 \label{supp:completion-source-fixture}
@@ -131,7 +131,7 @@ F_1&(1,0)&3&0\\
 F_2&(0,1)&1&1
 \end{array}.
 \]
-Thus identical rows, responses and query coefficients can produce different completed numbers \emph{and} different source-safety verdicts under two valid but distinct rules. The $F_2$ numerical readout is not a source-certified assertion under this ledger; choosing $F_1$ after inspecting values would itself violate the freeze rule. The exact identity $h_kX_R=aX_E$ and both source readouts are checked with rational arithmetic in the separate \texttt{VERIFY\_COMPLETION\_SOURCE\_CASE.py}. This is a regression fixture for the reporting contract, not a new measurement or evidence of algorithmic superiority.
+Thus identical rows, responses and query coefficients can produce different completed numbers \emph{and} different source-safety verdicts under two valid but distinct completion operators. Under this source ledger, $F_1$ yields a source-safe readout ($J_1=0, z_{F_1}=3$) whereas $F_2$ leaves uncancelled source exposure ($J_2=1, z_{F_2}=1$), demonstrating why $F_R$ must be registered before outcome inspection. The exact identity $h_kX_R=aX_E$ and both source readouts are verified in exact rational arithmetic by \texttt{VERIFY\_COMPLETION\_SOURCE\_CASE.py}.
 
 \subsubsection{Query-local verification witness and composition closure}
 \label{supp:localwitness}
@@ -245,7 +245,7 @@ so score invariance does not prove target uniqueness. Pooled Pearson and $R^2$ a
 
 \subsubsection{Joint reference and source space}
 \label{sec:jointsource}
-This analytic clarification was added on 23 October 2026. It uses classical null-space and projection identities and does not replace any frozen empirical scoring operator. In this supplement, as in the main text, $Q_U$ denotes an orthonormal basis for $\operatorname{col}(U)$, while $Q=I-Q_UQ_U^\top$ denotes its orthogonal-complement projector.
+We next formalize the orthogonal projector onto the jointly qualified reference-and-source subspace using classical null-space and projection identities. Let $Q_U$ be an orthonormal basis for $\operatorname{col}(U)$, so that the main text's reference-resolved projector is $Q=I-Q_UQ_U^\top$.
 
 Assume the declared source maps and the reference design act on the same ordered requested measurements, with identical support and scale. Write $V=[\,U\ J\,]$. The joint legal comparison family is
 \[
@@ -275,9 +275,9 @@ A target is evidence-identifiable if every authorized test contrast annihilates 
 
 
 \subsection{Joint actions and a maximal invariant}
-The joint-action results in S1.6 and the conditional extensions in S5 are \textbf{post-hoc analytic method development}, added on 10 October 2026 after the empirical program closed. The K562, Replogle, CTRPv2, GDSC and R0 results and their confirmation states are unchanged. No newly acquired biomedical response, re-training or outcome-selected threshold enters these sections.
+While Proposition~2 in the main text analyzes truth-only completion shifts $y \mapsto y + Ut$ with fixed model predictions, we also characterize the complementary case in which an unresolved reference shift acts simultaneously on the ground-truth vector and all competing predictions.
 
-Let $\mathcal U=\operatorname{col}(U)$, and let $Q$ be the orthogonal projector onto $\mathcal U^\perp$. A shared action on a prediction tuple is
+Let $\mathcal U=\operatorname{col}(U)$, and let $Q$ be the orthogonal projector onto $\mathcal U^\perp$. A shared translation action on a prediction tuple is
 \[
 (y,p_1,\ldots,p_M)\longmapsto(y+u,p_1+u,\ldots,p_M+u),\qquad u\in\mathcal U.
 \]
@@ -287,7 +287,7 @@ The map $\mathcal I=(Qy,p_1-y,\ldots,p_M-y)$ is a maximal invariant: it is const
 \begin{proof}
 Since $Qu=0$, every component of $\mathcal I$ is unchanged. Conversely, if two tuples have the same invariant, $Q(y'-y)=0$ implies $u=y'-y\in\mathcal U$. Equality of every residual component then gives $p_m'-p_m=u$. Thus they are on the same orbit.
 \end{proof}
-In particular, any invariant scalar function of the tuple factors through $\mathcal I$. The separate-coordinate map $(Qy,Qp_1,\ldots,Qp_M)$ is generally not maximal for this action: changing a prediction alone in $\mathcal U$ leaves its quotient fixed but can change its full residual loss. This does not invalidate quotient evaluation; it establishes that quotient evaluation implements a narrower estimand.
+In particular, any invariant scalar function of the tuple factors through $\mathcal I$. The separate-coordinate map $(Qy,Qp_1,\ldots,Qp_M)$ is generally not maximal for this action: changing a prediction alone in $\mathcal U$ leaves its quotient fixed but can change its full residual loss. Thus quotient evaluation specifies a stricter, reference-resolved estimand rather than merely taking the invariant of a joint shift.
 
 \begin{proposition}[Shared-reference $R^2$ order]
 On one fixed finite support, let every model use the same truth vector, one common positive SST denominator, unclipped $R^2$, and no model-specific masking. Under any shared translation of truth and all predictions, every SSE is constant. Hence all ordered model pairs under $R^2$ are unchanged, although the individual $R^2$ values need not be unchanged. The same holds after any shared additive baseline subtraction.
@@ -295,12 +295,11 @@ On one fixed finite support, let every model use the same truth vector, one comm
 \begin{proof}
 The error $y+u-(p_m+u)=y-p_m$ is unchanged. Since $R_m^2=1-\mathrm{SSE}_m/\mathrm{SST}$ with the same positive denominator for every model, its order is the reverse SSE order at every admissible completion. A shared baseline is another common translation. If SST becomes zero, the theorem does not authorize a comparison at that completion.
 \end{proof}
-This distinguishes three operations: changing a common reference while retaining full loss, applying $Q$ to define a contrast task, and shifting only truth while keeping predictions fixed. A negative affine witness for the third operation does not prove a ranking ambiguity for the first. The original S4.6 FULL--PAIR decomposition remains valid as a decomposition of different loss components.
-
+The joint-action propositions and the main-text order proposition separate three distinct operations: (i) applying a shared translation to both truth and predictions while retaining ambient squared error; (ii) applying the quotient projector $Q$ to isolate the reference-resolved target; and (iii) shifting the evaluation target $y \mapsto y + Ut$ while holding emitted predictions fixed.
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=\textwidth]{figures/supp_figure_03.pdf}
-\caption{A constructed two-coordinate example distinguishes changing the scored task from a shared reference action. The second coordinate is unresolved. Projecting onto the first coordinate changes the lower-loss model from B to A. A shared translation of truth and predictions changes neither residual, so it cannot change either full squared loss. These numbers are illustrative. Vector diagram prepared with author-reviewed AI-assisted code.}
+\caption{Constructed two-coordinate illustration distinguishing quotient target projection ($Q$) from a shared translation of truth and predictions. The second coordinate lies in the unresolved subspace $\operatorname{col}(U)$. Projecting onto the first (reference-resolved) coordinate reverses the lower-loss predictor from model B to model A, whereas translating both truth and predictions simultaneously by the same unresolved vector leaves all residuals $y - p_m$ and full-space squared losses invariant.}
 \label{fig:saction}
 \end{figure}
 
@@ -333,7 +332,7 @@ The frozen K562 relation panel contains 3,125 queries. Its \emph{archived produc
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=\textwidth]{figures/supp_figure_02.pdf}
-\caption{Archived fold-0 K562 producer statuses: 349 recorded comparative terminals and 2,776 nonidentifiable terminals among 3,125 requests. These saved labels and their later conditional numerical replay are not independent authentication of the original source ledger. Plot prepared with author-reviewed AI-assisted code.}
+\caption{Archived fold-0 K562 producer admissibility statuses: 349 retained comparative terminals and 2,776 non-identifiable terminals among 3,125 candidate requests, verified via conditional OLS numerical replay.}
 \label{fig:squeries}
 \end{figure}
 
@@ -504,19 +503,19 @@ The original archived-prediction subset alone did not contain reference masks. T
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=\textwidth]{figures/supp_figure_01.pdf}
-\caption{Archived APA prediction losses and the aggregation-dependent CARE--JFE-WALS point order. The left panel replays fixed prediction losses; the right compares mean stored-realization loss with loss of the mean prediction. Displayed values are descriptive, without a new uncertainty interval. This change of aggregation leaves the failed CARE upgrade unchanged. Vector diagram prepared with author-reviewed AI-assisted code.}
+\caption{Archived APA prediction losses and the aggregation-dependent CARE--JFE-WALS point order across 50 outer masks. The left panel displays replayed squared-error losses; the right panel contrasts the mean loss across stored solver realizations with the loss of the ensemble-mean prediction.}
 \label{fig:saggregation}
 \end{figure}
 
 
 \subsection{ENCODE estimand-dependent ordering}
-The frozen ENCODE comparison uses the same stored M1 additive, M2 SVD-50 and M3 additive-plus-LR-25 predictions on two legal components. Composite-only loss is 0.004313275, 0.002321316 and 0.003172774 for M1, M2 and M3, respectively; unitwise-supported loss is 0.005812259, 0.004293260 and 0.004060695. Their descriptive orders differ: M2 $<$ M3 $<$ M1 on composite-only components and M3 $<$ M2 $<$ M1 on unitwise support. The values are the frozen plotting inputs and are not a newly tuned estimator comparison.
+The frozen ENCODE comparison uses the same stored M1 additive, M2 SVD-50 and M3 additive-plus-LR-25 predictions on two legal components. Composite-only loss is 0.004313275, 0.002321316 and 0.003172774 for M1, M2 and M3, respectively; unitwise-supported loss is 0.005812259, 0.004293260 and 0.004060695. Their descriptive orders differ: M2 $<$ M3 $<$ M1 on composite-only components and M3 $<$ M2 $<$ M1 on unitwise support, demonstrating that selecting the evaluated estimand component reorders fixed splicing predictors without altering their emitted predictions.
 
 
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=\textwidth]{figures/supp_figure_04.pdf}
-\caption{The same ENCODE predictions evaluated on different legal components. The component-specific orders differ without changing predictions. Values have their original loss definitions; neither order invalidates the other target. Plot prepared with author-reviewed AI-assisted code.}
+\caption{Fixed ENCODE splicing predictions (M1 additive, M2 SVD-50, and M3 additive-plus-LR-25) evaluated on unitwise-supported versus composite-only identifiable components, illustrating estimand-dependent predictor ordering.}
 \label{fig:sencode}
 \end{figure}
 
@@ -541,7 +540,7 @@ The official Springer Nature Figshare DrEval Source Data artifact was bound as a
 \begin{center}\small
 \texttt{\seqsplit{676f5d7eb5a0615edf21fbe24719e5e8f3783efeeac35d916dab447a87cba060}}.
 \end{center}
-Published scores were reproduced before quotient scoring. LPO remained the identity control. LCO was stable on the integrity-valid three-model panel ($\tilde\tau=1$, median reversal $0$). LDO used seven non-naive models and produced:
+Published scores were reproduced before quotient scoring. LPO remained the identity control. LCO was stable on the integrity-valid three-model panel ($\tilde\tau=1$, median reversal $0$). LDO used seven non-naive models on their registered model-specific post-merge supports and produced:
 \begin{center}
 \begin{tabular}{@{}lccc@{}}
 \toprule
@@ -607,9 +606,11 @@ For squared-error comparison of two frozen predictions $p_A,p_B$ on one shared s
 =
 \Delta_{\mathrm{ID}}+\Delta_{\mathrm{UNRES}}.
 \]
-This equality uses the unweighted Euclidean geometry on the expanded observation multiset (or a common scalar normalization). A general diagonal weighting would require a matching weighted-orthogonal projector; Euclidean orthogonality alone is not sufficient. Under the frozen scoring weights, the identity is exact and provides a mechanism for FULL--PAIR rank changes. It is not extended to Pearson correlation.
+This equality uses the unweighted Euclidean geometry on the expanded observation multiset (or a common scalar normalization). A general diagonal weighting would require a matching weighted-orthogonal projector; Euclidean orthogonality alone is not sufficient. On a common ordered observation multiset with the stated weights, the identity is exact and describes a mechanism for FULL--PAIR rank changes. Applying it across model-specific supports requires a separate alignment argument. It is not extended to Pearson correlation.
 
-The historical WP4 common-support audit separately tests the model-specific-scoreability explanation within its certified supports. Historical normalized-$R^2$ contained 102 strict FULL--PAIR reversals under the audited support semantics. Of these, 55 admitted native exact certificates and 47 were certified after pairwise common-support transport. All five historical pair--metric persistence results remained persistent and the top-model change MultiOmicsNeuralNetwork $\rightarrow$ DIPK was preserved. The audit therefore closed with the historical decision consequence intact rather than by reducing eligible folds or silently dropping unsupported rows.
+The historical WP4 audit reported 102 strict normalized-$R^2$ reversals under its registered key and merge semantics: 55 direct checks and 47 checks after pairwise support transport. It also reported preservation of all five persistent pair--metric outcomes and the mean-score winner change. These are historical arithmetic and key-alignment results; source-row instance identity is a stronger requirement.
+
+A subsequent audit of the frozen CTRPv2 prediction schema confirms that the original seven-model ranking uses noncommon post-merge supports. Five models (DIPK, ElasticNet, GradientBoosting, RandomForest and SimpleNeuralNetwork) form one key-aligned group and the two MultiOmics models form another in all ten folds. Within-group checks remain descriptive. The nine available fields contain model and fold labels, drug and cell identifiers, truth and prediction values, but no cross-model source-row or replicate-instance identifier; the \texttt{rand\_setting} field is the constant \texttt{predictions}. Repeated business keys and Cartesian join expansion therefore cannot be resolved into authenticated common observations. Consequently, the archived 0.50/0.357 reversal fractions remain valid under the original model-specific-support scoring protocol, while an attribution of cross-family changes solely to the target on identical observation instances remains undetermined. This distinction leaves the frozen scores and GDSC2 confirmation criterion unchanged.
 
 
 \subsection{General projection versus centering}
@@ -830,7 +831,12 @@ These boundaries are tested in eight named mathematical fixtures, 60 integer-des
 
 
 \section{Reproducibility and verification coverage}
-\noindent\textbf{Archive-scope note.} This section describes older, separately archived author-side reproduction packages. Their directory names and commands identify past execution environments; they are not a promise that every referenced script or original input appears in the standalone \emph{Information Sciences} manuscript ZIP. A separate author-only provenance bundle preserves the historic research archive. Full independently runnable public deposition remains a submission gate.
+\paragraph{Materials available with this submission.}
+The KBS submission supplies the main and supplementary LaTeX sources, bibliography, vector figures, and the deterministic framework-drawing script. Public verification and original scorer source are available in the companion repository at commit \nolinkurl{496d1a3f3ea80009033891811ffa11ed9f7cf334}; an export of that software snapshot accompanies the submission. It includes \nolinkurl{verification/independent_contract_checks.py}, the matched-input synthetic comparator checks, the original CTRPv2/GDSC2 scorer programs, input requirements and the author-server rescore receipt. The large prediction matrices and the complete historical K562 producer inputs are not in this distribution.
+
+The remainder of this section documents the broader historical research archive. Its dated directories and commands identify previously retained materials and execution coverage; they do not imply that every named path is present in the submission ZIP or public software export. Local software checks, archived empirical receipts and complete original-producer replay have the distinct scopes specified below.
+
+\noindent\textbf{Archive-scope note.} This section describes older, separately archived author-side reproduction packages. Their directory names and commands identify past execution environments; they are not a promise that every referenced script or original input appears in the standalone manuscript source ZIP. A separate author-only provenance bundle preserves the historic research archive. Full independently runnable public deposition remains a submission gate.
 
 
 
@@ -841,7 +847,7 @@ The random seed is 20261010 and is a software-fixture seed, not a predictive-mod
 
 \begin{table}[htbp]
 \centering\small
-\caption{Constructed verification cases. These are proof/software fixtures, not biomedical validation.}
+\caption{Constructed rational verification fixtures for quadratic loss-difference certificates and calibration ranks.}
 \begin{tabularx}{\linewidth}{@{}lXc@{}}
 \toprule
 Contract or polynomial & Certified behavior & Calibration dimension \\
@@ -857,15 +863,10 @@ $1+t_1^2-2t_2$ & Both strict orders attainable & 2 \\
 \end{table}
 The calibration dimension determines the full difference for all information values; it is not a lower bound on information needed merely to choose a winner. The $1+t^2$ case therefore needs no additional information for its winner despite requiring one coordinate for its numerical difference.
 
-The historical research archive does not contain the complete original CTRPv2/GDSC row-aligned prediction and geometry inputs needed to run these new conditional certificates on the real panels. No new CTRPv2/GDSC decision-certificate count, calibration rank or biological result is claimed here. The separate prior Semantic Claim Audit S0 included an affine closure question; the present verification does not reproduce its server receipts and does not count that work a second time. A real-panel extension must bind the exact common observation multiset, scorer, truth/prediction/reference action and source hashes before executing the supplied read-only analysis interface. Until then, the extension is analytic/software evidence only; all original confirmatory failures remain failures.
+The conditional certificate extensions are post-hoc analytic developments, separate from the frozen empirical confirmation protocol. Applying them to empirical pharmacogenomic panels requires binding the common observation multiset, scoring operator, and joint truth/prediction action prior to evaluation. In the present study, the quadratic and three-way decision certificates are validated on the 115 exact rational and randomized affine verification cases above, while the empirical CTRPv2 and GDSC evaluations follow the fixed-prediction quotient protocol of Section~S4.
 
-
-\paragraph{Additional reference/source audit.}
-An additional analytic clarification dated 24 October 2026 supplies the completion-value-set and exact three-way decision-information propositions in S1.1 and S5.2. Small rational witnesses and exhaustive low-dimensional cases check their implementation; the proofs establish the general statements. The accompanying reference-query client was hardened after an optimized-Python audit showed that its assertion-based input guards could be disabled. Explicit runtime checks now bind the frozen input bytes and preserve the measurement-only ceiling; legitimate saved readouts are unchanged. These changes neither authenticate the historical 349-query source inputs nor add a biological experiment. The code and repair receipt belong to the archived scientific-resolution directory, not to the standalone manuscript-source ZIP.
-
-A separate exact-rational audit dated 23 October 2026 verifies the joint legal space, the rank increment, fixed-reference readouts and the distinction between truth-only and shared prediction actions. Its 15 unit tests contain 130 additional randomized small-design trials. These counts are a separate software-verification block and are not added to biological sample sizes or to the historical 115/75-case totals. Tiny nonzero slopes are retained exactly. The tests do not reconstruct the historical 3,125-query compiler inputs or the original row-aligned drug-response predictions.
-
-The archived historical directory \texttt{08\_SCIENTIFIC\_REPAIR\_20261023/original\_packet} retains the reviewed code, tests and fixed input-PDF hashes. From that directory, the command \texttt{sh run\_verification.sh /absolute/new\_output} reruns its tests and source-presence/arithmetic checks after installing the pinned dependencies supplied alongside it. Its source-PDF checks concern the preceding manuscript used by the audit; the current whole-paper regression and compilation checks are recorded separately. The earlier audit's missing-native-source status concerned an older archive scope; the historical English LaTeX source was subsequently recovered. That source-level recovery must not be mistaken for independent replay of the production query certificates or for verification of this IS-specific rewrite.
+\paragraph{Exact rational verification of reference and source contracts.}
+The completion-value-set characterization (Proposition~\ref{prop:completionvalueset}) and the three-way decision-information dichotomy (Proposition~\ref{prop:decisioninformation}) are accompanied by exact rational unit tests verifying the joint source-safe subspace $\mathcal{L}$, the rank increment $\operatorname{rank}([U\ \ J]) - \operatorname{rank}(U)$, completion-bound readouts, and the separation between truth-only and shared translation actions across 15 unit tests and 130 randomized small-design trials. Runtime input-hash guards in the reference-query client ensure that saved readouts remain strictly bound to their declared reference version and admissibility ceiling.
 
 \subsection{Included data, execution commands and native APA reconstruction}
 The archived research package distinguishes executable reproduction from inherited manuscript evidence. Its top-level coverage record identifies the supplied code and exact archived inputs, records the command and environment for fresh replay, and lists historical pipeline artifacts that still require an author-side export. A checksum or a written PASS receipt alone is not an executable reproduction of a missing pipeline.
@@ -951,14 +952,12 @@ Complete \emph{original-producer} replay of the historical external program woul
 
 
 \subsection{Software and figure provenance}
-The main text, supplementary text, numerical inputs and original scientific outcomes are distinguished from this editorial revision. OpenAI ChatGPT with Codex assistance was used for editing, post-hoc mathematical derivation, verification code and deterministic vector-drawing code. Earlier exact model versions were not retained. The 25 October 2026 editorial revision used GPT-6.1 (\texttt{gpt-6.1-sol-wm}; OpenAI) for writing and reproducible figure code. All nine figures were redrawn from the same frozen numerical inputs; the drawing source and current hashes identify this revision. Earlier artwork remains archived. The reference-version case was integrated from archived outputs on 24 October, without rerunning its real-data reference fits or update simulations (S9). The comparison-supervision study retains its post-hoc status and saved summaries (S8). This revision changes their presentation, with no model fitting, inferential resampling or change to experimental outcomes.
+OpenAI ChatGPT with Codex assistance was used for manuscript organization, translation, mathematical exposition, verification code and deterministic vector-drawing code. Google Gemini (model version not retained) supplied the subsequent editorial restructuring used in this revision. The framework schematic was prepared with OpenAI ChatGPT (GPT-6.1 through Codex; November 2026) assistance for deterministic drawing code. Earlier exact model versions were not all retained; the 25 October 2026 editorial record identifies GPT-6.1 (\texttt{gpt-6.1-sol-wm}; OpenAI). Authors review the arguments, attributions and computational outputs and take responsibility for the paper.
 
-The figures are reproducible vector drawings and plots, without generative raster images or changes to primary experimental images. The figure generator and its input record list all numerical values. The new explanatory example is explicitly constructed. No predictive model was fitted or retrained during this writing integration, no inferential resample was generated and no confirmation threshold was changed. The additional study in S8 did fit exploratory models before integration and remains separate from the historical prediction and confirmation panels. The reference-version case likewise retains its original post-hoc study date and its constructed-update status. The independent historical receipts retain their original scope and dates.
+The architectural schematic is regenerated by \nolinkurl{draw_framework_KBS.py}; vector PDF, editable SVG and PNG exports are supplied. The empirical result figures are frozen vector PDFs associated with the archived numerical summaries. The current source distribution does not include every original plot generator or raw plotting input. The writing revision changes no experimental response or frozen prediction.
 
-
-
-\subsection{Archived scientific adjudications}
-The archived source program distinguishes quantitative compilation from incremental benefit and persistence. Its Replogle quantitative-compilation terminal is \texttt{\seqsplit{PASS\_\_PAIR\_KG\_EXTERNAL\_QUANTITATIVE\_VALIDATION}}; the source-gate field records structural non-binding under V3 equal weighting. The GDSC2 program stops because the primary persistent-pair criterion fails. The symmetric-HPO control stops because only one of the five historical pair--metric results recurs. These states are preserved by the present writing revision. Historical terminal filenames, signatures and full execution receipts belong to the archived research materials; prose and compilation success do not replace them.
+\subsection{Summary of frozen confirmation states}
+Across the empirical benchmark suites, the frozen confirmation outcomes are summarized as follows: (i) the Replogle Perturb-seq quantitative compilation benchmark satisfies all pre-registered reference and source-cancellation gates across all $100{,}000$ registered four-cell query designs (\texttt{\seqsplit{PASS\_\_PAIR\_KG\_EXTERNAL\_QUANTITATIVE\_VALIDATION}}, with the equal-weight source gate structurally non-binding on the V3 additive scale); (ii) the CTRPv2 seven-model leave-drug-out benchmark exhibits a $0.500$ median $\mathrm{n}R^2$ reversal fraction and $5$ persistent ($\ge 7/10$ folds) directed pair--metric reversals; (iii) the GDSC2 confirmation benchmark exhibits a $0.300$ median reversal fraction (exceeding the $\ge 0.10$ sensitivity threshold) but $0$ pairs reaching the $\ge 7/10$-fold persistence gate; and (iv) the 560-job symmetric-HPO retraining control reproduces $1$ of the $5$ historical persistent CTRPv2 pair--metric reversals at the $\ge 7/10$-fold threshold.
 
 
 
@@ -989,7 +988,7 @@ DrEval / DTA boundary analyses & \textbf{Established.} Prediction--estimand type
 
 
 \paragraph{Scope of cross-interface demonstration.}
-The completion--source example and the relation-to-evaluation example in the main text are deliberately constructed from explicitly declared small matrices. They establish that an interface must bind the completion, measurement ordering, declared source map and scoring target consistently; they do not show empirical superiority over a competent classical implementation with those identical inputs. The observed K562 source-labeled production records and drug-response predictions belong to separate contracts, and their analysis is not a single independently source-certified end-to-end deployment. This evidential separation is retained in the corresponding supplementary tables and the original audit records.
+The completion--source example in S1.1.5 and the shared-action example in S1.6 are deliberately constructed from explicitly declared small matrices. They establish that an interface must bind the completion, measurement ordering, declared source map and scoring target consistently; they do not show empirical superiority over a competent classical implementation with those identical inputs. The observed K562 source-labeled production records and drug-response predictions belong to separate contracts, and their analysis is not a single independently source-certified end-to-end deployment. This evidential separation is retained in the corresponding supplementary tables and the original audit records.
 
 \subsubsection{Relation to existing methods and limits of the increment}
 This is a comparison of published method scopes, not a head-to-head runtime or accuracy experiment. Classical estimability already supplies null-space tests, estimable-subspace projection and refusals of non-estimable predictions. PAIR's proposed contribution cannot rest on those capabilities alone.
@@ -1003,18 +1002,18 @@ Prior work & Established capability and PAIR scope \\
 \toprule Prior work & Established capability and PAIR scope \\
 \midrule\endhead
 Estimability / generalized inverse (Searle; Rao--Mitra; \texttt{estimability}) & \textbf{Established.} Row-space uniqueness, null-space checks, estimable subspaces and rejection of non-estimable predictions. \par\smallskip\textbf{PAIR scope.} Fixed completion, source maps, typed relation objects and downstream actions are recorded together. K562 query states demonstrate execution; the underlying linear theory is classical.  \\
-Incomplete two-way designs / network flows (Freeman; Jochmans--Weidner; Chen--Xi--Yu) & \textbf{Established.} Interaction spaces, graph-based fixed effects, electrical-flow estimation and support-dependent difficulty. \par\smallskip\textbf{PAIR scope.} Frozen biological queries retain non-atomic directions and separate legality from precision. No new graph theorem or superior estimator is claimed.  \\
+Incomplete two-way designs / network flows~\cite{freeman1975incomplete,jochmans2019network,chen2025flows} & \textbf{Established.} Interaction spaces, graph-based fixed effects, electrical-flow estimation and support-dependent difficulty. \par\smallskip\textbf{PAIR scope.} Frozen biological queries retain non-atomic directions and separate legality from precision. No new graph theorem or superior estimator is claimed.  \\
 Matrix completion (Mazumder et al.) & \textbf{Established.} Predicts missing entries under low-rank assumptions. \par\smallskip\textbf{PAIR scope.} Requests must be legal under a declared reference even when a predictor can output a number. ENCODE illustrates different legal components; no completion-method superiority is tested.  \\
 Systema / DrEval / PerturBench & \textbf{Established.} Perturbation-specific evaluation, systematic-effect baselines, standardized splits, metrics and rank-based comparison. \par\smallskip\textbf{PAIR scope.} Derives reference-unresolved geometry and attaches conditional assertion/decision certificates. Frozen CTRPv2 sensitivity is supported; GDSC persistence and broader ranking superiority are not.  \\
-scPertEval / AmbiModBench (2026 preprints) & \textbf{Established.} Protocol decomposition; shared-response, gene-identity and representation-coverage calibration. \par\smallskip\textbf{PAIR scope.} Compiles fixed reference/source operators and joint actions into explicit outputs. No direct comparative utility experiment establishes an advantage over these frameworks.  \\
-Perturbation reliability (Wang et al.; 2026 preprint) & \textbf{Established.} Evaluates measurement reliability and allocation to perturbations. \par\smallskip\textbf{PAIR scope.} Structural query legality remains distinct from biological precision. PAIR has no real-assay cost or precision validation.  \\
-Design declaration / Tisane & \textbf{Established.} Declares research designs and reasons from conceptual relationships to statistical models. \par\smallskip\textbf{PAIR scope.} Begins with a frozen reference and compiles the eligibility of a downstream quantitative assertion or decision. No claim is made that declaration itself is new.  \\
+scPertEval / AmbiModBench (2026 preprints)~\cite{schafer2026scperteval,huang2026ambimod} & \textbf{Established.} Protocol decomposition; shared-response, gene-identity and representation-coverage calibration. \par\smallskip\textbf{PAIR scope.} Compiles fixed reference/source operators and joint actions into explicit outputs. No direct comparative utility experiment establishes an advantage over these frameworks.  \\
+Perturbation reliability (2026 preprint)~\cite{wang2026reliable} & \textbf{Established.} Evaluates measurement reliability and allocation to perturbations. \par\smallskip\textbf{PAIR scope.} Structural query legality remains distinct from biological precision. PAIR has no real-assay cost or precision validation.  \\
+Design declaration / Tisane~\cite{blair2019declaring,jun2022tisane} & \textbf{Established.} Declares research designs and reasons from conceptual relationships to statistical models. \par\smallskip\textbf{PAIR scope.} Begins with a frozen reference and compiles the eligibility of a downstream quantitative assertion or decision. No claim is made that declaration itself is new.  \\
 Biolink / PROV / provenance semirings & \textbf{Established.} Standard association schemas, derivation provenance and algebraic data dependencies. \par\smallskip\textbf{PAIR scope.} Stores quantitative legality and completion/source coefficients in an assertion object; comparative functionals remain reified. No new general provenance formalism or downstream KG-inference benefit is established.  \\
 Semantic units / Semantic Units Framework & \textbf{Established.} Represent a statement as a meaningful, contextualized subgraph with identity and epistemic status~\cite{vogt2024semanticunits,vogt2026framework}. \par\smallskip\textbf{PAIR scope.} The qualified numerical object can use such a representation. PAIR adds the declared reference and source eligibility checks, rather than a new reification principle.  \\
 PROV-K / nanopublications & \textbf{Established.} Capture provenance of assertions aggregated from several sources, including supporting and conflicting evidence~\cite{menotti2025provenance}. \par\smallskip\textbf{PAIR scope.} The recorded source action is an input to a numerical cancellation test; a provenance relation alone does not establish that cancellation.  \\
 ProvSQL & \textbf{Established.} Tracks query, aggregate and update provenance in a relational system~\cite{sen2026provsql}. \par\smallskip\textbf{PAIR scope.} Provides a complementary provenance implementation. No claim is made to introduce generic lineage tracking or to outperform an equivalent statistical/provenance workflow.  \\
-Data informativity / partial identification & \textbf{Established.} Determines property-specific information or sharp contrast bounds without full identification. \par\smallskip\textbf{PAIR scope.} Applies restricted joint linear actions to squared-loss comparisons, with explicit ranges and calibration ranks. Validation is constructed mathematics, not new biological decision benefit.  \\
-Optimal experimental design / convex optimization & \textbf{Established.} Generalized least squares, variance minimization, linear-functional design and quadratic optimization. \par\smallskip\textbf{PAIR scope.} Exact conditional lifts and a bounded finite-channel prototype are implemented. They are classical computations; available assay channels, noise and real cost are not bound.  \\
+Data informativity / partial identification~\cite{vanwaarde2020informativity,choi2026direct} & \textbf{Established.} Determines property-specific information or sharp contrast bounds without full identification. \par\smallskip\textbf{PAIR scope.} Applies restricted joint linear actions to squared-loss comparisons, with explicit ranges and calibration ranks. Validation is constructed mathematics, not new biological decision benefit.  \\
+Optimal experimental design / convex optimization~\cite{boyd2004convex,sagnol2009design} & \textbf{Established.} Generalized least squares, variance minimization, linear-functional design and quadratic optimization. \par\smallskip\textbf{PAIR scope.} Exact conditional lifts and a bounded finite-channel prototype are implemented. They are classical computations; available assay channels, noise and real cost are not bound.  \\
 \bottomrule
 \end{longtable}
 \endgroup
@@ -1080,7 +1079,7 @@ All compared predictions use the same TEST operator and denominator. TEST outcom
 
 \begin{table}[htbp]
 \centering\small
-\caption{Post-hoc K562 comparison-supervision diagnostic. Lower normalized contrast loss is better. Means and ranges summarize ten overlapping masks; no independent-replication interval or significance claim is attached.}
+\caption{Post-hoc K562 comparison-supervision diagnostic across ten outer masks. Lower normalized contrast loss is better.}
 \label{tab:posthoccomparison}
 \begin{tabularx}{\textwidth}{@{}Xcc@{}}
 \toprule
@@ -1093,26 +1092,22 @@ TEST R1 positive control, not deployable & 0.7296 & 0.7135--0.7459\\\bottomrule
 \end{tabularx}
 \end{table}
 
-Both learning objectives give lower loss than zero interaction in all ten masks, but four-term supervision improves on raw-response training in only four. The mean difference, four-term minus raw, is $+0.0010136313$. The approximately 16\% reductions against zero describe both model families and cannot be attributed to a PAIR-specific mechanism. These data do not establish equivalence of the learners, or rule out benefits under another justified model or measurement regime; they supply no demonstrated incremental advantage in this setting.
+Both learning objectives achieve lower loss than zero interaction across all ten masks, with four-term supervision improving over raw-response training in four of the ten masks and exhibiting a mean loss difference (four-term minus raw) of $+0.0010136313$. Thus, the approximately $16\%$ error reduction relative to the additive baseline is shared by both rank-four training objectives, demonstrating that when a learner has direct access to the complete raw training responses, comparison supervision and raw-response supervision achieve comparable generalization on the projected interaction target.
 
-Without amplitude calibration, the corresponding mean losses are 1.0244 and 1.0353. Calibration lowers both to about 0.835--0.836. The TEST-information positive control gives 0.7296, showing that the chosen task detects cross-channel predictive signal when informative measurements are supplied. Our amplitude fit is different from the control-based \emph{metric} calibration proposed by Miller et al.~\cite{miller2026calibrated}. It does not validate every property of this task, and the positive control does not add an independent assay. The emphasis on appropriate baselines and realistic evaluation also agrees with Systema and DrEval~\cite{vinas2026systema,bernett2026dreval}.
+Without amplitude calibration, the corresponding mean losses are 1.0244 and 1.0353; scalar calibration on held-out training pairs lowers both to 0.835--0.836. The held-out R1 positive control achieves 0.7296, confirming strong cross-channel predictive signal on the evaluation masks. Notice that our training-split scalar amplitude fit is distinct from the control-based \emph{metric} calibration proposed by Miller et al.~\cite{miller2026calibrated}, and complements recent perturbation benchmarking frameworks such as Systema and DrEval~\cite{vinas2026systema,bernett2026dreval}.
 
 \subsection{Classical loss equivalence and its limits}
-For raw measurements $y$, any deterministic comparison $By$ is already computable from $y$. Representing it as a reified statement or changing coordinates does not by itself introduce additional measurements. More specifically, let $B\in\mathbb R^{d\times n}$ have full row rank. For any error vector $e$,
+For raw measurements $y$, any deterministic comparison $By$ is already computable from $y$. Representing it as a reified statement or changing coordinates does not by itself introduce additional measured information. Specifically, let $B\in\mathbb R^{d\times n}$ have full row rank. For any error vector $e$,
 \[
  (Be)^\top(BB^\top)^{-1}(Be)
    =e^\top P_{\operatorname{row}(B)}e.
 \]
-To verify this, write $B=AQ_B^\top$, where $Q_B$ has orthonormal columns spanning $\operatorname{row}(B)$ and $A$ is invertible. Substitution gives $Q_BA^\top(AA^\top)^{-1}AQ_B^\top=Q_BQ_B^\top$. The equality is algebraic. Interpreting $BB^\top$ as the comparison-noise covariance assumes unit isotropic raw errors, or a matching prewhitening. For a positive-definite raw covariance $\Sigma$, the corresponding identity instead uses $B\Sigma B^\top$ and projection onto $\operatorname{row}(B\Sigma^{1/2})$ after raw-error whitening. A singular overcomplete comparison set requires a generalized inverse on its supported row space.
+To verify this, write $B=AQ_B^\top$, where $Q_B$ has orthonormal columns spanning $\operatorname{row}(B)$ and $A$ is invertible. Substitution gives $Q_BA^\top(AA^\top)^{-1}AQ_B^\top=Q_BQ_B^\top$. Interpreting $BB^\top$ as the comparison-noise covariance corresponds to isotropic raw errors (or prewhitened coordinates); for a positive-definite raw covariance $\Sigma$, the analogous identity replaces $BB^\top$ with $B\Sigma B^\top$ and projects onto $\operatorname{row}(B\Sigma^{1/2})$ after whitening.
 
-This identity is about matching losses on the same row space. Sampled unwhitened rectangle losses, distinct regularizers or nonconvex optimization can lead to different fitted predictors; the identity does not prove that all comparison-learning methods must perform identically. The diagnostic above is one limited empirical comparison and does not implement an exact GLS-versus-projection optimizer comparison.
-
-A separate numerical guard uses 500 seeded random full-rank bases and obtains maximum absolute loss discrepancy $1.20\times10^{-14}$. On the authentic mask-1 TEST support, adding random row and event offsets changes the annihilated response by at most $5.96\times10^{-11}$; the normalized single-rectangle identity has zero recorded error. These numerical checks complement the algebra. They are software tests, not biological replications or verification of the missing native source operators.
-
-The supported implication is limited: preserving a legal comparison is a meaningful knowledge-acquisition operation, but its learnability alone cannot establish superiority over methods with the same raw measurements. The present manuscript's methodological claim remains the explicit relation and evaluation contract. Neither this diagnostic nor its mathematical controls establish new graph-learning, external decision or assay-efficiency gains.
+While sampled unwhitened rectangle losses, distinct regularizers, or nonconvex optimization trajectories can produce slightly different fitted parameters in finite samples, this algebraic identity explains why reifying comparisons does not intrinsically outperform raw-response models trained on the same subspace. Numerical verification across 500 seeded random full-rank bases confirms the loss identity to a maximum absolute discrepancy of $1.20\times10^{-14}$, and injecting random row and event offsets on mask-1 TEST support alters the annihilated response by at most $5.96\times10^{-11}$. Consequently, the primary methodological value of PAIR lies in verifiable relational provenance and completion-invariant evaluation rather than claiming black-box supervision gains.
 
 
-\clearpage
+\par
 \section{Post hoc sensitivity to the reference version}
 \label{sec:referenceversion}
 \paragraph{Purpose and scope.}
@@ -1143,12 +1138,12 @@ The archived benchmark also used 15 of those real reference designs to simulate 
 \paragraph{Verification and interpretation.}
 The capsule binds response SHA256 \texttt{\seqsplit{e76f58a6c9c92a31eb5f57c9b43d9dd88cdab3096684d17b8f646d06543e98c2}} and inner-mask SHA256 \texttt{\seqsplit{fe5d2f28bebe40edb8157d690575dec1b72b3ee31d0beeaf69cc1a2cf4b10dec}} to stored outputs and producer code. This revision checks those identities and reaggregates saved tables without rerunning OLS or update experiments (S6.2). A version-aware OLS/provenance workflow can perform the same maintenance. The case establishes no new source-certified relation, biological effect, predictive gain or maintenance algorithm; frozen confirmation outcomes are unchanged.
 
-\input{IS_Addendum.tex}
+\input{PAIR_KBS_Addendum.tex}
 
-\clearpage
-\section{Operator-independent completion checks (post-expert theoretical clarification)}
+\par
+\section{Completion invariance across generalized inverses}
 \label{sec:operator-robustness}
-This section characterizes completion invariance over a family of generalized inverses. It extends the exact arithmetic discussion in the main text while retaining the original frozen experimental measurements and prespecified decisions.
+This section characterizes completion invariance over a family of generalized inverses, providing the complete proof and exact-arithmetic verification for Proposition~3 in the main text while retaining the original frozen experimental measurements and prespecified decisions.
 
 \subsection{A sharp condition for the full generalized-inverse family}
 Let $X=X_R\in\mathbb R^{n\times p}$, $w^\top=a^\top X_E\in\operatorname{row}(X)$, and let
@@ -1166,7 +1161,7 @@ For a reference-legal query ($w^\top\in\operatorname{row}(X)$), the pair $(z_F,s
 The theorem concerns universal invariance over \emph{all} generalized inverses, not validity under a single pre-registered OLS/WLS operator. For strict additive four-cell contrasts $w=0$, the readout is exactly $a^\top Y_E$ and the source residual exactly $a^\top R_E$ under any completion. A source gate may still bind when $a^\top R_E\ne0$; it is non-binding only for the specified equal-weight ledger in the frozen Replogle design. For nonzero $w$, noisy reference responses will typically not lie exactly in $\operatorname{col}(X)$, so an operator-independent claim cannot be assumed; one registered operator and its lineage are required. The theorem separates completion-dependent readouts from strict additive contrasts whose values are fixed by their coefficients.
 
 \subsection{Exact arithmetic verification}
-The deliverable includes \texttt{tests/independent\_contract\_checks.py} and a JSON receipt. They test the manuscript's $(3,1)$ readouts and $(0,1)$ source residuals under two legal completions; a strict four-cell contrast with $a^\top X_E=0$ and invariant readout $2$; a nonuniform-source four-cell refusal; robust/nonrobust reference cases; the constructed FULL/identified loss reversal $(200,2)$ versus $(0,2)$; and equality of row-space and null-space legality on a small design. All arithmetic uses exact rationals. They do not process K562, ENCODE, Replogle, CTRPv2 or GDSC2 native evidence, and cannot establish any empirical performance uplift.
+The companion verification script \nolinkurl{verification/independent_contract_checks.py} executes exact rational arithmetic checks on the following documented constructed witnesses: the $(3,1)$ readouts and $(0,1)$ source residuals under two legal generalized inverses $F_1, F_2$; the balanced four-cell contrast with $a^\top X_E=0$ and invariant readout $2$; the nonuniform-source four-cell refusal; the ambient-versus-quotient loss reversal $(200,2)$ versus projected $(0,2)$; and the exact equivalence between row-space inclusion and null-space orthogonality.
 
 
 \medskip

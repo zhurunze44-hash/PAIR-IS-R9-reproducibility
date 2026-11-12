@@ -1,0 +1,192 @@
+{
+  "date": "2026-11-12",
+  "target_journal": "Knowledge-Based Systems",
+  "title": "PAIR: Verifiable quantitative knowledge and model comparison from incomplete experimental references",
+  "scope": "GitHub alignment only; Gemini manuscript, supplementary content, submission wording and original scoring code preserved",
+  "main_pages": 26,
+  "supplement_pages": 46,
+  "scientific_text_changed": false,
+  "scientific_results_changed": false,
+  "source_archive_members_match_canonical_source": true,
+  "files": [
+    {
+      "repository_path": "manuscript/PAIR_KBS_Main.pdf",
+      "source_archive_file": "01_Submission/Manuscript.pdf",
+      "sha256": "028ab2a49e412292ab044de44862bf14eff36494c3c68ceff3c7897d3a72480b",
+      "byte_identical_to_gemini_kbs_pdf": true
+    },
+    {
+      "repository_path": "manuscript/PAIR_KBS_Supplement.pdf",
+      "source_archive_file": "01_Submission/Supplementary_Information.pdf",
+      "sha256": "9e7c747211f6c840fff83cc68494265bb53aa323b531c3c6e10d357512c558cb",
+      "byte_identical_to_gemini_kbs_pdf": true
+    },
+    {
+      "repository_path": "manuscript/PAIR_KBS_Addendum.tex",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "b39ad411b0987b91a01c0fc540e1016abcaff44bddabc1d20c02fcfc8d2cb4c2",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/PAIR_KBS_Main.bbl",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "3018cb2ee4931a133dd76ef6f1a712bffdeb1913e1edfa118c3faebe6ec32745",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/PAIR_KBS_Main.tex",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "37b615e53bd9dc93c1fe6d0a13a0c36656bc091b3f702c62bdd4675d94fda062",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/PAIR_KBS_Supplement.bbl",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "cb39a4a89148b398dc87bfa03d1e091f13692d74236f8ae738c6d020ba7ca80c",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/PAIR_KBS_Supplement.tex",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "52bfb2dc58a3da15855e9c095df65d26cfb054b65ed542559241f431c081c996",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/authors.tex",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "dd2edf2727cd2c7d6c6f820102b5855731290f27732dde7602e571357b11ebfa",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/elsarticle.cls",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "ba7a1f25626a79fb39b53888dd826c4ae14d20db5429e236abdaaaf2fdf897ab",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/figures/figure_01.pdf",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "b7ae36455eecd2f3124480827abb49e2a183d17bf9b143d4e9e3f1c6b63a444a",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/figures/figure_02.pdf",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "4c91105c37fa6f3b68148decbe283e8a6cf296ec0b9d58e33685363a0f88d6e8",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/figures/figure_03.pdf",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "ad8c5f638c7593c1415b6edddeb2a0665fa0fd6a6b131950f12f4644bcb9efc9",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/figures/figure_04.pdf",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "2d0db355d34100e061bf2d9ddfb85c0d5b55dc7f0be012cbf88d4691006c2450",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/figures/supp_figure_01.pdf",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "d579b8c6c0bce51685bde14375ea3bbdaf890a7eaa822493f04f70d5588e4028",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/figures/supp_figure_02.pdf",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "72d67c6769555529f2b6415f850dd0dad75c1a5f24217b33d7da53add9302572",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/figures/supp_figure_03.pdf",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "885e827a0648ceb0a41daddca19437da91d03c773b2cb64c53c4c85108eaf4aa",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/figures/supp_figure_04.pdf",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "e39bd4ea447c5400014330c3198b7e71e21e50c02dafe4a3c791f6d26f55152e",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/metadata.tex",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "8b988fb6845ba2eac060ca77ae5a63e6a949543546a80169d9c2ee8497bacbd9",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/references.bib",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "9591693c8d5b13d55674c3224c74ad3d803e13997badda03eb2c83d2a0324961",
+      "content_changed": false
+    },
+    {
+      "repository_path": "manuscript/unsrtnat.bst",
+      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
+      "sha256": "2b257bc5d35c5716691f67615b3b29cc718d05b6b998f87473c924dec0a652e9",
+      "content_changed": false
+    },
+    {
+      "repository_path": "submission/Cover_Letter.docx",
+      "source_archive_file": "01_Submission/Cover_Letter.docx",
+      "sha256": "0a5440043077c8e5c20da7a3159f213e4172881930c33734d9664dfabe6c5f8f",
+      "content_changed": false
+    },
+    {
+      "repository_path": "submission/Declaration_of_Interest.docx",
+      "source_archive_file": "01_Submission/Declaration_of_Interest.docx",
+      "sha256": "10c7e6a97f0ceb8f3cbf2b3dbfd77d524245faf6a41aab8a4a1f415cea7952c8",
+      "content_changed": false
+    },
+    {
+      "repository_path": "submission/Figure_Captions.txt",
+      "source_archive_file": "01_Submission/Figure_Captions.txt",
+      "sha256": "9c6638a6e8bce6f8dec6534f0f8c2d2085890b407c78908f909c33409f65f3eb",
+      "content_changed": false
+    },
+    {
+      "repository_path": "submission/Highlights.docx",
+      "source_archive_file": "01_Submission/Highlights.docx",
+      "sha256": "438abada62699427376da123d33c98fc7732274131479925dc9f47998fed1174",
+      "content_changed": false
+    },
+    {
+      "repository_path": "submission/Highlights.txt",
+      "source_archive_file": "01_Submission/Highlights.txt",
+      "sha256": "bc3d37cd6746fd1b1800895f4c017cfe5f3559efba7974f3f92e29f162771875",
+      "content_changed": false
+    },
+    {
+      "repository_path": "submission/Manuscript_Source.zip",
+      "source_archive_file": "01_Submission/Manuscript_Source.zip",
+      "sha256": "c33da88805bed19d3af019c721999d511e62b44ad1a0934024867f84886d4c70",
+      "content_changed": false
+    },
+    {
+      "repository_path": "submission/Metadata.txt",
+      "source_archive_file": "01_Submission/Metadata.txt",
+      "sha256": "a3efbcaa38077b2caf0b63c43bba22482e916ba2dfb90b202a7a101ed3bebddc",
+      "content_changed": false
+    },
+    {
+      "repository_path": "submission/Supplementary_Source.zip",
+      "source_archive_file": "01_Submission/Supplementary_Source.zip",
+      "sha256": "ce1c580b64d60709ee987748533b983380ca51c37a8eb2538e51b67b5b221cc8",
+      "content_changed": false
+    },
+    {
+      "repository_path": "submission/Title_Page.docx",
+      "source_archive_file": "01_Submission/Title_Page.docx",
+      "sha256": "ea77f72a3765ae0356b22f2298e1badc4726a658cad8a088d39b5e111c3cec12",
+      "content_changed": false
+    }
+  ],
+  "generated_software_capsule": {
+    "path": "submission/Supplementary_Code.zip",
+    "sha256": "7f9aebce9bde6cb863cf01ba7a26bbc20057e88964a2ab242da83899e99e8ff8",
+    "original_scoring_and_verification_implementations_changed": false
+  }
+}

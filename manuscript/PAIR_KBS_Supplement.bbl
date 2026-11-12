@@ -1,0 +1,260 @@
+\begin{thebibliography}{33}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Tian and Manley(2017)]{tian2017apa}
+B.~Tian and J.~L. Manley.
+\newblock {Alternative polyadenylation of mRNA precursors}.
+\newblock \emph{Nature Reviews Molecular Cell Biology}, 18:\penalty0 18--30,
+  2017.
+\newblock \doi{10.1038/nrm.2016.116}.
+
+\bibitem[Gruber and Zavolan(2019)]{gruber2019apa}
+A.~J. Gruber and M.~Zavolan.
+\newblock {Alternative cleavage and polyadenylation in health and disease}.
+\newblock \emph{Nature Reviews Genetics}, 20:\penalty0 599--614, 2019.
+\newblock \doi{10.1038/s41576-019-0145-z}.
+
+\bibitem[Mitschka and Mayr(2022)]{mitschka2022apa}
+S.~Mitschka and C.~Mayr.
+\newblock {Context-specific regulation and function of mRNA alternative
+  polyadenylation}.
+\newblock \emph{Nature Reviews Molecular Cell Biology}, 23:\penalty0 779--796,
+  2022.
+\newblock \doi{10.1038/s41580-022-00507-5}.
+
+\bibitem[Kowalski et~al.(2024)]{kowalski2024cpa}
+M.~H. Kowalski et~al.
+\newblock {Multiplexed single-cell characterization of alternative
+  polyadenylation regulators}.
+\newblock \emph{Cell}, 187:\penalty0 4408--4425.e23, 2024.
+\newblock \doi{10.1016/j.cell.2024.06.005}.
+
+\bibitem[Jagannatha et~al.(2026)]{jagannatha2026rbp}
+P.~Jagannatha et~al.
+\newblock {Large-scale tethered screen of RNA-binding proteins reveals novel
+  regulators of poly(A) site selection}.
+\newblock \emph{Molecular Cell}, 86:\penalty0 2811--2827.e10, 2026.
+\newblock \doi{10.1016/j.molcel.2026.06.011}.
+
+\bibitem[Van~Nostrand et~al.(2020)]{vannostrand2020rbp}
+E.~L. Van~Nostrand et~al.
+\newblock {A large-scale binding and functional map of human RNA-binding
+  proteins}.
+\newblock \emph{Nature}, 583:\penalty0 711--719, 2020.
+\newblock \doi{10.1038/s41586-020-2077-3}.
+
+\bibitem[Shen et~al.(2014)]{shen2014rmats}
+S.~Shen et~al.
+\newblock {rMATS: robust and flexible detection of differential alternative
+  splicing from replicate RNA-Seq data}.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 111:\penalty0
+  E5593--E5601, 2014.
+\newblock \doi{10.1073/pnas.1419161111}.
+
+\bibitem[Freeman(1975)]{freeman1975incomplete}
+G.~H. Freeman.
+\newblock {Analysis of interactions in incomplete two-way tables}.
+\newblock \emph{Journal of the Royal Statistical Society Series C},
+  24:\penalty0 46--55, 1975.
+\newblock \doi{10.2307/2346704}.
+
+\bibitem[Jochmans and Weidner(2019)]{jochmans2019network}
+K.~Jochmans and M.~Weidner.
+\newblock {Fixed-effect regressions on network data}.
+\newblock \emph{Econometrica}, 87:\penalty0 1543--1560, 2019.
+\newblock \doi{10.3982/ECTA14605}.
+
+\bibitem[Chen et~al.(2025)Chen, Xi, and Yu]{chen2025flows}
+Yudong Chen, Xumei Xi, and Christina~Lee Yu.
+\newblock {Entry-specific matrix estimation under arbitrary sampling patterns
+  through the lens of network flows (Extended Abstract)}.
+\newblock In \emph{16th Innovations in Theoretical Computer Science Conference
+  (ITCS 2025)}, volume 325 of \emph{Leibniz International Proceedings in
+  Informatics (LIPIcs)}, pages 36:1--36:2. Schloss Dagstuhl -- Leibniz-Zentrum
+  f{\"u}r Informatik, 2025.
+\newblock \doi{10.4230/LIPIcs.ITCS.2025.36}.
+
+\bibitem[Sch\"afer et~al.(2026)]{schafer2026scperteval}
+P.~S.~L. Sch\"afer et~al.
+\newblock {Towards principled evaluation of single-cell perturbation prediction
+  models}, 2026.
+\newblock URL \url{https://doi.org/10.64898/2026.07.23.740433}.
+\newblock bioRxiv preprint.
+
+\bibitem[Huang et~al.(2026)Huang, Yang, Yu, Chen, and Li]{huang2026ambimod}
+Sikai Huang, Zhiwen Yang, Kai Yu, Jiayuan Chen, and Stan~Z. Li.
+\newblock {AmbiModBench: benchmarking gene perturbation prediction beyond
+  shared responses}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2609.32527}.
+\newblock arXiv:2609.32527; preprint.
+
+\bibitem[Wang et~al.(2026)Wang, Kuipers, Hugi, Platt, and
+  Beerenwinkel]{wang2026reliable}
+Xi~Wang, Jack Kuipers, Florian Hugi, Randall~J. Platt, and Niko Beerenwinkel.
+\newblock {Reliable single-cell perturbations explain and improve model
+  performance}, 2026.
+\newblock URL \url{https://doi.org/10.64898/2026.08.11.744177}.
+\newblock bioRxiv preprint.
+
+\bibitem[Blair et~al.(2019)Blair, Cooper, Coppock, and
+  Humphreys]{blair2019declaring}
+G.~Blair, J.~Cooper, A.~Coppock, and M.~Humphreys.
+\newblock {Declaring and diagnosing research designs}.
+\newblock \emph{American Political Science Review}, 113:\penalty0 838--859,
+  2019.
+\newblock \doi{10.1017/S0003055419000194}.
+
+\bibitem[Jun et~al.(2022)Jun, Seo, Heer, and Just]{jun2022tisane}
+E.~Jun, J.~Seo, J.~Heer, and R.~Just.
+\newblock {Tisane: authoring statistical models via formal reasoning from
+  conceptual and data relationships}.
+\newblock In \emph{CHI Conference on Human Factors in Computing Systems}, 2022.
+\newblock \doi{10.1145/3491102.3501888}.
+
+\bibitem[Vogt et~al.(2024)Vogt, Kuhn, and Hoehndorf]{vogt2024semanticunits}
+Lars Vogt, Tobias Kuhn, and Robert Hoehndorf.
+\newblock Semantic units: organizing knowledge graphs into semantically
+  meaningful units of representation.
+\newblock \emph{Journal of Biomedical Semantics}, 15:\penalty0 7, 2024.
+\newblock \doi{10.1186/s13326-024-00310-5}.
+
+\bibitem[Vogt(2026)]{vogt2026framework}
+Lars Vogt.
+\newblock {The Semantic Units Framework, a technology-agnostic representational
+  approach to FAIR and CLEAR knowledge infrastructures}.
+\newblock \emph{Scientific Data}, 13:\penalty0 936, 2026.
+\newblock \doi{10.1038/s41597-026-07588-3}.
+
+\bibitem[Menotti et~al.(2025)Menotti, Marchesin, Giachelle, and
+  Silvello]{menotti2025provenance}
+Laura Menotti, Stefano Marchesin, Fabio Giachelle, and Gianmaria Silvello.
+\newblock Provenance-driven nanopublications: representing source lineage and
+  trust networks for multi-source assertions.
+\newblock \emph{International Journal on Digital Libraries}, 26:\penalty0 24,
+  2025.
+\newblock \doi{10.1007/s00799-025-00431-x}.
+
+\bibitem[Sen et~al.(2026)Sen, Maniu, and Senellart]{sen2026provsql}
+Aryak Sen, Silviu Maniu, and Pierre Senellart.
+\newblock {ProvSQL}: A general system for keeping track of the provenance and
+  probability of data.
+\newblock In \emph{Proceedings of the 42nd IEEE International Conference on
+  Data Engineering (ICDE)}, pages 1252--1265, 2026.
+\newblock \doi{10.1109/ICDE65706.2026.00098}.
+\newblock URL
+  \url{https://pierre.senellart.com/publications/sen2026provsql.pdf}.
+
+\bibitem[van Waarde et~al.(2020)van Waarde, Eising, Trentelman, and
+  Camlibel]{vanwaarde2020informativity}
+H.~J. van Waarde, J.~Eising, H.~L. Trentelman, and M.~K. Camlibel.
+\newblock {Data informativity: a new perspective on data-driven analysis and
+  control}.
+\newblock \emph{IEEE Transactions on Automatic Control}, 65:\penalty0
+  4753--4768, 2020.
+\newblock \doi{10.1109/TAC.2020.2966717}.
+
+\bibitem[Choi et~al.(2026)Choi, Kim, and Kim]{choi2026direct}
+W.~G. Choi, S.-H. Kim, and M.~S. Kim.
+\newblock {Sharp partial identification for survival model comparison without
+  target outcomes}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2610.09658}.
+\newblock arXiv:2610.09658; preprint.
+
+\bibitem[Boyd and Vandenberghe(2004)]{boyd2004convex}
+S.~Boyd and L.~Vandenberghe.
+\newblock \emph{{Convex Optimization}}.
+\newblock Cambridge University Press, 2004.
+\newblock URL \url{https://web.stanford.edu/~boyd/cvxbook/}.
+
+\bibitem[Sagnol(2009)]{sagnol2009design}
+G.~Sagnol.
+\newblock {Computing optimal designs of multiresponse experiments reduces to
+  second-order cone programming}, 2009.
+\newblock URL \url{https://arxiv.org/abs/0912.5467}.
+\newblock arXiv:0912.5467; revised 2010.
+
+\bibitem[Miller et~al.(2026)Miller, Mejia, Leblanc, Swain, Wang, and
+  de~Lima~Camillo]{miller2026calibrated}
+Henry~E. Miller, Gabriel~M. Mejia, Francis J.~A. Leblanc, Brendan Swain,
+  Bo~Wang, and Lucas~Paulo de~Lima~Camillo.
+\newblock {Deep learning perturbation models can outperform baselines on
+  calibrated metrics}.
+\newblock \emph{Nature Biotechnology}, 2026.
+\newblock \doi{10.1038/s41587-026-03307-w}.
+\newblock Published online 1 October 2026.
+
+\bibitem[Vi\~nas Torn\'e et~al.(2026)Vi\~nas Torn\'e, Wiatrak, Piran, Fan,
+  Jiang, Teichmann, Nitzan, and Brbi\'{c}]{vinas2026systema}
+Ramon Vi\~nas Torn\'e, Maciej Wiatrak, Zoe Piran, Shuyang Fan, Liangze Jiang,
+  Sarah~A. Teichmann, Mor Nitzan, and Maria Brbi\'{c}.
+\newblock {Systema: a framework for evaluating genetic perturbation response
+  prediction beyond systematic variation}.
+\newblock \emph{Nature Biotechnology}, 44:\penalty0 1050--1059, 2026.
+\newblock \doi{10.1038/s41587-025-02777-8}.
+
+\bibitem[Bernett et~al.(2026)]{bernett2026dreval}
+J.~Bernett et~al.
+\newblock {Critical evaluation of drug response prediction models with DrEval}.
+\newblock \emph{Nature Communications}, 17:\penalty0 4238, 2026.
+\newblock \doi{10.1038/s41467-026-72903-w}.
+
+\bibitem[Rao and Mitra(1971)]{rao1971generalized}
+C.~R. Rao and S.~K. Mitra.
+\newblock \emph{{Generalized Inverse of Matrices and Its Applications}}.
+\newblock Wiley, 1971.
+
+\bibitem[Lei et~al.(2018)Lei, G'Sell, Rinaldo, Tibshirani, and
+  Wasserman]{lei2018distribution}
+Jing Lei, Max G'Sell, Alessandro Rinaldo, Ryan~J. Tibshirani, and Larry
+  Wasserman.
+\newblock Distribution-free predictive inference for regression.
+\newblock \emph{Journal of the American Statistical Association}, 113\penalty0
+  (523):\penalty0 1094--1111, 2018.
+\newblock \doi{10.1080/01621459.2017.1307116}.
+
+\bibitem[Geifman and El-Yaniv(2017)]{geifman2017selective}
+Yonatan Geifman and Ran El-Yaniv.
+\newblock Selective classification for deep neural networks.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~30, 2017.
+\newblock URL
+  \url{https://papers.nips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html}.
+
+\bibitem[Angelopoulos et~al.(2024)Angelopoulos, Bates, Fisch, Lei, and
+  Schuster]{angelopoulos2024conformalrisk}
+Anastasios~N. Angelopoulos, Stephen Bates, Adam Fisch, Lihua Lei, and Tal
+  Schuster.
+\newblock Conformal risk control.
+\newblock In \emph{International Conference on Learning Representations}, 2024.
+\newblock URL \url{https://research.google/pubs/conformal-risk-control/}.
+
+\bibitem[Bennouna et~al.(2025)Bennouna, Bennouna, Amin, and
+  Ozdaglar]{bennouna2025decision}
+Omar Bennouna, Amine Bennouna, Saurabh Amin, and Asuman Ozdaglar.
+\newblock What data enables optimal decisions? an exact characterization for
+  linear optimization.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2025.
+\newblock URL
+  \url{https://papers.nips.cc/paper_files/paper/2025/hash/f2865c76810f9f702f52fd3e4150a296-Abstract-Conference.html}.
+\newblock NeurIPS 2025, Main Conference Track.
+
+\bibitem[Ye et~al.(2026)Ye, Amin, and Ozdaglar]{ye2026decisionsufficient}
+Yuhan Ye, Saurabh Amin, and Asuman Ozdaglar.
+\newblock Learning decision-sufficient representations for linear optimization.
+\newblock In \emph{Proceedings of the Conference on Learning Theory}, volume
+  336 of \emph{Proceedings of Machine Learning Research}, 2026.
+\newblock URL \url{https://proceedings.mlr.press/v336/ye26a.html}.
+
+\bibitem[Kossen et~al.(2021)Kossen, Farquhar, Gal, and
+  Rainforth]{kossen2021activetesting}
+Jannik Kossen, Sebastian Farquhar, Yarin Gal, and Tom Rainforth.
+\newblock Active testing: Sample-efficient model evaluation.
+\newblock In \emph{Proceedings of the 38th International Conference on Machine
+  Learning}, volume 139, pages 5753--5763, 2021.
+\newblock URL \url{https://proceedings.mlr.press/v139/kossen21a.html}.
+
+\end{thebibliography}

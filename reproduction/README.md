@@ -1,4 +1,4 @@
-# Paper2 R9: frozen-input checks and reproduction boundaries
+# Paper2 KBS: frozen-input checks and reproduction boundaries
 
 This directory provides executable checks for **actual frozen Paper2 files**, not only synthetic algebra tests.
 

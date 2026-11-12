@@ -3,8 +3,11 @@ __pycache__/
 *.pyc
 *.aux
 *.bbl
+!manuscript/*.bbl
 *.blg
 *.log
+*.out
+*.toc
 *.synctex.gz
 *.PRIVATE.json
 NATIVE_EVIDENCE_PRIVATE.zip

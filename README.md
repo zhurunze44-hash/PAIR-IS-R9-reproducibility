@@ -1,80 +1,84 @@
-# PAIR: reference- and source-qualified molecular comparisons
+# PAIR: Verifiable quantitative knowledge and model comparison
 
-This repository is the software and manuscript-source companion to
-*PAIR: Compiling reference- and source-qualified comparisons from incomplete
-molecular screens* (Information Sciences submission candidate, R9).
+Companion repository for **PAIR: Verifiable quantitative knowledge and model
+comparison from incomplete experimental references**, prepared for
+**Knowledge-Based Systems (KBS)**.
 
-## Contents
+The current paper is the Gemini KBS manuscript: **26-page main article and
+46-page supplementary information**. The PDFs, matching compact LaTeX sources
+and submission documents are included without changing their scientific text.
+Repository alignment date: **12 November 2026**.
 
-- `manuscript/`: complete editable English article, supplement (S1-S16), bibliography and vector figures.
-- `verification/`: exact algebraic checks, native-input-bound comparator and synthetic tests.
-- `scripts/`: executed-test runner, release gate and private-repository publication helper.
-- `schemas/`: schema for authenticated original historical producer/query arrays.
-- `evidence/`: structured paper-to-evidence index, source citation table and constructed test receipt.
-- `NATIVE_DATA_REQUIREMENTS.md`: artifact-level description of original experiment inputs required for full reproduction.
-- `SUBMISSION_SOFTWARE_COVERAGE.md`: exact release contents, without overstated reproducibility.
+## The PAIR framework
 
+Quantitative knowledge systems reuse comparisons computed from experimental
+references. An incomplete reference can support a comparison among measured
+cells while leaving the individual adjusted cells unresolved. PAIR connects
+knowledge compilation and model comparison through this shared reference geometry.
 
-## Run and verify
+- **PAIR-KG** retains complete linear comparisons, binding their coefficients,
+  registered completion, source maps and locally verifiable witness.
+- **PAIR-Eval** uses the dual quotient response space to separate resolved
+  prediction error from training-unresolved offsets and characterize model
+  preferences under reference completion.
 
-The repository has executable checks at three clearly separated levels:
+The paper develops cancellation and aggregation properties, source-refinement
+monotonicity, universal completion conditions and explicit computational costs,
+with molecular and pharmacogenomic evaluations.
 
-1. **Public reproducibility tests** (no original data): run `bash scripts/run_constructed_checks.sh`, `PYTHONPATH=reproduction python -m unittest discover -s reproduction -p 'test_*.py' -v`, or view [GitHub Actions](https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility/actions).
-2. **Frozen original file checks** (on the author machine): `evidence/native_input_pins.json` fixes exact SHA256 identities for 29 original K562/ENCODE/Replogle/CTRPv2/GDSC artifacts. Follow [reproduction/README.md](reproduction/README.md) using the separate **private** locations manifest. No dataset is reconstructed from paper tables.
-3. **Actual empirical replay**: the original scoring/generator programs, pinned predictions, correct source identities and exact invocations must be run independently. The public repository currently does **not** include all those original binaries and inputs, so its CI status is not a claim of complete empirical reproduction.
+## Paper and submission materials
 
-Please cite the actual repository commit SHA used for any verified run. Original measurements are governed by upstream access and redistribution terms. Do not commit server inventory, credentials, or unreviewed private datasets.
+| Material | File |
+|---|---|
+| KBS main manuscript | [PDF](manuscript/PAIR_KBS_Main.pdf) · [LaTeX](manuscript/PAIR_KBS_Main.tex) |
+| KBS supplementary information S1-S16 | [PDF](manuscript/PAIR_KBS_Supplement.pdf) · [LaTeX](manuscript/PAIR_KBS_Supplement.tex) |
+| Cover letter, highlights, title page and metadata | [submission/](submission/README.md) |
+| Main editable source bundle | [Manuscript_Source.zip](submission/Manuscript_Source.zip) |
+| Supplement editable source bundle | [Supplementary_Source.zip](submission/Supplementary_Source.zip) |
+| File version correspondence and SHA256 | [KBS_FILE_ALIGNMENT.json](evidence/KBS_FILE_ALIGNMENT.json) |
 
-## Quick local verification
+The repository retains its historical URL so existing links and scorer citations
+continue to resolve. The active manuscript directory now contains the KBS files;
+the earlier IS manuscript remains in Git history.
+
+## Run the companion checks
 
 ```bash
 python3 -m venv .venv
 . .venv/bin/activate
 python3 -m pip install -r requirements-verified.txt
+python3 scripts/publication_sanity.py
 bash scripts/run_constructed_checks.sh
+PYTHONPATH=reproduction python3 -m unittest discover -s reproduction -p 'test_*.py' -v
+python3 reproduction/original_scorers/verify_scorer_source.py
+python3 scripts/verify_kbs_alignment.py
 ```
 
-The expected result is `PASS_CONSTRUCTED_ONLY`, not a real-data or model-training replay.
-
-## Rebuild manuscript
+With a complete TeX Live installation, rebuild the paper and supplement using:
 
 ```bash
-cd manuscript
-bash build.sh
+bash manuscript/build.sh
 ```
 
-The original figure-generation scripts and all frozen plot inputs are not contained
-in the R9 manuscript archive; the submitted figure PDFs are supplied unchanged.
+The build writes to `output/manuscript-build/`; the archived manuscript PDFs
+remain unchanged. Included BBL files support the current bibliography.
+See [GitHub Actions](https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility/actions)
+and [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for verification details.
 
+## Data and scoring resources
 
-## 2026-11-05 original-scoring replay (source uploaded)
+The repository includes the original independent CTRPv2/GDSC scoring programs,
+29 frozen input SHA256 identities and the historical author-server rescore
+receipt. The receipt records matching 700 CTRPv2 and 420 GDSC2 metric fields.
+Original scoring sources and historical evidence files are retained unchanged.
 
-The two **original, byte-identical** independent scoring scripts are now public under
-[reproduction/original_scorers/](reproduction/original_scorers/README.md).
-The author-server audit reran CTRPv2 and GDSC2 from frozen predictions:
-CTRPv2 700/700 numeric fields and GDSC2 420/420 numeric fields matched
-historical results, with matching historical fold-metric TSV bytes.
-See [public rescore receipt](evidence/P2_R9_PUBLIC_RESCORE_RECEIPT.json)
-for source SHA256, result hashes, environment, and claim-by-claim verdicts.
+Access to large frozen prediction matrices and historical experiment inputs
+follows the original data and code availability statement and provider terms.
+The public checks verify the supplied software; resource-specific empirical
+reproduction uses the corresponding original inputs. Details are in
+[DATA_AND_CODE_AVAILABILITY.md](DATA_AND_CODE_AVAILABILITY.md),
+[NATIVE_DATA_REQUIREMENTS.md](NATIVE_DATA_REQUIREMENTS.md) and
+[the original scorer guide](reproduction/original_scorers/README.md).
 
-This is a genuine author-server **scorer replay** with frozen predictions.
-The raw CTRPv2/GDSC2 prediction matrices are not redistributed here.
-The historical K562 producer call-trace and GDSC1 predictions remain unavailable
-for independent rerun; no blanket claim of full experimental reproduction is made.
-
-## Original data and experiments
-
-See `evidence/upstream_data_sources.csv` for citations to source publications, and
-`NATIVE_DATA_REQUIREMENTS.md` for required frozen inputs. The author-server
-export tool is distributed separately with the editor package and never
-alters research source data. Third-party raw observations cannot be assumed
-redistributable. This public snapshot includes original CTRPv2 and GDSC2 scorer source with a verified author-server replay receipt; the frozen prediction matrices needed for an external rerun and other historical native inputs are not supplied.
-
-## Versioning and distribution
-
-This repository is publicly accessible at
-https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility.
-It is a source-code/manuscript snapshot, NOT a full empirical reproduction release.
-No immutable release tag or DOI has been issued, and no software reuse license
-has been granted. Original producer evidence and third-party data remain absent;
-see `RELEASE_STATUS.json` and `evidence/RELEASE_COVERAGE.csv` for exact scope.
+Please cite the exact Git commit used. Software and data rights remain as
+documented in [RIGHTS_NOTICE.md](RIGHTS_NOTICE.md).

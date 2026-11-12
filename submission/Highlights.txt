@@ -1,0 +1,5 @@
+PAIR compiles measured comparisons as locally verifiable quantitative knowledge.
+Source-aware witnesses bind each relation to its reference and completion.
+K562 and ENCODE retain 2,635 and 56,395 compound-only dimensions.
+Quotient scoring separates resolved prediction errors from unresolved offsets.
+CTRPv2 median nR2 order reversal is 50% on registered model-specific supports.

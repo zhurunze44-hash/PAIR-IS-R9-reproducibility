@@ -1,0 +1,41 @@
+TARGET JOURNAL: Knowledge-Based Systems
+ARTICLE CATEGORY: Regular original research (select the matching live option)
+
+TITLE
+PAIR: Verifiable quantitative knowledge and model comparison from incomplete experimental references
+
+ABSTRACT
+Knowledge-based systems need quantitative assertions whose numerical meaning remains valid when experimental references are incomplete. We introduce PAIR (Projection-Aligned Identifiable Relations), connecting verifiable knowledge compilation with model comparison through a shared reference geometry. PAIR-KG retains complete linear comparisons, binds them to a registered completion and local witness, and verifies reference estimability and declared shared-source cancellation. Its properties include aggregation closure, source-refinement monotonicity, universal completion conditions and explicit operator-application costs. PAIR-Eval uses the dual quotient space to separate resolved prediction error from training-unresolved offsets and characterize model-order invariance under truth-only completion shifts, including three-way preferences on bounded domains. K562 and ENCODE retain 2,635 (26.50%) and 56,395 (5.79%) compound-only dimensions beyond individually estimable effects. Replogle metadata establish shared-control cancellation for 100,000 registered four-cell designs. For seven fixed CTRPv2 predictors on registered model-specific supports, full-to-resolved scoring reverses median fractions of 50.0% of model-pair orders under normalized R² and 35.7% under normalized Pearson correlation, with five persistent pair–metric reversals. GDSC2 exhibits 30.0% median fold-level reversals; persistence checks distinguish target sensitivity from recurring model preferences. PAIR preserves the comparative information needed to verify quantitative knowledge and interpret predictive decisions.
+
+KEYWORDS
+Quantitative knowledge representation ; Knowledge verification ; Incomplete experimental references ; Data provenance ; Quotient-space model evaluation ; Three-way decisions
+
+AUTHORS IN ORDER
+1. Runze Zhu | zhurunze44@gmail.com
+2. Guanfeng Li | ligf@nxu.edu.cn | CORRESPONDING AUTHOR
+
+AFFILIATION
+School of Information Engineering, Ningxia University, Yinchuan, China
+
+FUNDING
+This work was supported by the Natural Science Foundation of Ningxia (Grant No. 2026AAC020029) and the National Natural Science Foundation of China (Grant No. 62066038).
+
+COMPETING INTERESTS
+The authors declare no relevant financial or non-financial competing interests.
+
+CREDIT
+Runze Zhu: Conceptualization, Methodology, Software, Data curation, Investigation, Validation, Writing - original draft.
+Guanfeng Li: Writing - review and editing, Formal analysis, Supervision.
+
+AI DECLARATION
+Google Gemini (model version not retained) and OpenAI ChatGPT with Codex assistance were used for editorial revision, translation, LaTeX and deterministic figure-code support. The authors review the content and take responsibility for the publication. See Supplementary Section S6.4.
+
+DATA AND CODE
+https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility
+Pinned commit: 496d1a3f3ea80009033891811ffa11ed9f7cf334. This R9 software snapshot and the separately supplied KBS manuscript sources have different version roles; missing native inputs and per-result reproduction scope are specified in Supplementary Section S6.
+
+PUBLICATION PREFERENCE
+Use the subscription route if offered. Do not opt into paid open access or optional public preprint posting without separate author instructions.
+
+FINAL AUTHOR CONFIRMATIONS
+All authors must review the final files and confirm authorship, declarations, exclusive consideration and any additional live journal questions before final submission.

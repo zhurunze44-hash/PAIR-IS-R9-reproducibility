@@ -1,4 +1,4 @@
-name: Constructed and native-verifier software tests
+name: KBS companion checks
 on:
   push:
   pull_request:
@@ -17,3 +17,4 @@ jobs:
       - run: python -m py_compile reproduction/original_scorers/independent_scorer.py reproduction/original_scorers/gdsc_independent_scorer.py reproduction/original_scorers/run_gdsc2_only.py
       - run: bash scripts/run_constructed_checks.sh
       - run: PYTHONPATH=reproduction python -m unittest discover -s reproduction -p 'test_*.py' -v
+      - run: python scripts/verify_kbs_alignment.py
