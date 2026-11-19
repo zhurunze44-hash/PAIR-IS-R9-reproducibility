@@ -98,39 +98,107 @@ def legend(fig, handles, x, y, columns=2, **kwargs):
                ncols=columns, columnspacing=1.25, **kwargs)
 
 def contract():
-    fig = plt.figure(figsize=(WIDTH, 2.65))
+    fig = plt.figure(figsize=(WIDTH, 3.86))
     ax = blank(fig)
-    branches = [
-        (.26, BLUE, "Molecular measurements", "Observed cells, reference and source maps",
-         "PAIR-KG", "Bind the reference completion", "Check estimability and source cancellation",
-         "Qualified contrast and local witness"),
-        (.74, RUST, "Fixed model predictions", "Outcomes or scores, unit IDs and weights",
-         "PAIR-Eval", "Set the target and check the measure", "Find repairs or test completion bounds",
-         "Preference, repair witness or decision bound"),
-    ]
-    line(ax, (.26, .804), (.74, .804))
-    arrow(ax, (.50, .804), (.50, .751))
-    text(ax, .50, .718, r"Declare the comparison contract  $\mathcal{C}=(\tau,\nu,s,\alpha,\mathcal{G})$",
-         fontsize=10.7, fontweight="bold")
-    text(ax, .50, .654, "Target · observation measure · score · aggregation · completion domain",
-         fontsize=9.2)
-    line(ax, (.50, .613), (.50, .582))
-    line(ax, (.26, .582), (.74, .582))
-    for x, color, inputs, records, name, first, second, output in branches:
-        text(ax, x, .949, inputs, fontsize=10.5, fontweight="bold")
-        text(ax, x, .881, records, fontsize=9.2)
-        line(ax, (x, .844), (x, .804))
-        arrow(ax, (x, .582), (x, .531), color=color)
-        text(ax, x, .491, name, color=color, fontsize=11, fontweight="bold")
-        text(ax, x, .425, first, fontsize=9.5)
-        text(ax, x, .365, second, fontsize=9.5)
-        arrow(ax, (x, .327), (x, .263), color=color)
-        text(ax, x, .222, output, fontsize=9.5, fontweight="bold")
-        line(ax, (x, .184), (x, .145), color=color)
-    line(ax, (.26, .145), (.74, .145))
-    arrow(ax, (.50, .145), (.50, .101))
-    text(ax, .50, .074, "Comparison assertion", fontsize=10.3, fontweight="bold")
-    text(ax, .50, .021, "Entities or models · contract · evidence · verification result", fontsize=9.0)
+    blue_tint, rust_tint, neutral = "#eef4f7", "#f8f2ee", "#f4f5f6"
+
+    def box(x, y, width, height, *, fill=neutral, edge=RULE):
+        ax.add_patch(Rectangle((x, y), width, height, facecolor=fill,
+                               edgecolor=edge, lw=.7, zorder=2))
+
+    def entries(x, y, columns, mask, color):
+        for i, row in enumerate(mask):
+            for j, known in enumerate(row):
+                left = x + j * columns
+                bottom = y - i * .023
+                box(left, bottom, columns - .005, .017,
+                    fill=color if known else "white", edge=color)
+
+    text(ax, .025, .971, "(a)  Inputs and comparison contract",
+         ha="left", fontsize=10.5, fontweight="bold")
+    text(ax, .025, .916, "Molecular measurements", ha="left", fontweight="bold")
+    entries(.025, .878, .024, ((1, 1, 0, 1), (0, 1, 1, 0), (1, 0, 1, 1)), BLUE)
+    text(ax, .134, .873, "Observed query cells", ha="left", fontsize=8.9)
+    text(ax, .134, .839, "Incomplete reference", ha="left", fontsize=8.9)
+    text(ax, .134, .807, "Declared source maps", ha="left", fontsize=8.9)
+
+    text(ax, .717, .916, "Evaluation records", ha="left", fontweight="bold")
+    for x, label in zip((.731, .770, .809), (r"$p_A$", r"$p_B$", r"$y$")):
+        text(ax, x, .876, label, fontsize=9.3)
+    entries(.714, .843, .039, ((1, 1, 1), (1, 1, 0)), RUST)
+    text(ax, .846, .848, "Scores or labels", ha="left", fontsize=8.9)
+    text(ax, .846, .816, "Keys and weights", ha="left", fontsize=8.9)
+
+    box(.335, .799, .330, .138)
+    arrow(ax, (.312, .866), (.335, .866))
+    arrow(ax, (.704, .866), (.665, .866))
+    text(ax, .50, .914, "Comparison contract", fontsize=10.4, fontweight="bold")
+    text(ax, .50, .875, r"$\mathcal{C}=(\tau,\nu,s,\alpha,\mathcal{G})$", fontsize=12.8)
+    text(ax, .50, .842, "Target · measure · metric", fontsize=8.9)
+    text(ax, .50, .815, "Aggregation · admissible changes", fontsize=8.9)
+    line(ax, (.50, .799), (.50, .785))
+    text(ax, .50, .766, r"Shared reference geometry  $\ker(U^{\mathsf{T}})=\mathrm{range}(Q)$",
+         fontsize=9.7)
+    line(ax, (.50, .747), (.50, .736))
+    line(ax, (.25, .736), (.75, .736))
+
+    for x, left, label, color, fill in [
+        (.25, .025, "(b)  PAIR-KG", BLUE, blue_tint),
+        (.75, .525, "(c)  PAIR-Eval", RUST, rust_tint),
+    ]:
+        arrow(ax, (x, .736), (x, .710), color=color)
+        box(left, .670, .450, .040, fill=fill, edge=color)
+        text(ax, left + .010, .690, label, ha="left",
+             fontsize=10.4, color=color, fontweight="bold")
+        for y in (.604, .539, .462):
+            line(ax, (left, y), (left + .450, y), color=GRID)
+        arrow(ax, (x, .455), (x, .426), color=color)
+
+    for y, label, equation in [
+        (.636, "Reference support", r"$a^{\mathsf{T}}U=0$"),
+        (.571, "Registered completion", r"$h^{\mathsf{T}}=a^{\mathsf{T}}X_EF_R$"),
+        (.502, "Source cancellation", r"$a^{\mathsf{T}}R_E=h^{\mathsf{T}}R_R$"),
+    ]:
+        text(ax, .035, y, label, ha="left", fontsize=9.4)
+        text(ax, .464, y, equation, ha="right", fontsize=11.2)
+
+    text(ax, .535, .636, "Target", ha="left", fontsize=9.4)
+    text(ax, .962, .636, r"$e_m$ (FULL) or $Qe_m$ (ID)", ha="right", fontsize=10.2)
+    text(ax, .535, .573, "Measure and key repair", ha="left", fontsize=9.4)
+    text(ax, .962, .571, r"$\sum_{f(j)=i}w'_j=w_i$", ha="right", fontsize=9.2)
+    text(ax, .535, .503, "Completion", ha="left", fontsize=9.4)
+    text(ax, .962, .513, "Missing scores or task deletion", ha="right", fontsize=8.9)
+    text(ax, .962, .483, r"Archived labels  $\mathcal{G}_{t+1}\subseteq\mathcal{G}_t$",
+         ha="right", fontsize=9.3)
+
+    text(ax, .25, .402, r"Qualified contrast $(a,h,z)$", color=BLUE, fontweight="bold")
+    text(ax, .25, .368, "Assert · Measurement only · Refuse", fontsize=8.8)
+    text(ax, .75, .402, "Preference · Repair witness · Decision bound",
+         color=RUST, fontsize=9.2, fontweight="bold")
+    text(ax, .75, .368, "Certified preference or open bound", fontsize=8.8)
+    line(ax, (.25, .349), (.25, .326), color=BLUE)
+    line(ax, (.75, .349), (.75, .326), color=RUST)
+    line(ax, (.25, .326), (.75, .326))
+    arrow(ax, (.50, .326), (.50, .240))
+
+    text(ax, .025, .285, "(d)  Versioned assertion graph",
+         ha="left", fontsize=10.5, fontweight="bold")
+    box(.349, .156, .302, .083, edge=INK)
+    text(ax, .50, .213, "Comparison assertion", fontsize=10.2, fontweight="bold")
+    text(ax, .50, .177, "Outcome and version", fontsize=8.9)
+    for left, y, label in [
+        (.025, .216, "Bound contract"), (.025, .132, "Source records"),
+        (.744, .216, "Numerical witness"), (.744, .132, "Disclosure action and cost"),
+    ]:
+        box(left, y - .023, .231, .046, fill="white")
+        text(ax, left + .1155, y, label, fontsize=9.0)
+    arrow(ax, (.349, .212), (.256, .216))
+    arrow(ax, (.349, .172), (.256, .132))
+    arrow(ax, (.651, .212), (.744, .216))
+    arrow(ax, (.651, .172), (.744, .132))
+    arrow(ax, (.50, .156), (.50, .083))
+    text(ax, .50, .052, "SPARQL retrieves current comparisons, certificates and label budgets",
+         fontsize=9.3)
     save(fig, "comparison_contract")
 
 def matrix2(ax, x, y, width, height, values, col_labels, row_labels):

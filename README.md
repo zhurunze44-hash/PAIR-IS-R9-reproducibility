@@ -15,9 +15,9 @@ under the declared contract.
 
 | File | Contents |
 |---|---|
-| [kbs.pdf](manuscript/kbs.pdf) | Main article, 35 pages |
+| [kbs.pdf](manuscript/kbs.pdf) | Main article, 36 pages |
 | [kbs-supplement.pdf](manuscript/kbs-supplement.pdf) | Supplementary Sections S1–S25, 60 pages |
-| [kbs-full.pdf](manuscript/kbs-full.pdf) | Main article and supplement, 95 pages |
+| [kbs-full.pdf](manuscript/kbs-full.pdf) | Main article and supplement, 96 pages |
 | [kbs-source.zip](manuscript/kbs-source.zip) | Compilable LaTeX, bibliography, editable tables, vector figures and figure code |
 
 The [source files](manuscript/) are also available individually. The

@@ -5,7 +5,7 @@
   "repository_url": "https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility",
   "repository_alignment_date": "2026-11-19",
   "manuscript_version": "2026.11.19",
-  "main_pages": 35,
+  "main_pages": 36,
   "supplement_pages": 60,
   "manuscript_text_changed": true,
   "submission_document_text_changed": false,
@@ -16,7 +16,7 @@
   "historical_scorer_receipt": "evidence/P2_R9_PUBLIC_RESCORE_RECEIPT.json",
   "may_claim_full_public_reproduction": false,
   "journal_submission_performed": false,
-  "complete_pages": 95,
+  "complete_pages": 96,
   "editorial_changes": [
     "Title",
     "Figure 1 and caption",
