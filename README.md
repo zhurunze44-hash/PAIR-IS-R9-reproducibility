@@ -3,7 +3,7 @@
 **PAIR: A Framework for Verifiable Quantitative Knowledge Representation and
 Model Comparison under Incomplete Evidence**
 
-Companion repository for the 19 November 2026 Knowledge-Based Systems manuscript.
+Companion repository for the PAIR full-length article submitted to **Knowledge-Based Systems on 19 November 2026**. The manuscript and supplement PDFs below are byte-identical to the files submitted in Editorial Manager; the 96-page reading copy is a repository-only merge.
 
 PAIR binds a quantitative comparison to its target, observation measure,
 scoring rule, aggregation and admissible completion domain. PAIR-KG compiles
@@ -18,7 +18,7 @@ under the declared contract.
 | [kbs.pdf](manuscript/kbs.pdf) | Main article, 36 pages |
 | [kbs-supplement.pdf](manuscript/kbs-supplement.pdf) | Supplementary Sections S1–S25, 60 pages |
 | [kbs-full.pdf](manuscript/kbs-full.pdf) | Main article and supplement, 96 pages |
-| [kbs-source.zip](manuscript/kbs-source.zip) | Compilable LaTeX, bibliography, editable tables, vector figures and figure code |
+| [kbs-source.zip](manuscript/kbs-source.zip) | Combined 44-file LaTeX source with frozen bibliography, editable tables, 12 vector figures and figure-generation code |
 
 The [source files](manuscript/) are also available individually. The
 [12 November snapshot](https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility/tree/ae3697aeb23ee42621b314a8a1b8b9c812f74ee9)
@@ -44,8 +44,11 @@ python3 reproduction/original_scorers/verify_scorer_source.py
 python3 scripts/verify_kbs_alignment.py
 ```
 
-See the [reproduction guide](REPRODUCIBILITY.md) and
-[manuscript file checksums](evidence/KBS_FILE_ALIGNMENT.json).
+See the [reproduction guide](REPRODUCIBILITY.md),
+[submitted-file checksums](evidence/KBS_FILE_ALIGNMENT.json), and
+[full evidence archive verification receipt](evidence/KBS_20261119_REPLAY_VERIFICATION.json).
+
+**Availability boundary:** The separately held 217,964,454-byte `KBS_Reproduction.zip` is **not hosted in this GitHub repository**. The public verification receipt reports 26 completed offline stages using the archived inputs, but that receipt is not a substitute for distributing those inputs. Its SHA-256 and scientific file manifest are recorded in [the source README](manuscript/README_SOURCE.txt) and [scientific release manifest](evidence/KBS_20261119_SCIENTIFIC_RELEASE_MANIFEST.json).
 
 ## Data and scoring code
 
