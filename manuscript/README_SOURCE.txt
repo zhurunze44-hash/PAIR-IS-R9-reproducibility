@@ -1,35 +1,39 @@
 PAIR: A Framework for Verifiable Quantitative Knowledge Representation and
 Model Comparison under Incomplete Evidence
-Knowledge-Based Systems / 19 November 2026
+Knowledge-Based Systems (Full Length Article), submitted 19 November 2026.
 
-Main manuscript: PAIR_KBS_Main.tex
-Supplementary information: PAIR_KBS_Supplement.tex
+Official submission files (byte-identical)
+------------------------------------------
+manuscript/kbs.pdf             36 pages; SHA-256 ae4777c17ef3d9ea8622f98fee0e516096c6943aab2328538e26f685ca808395
+manuscript/kbs-supplement.pdf  60 pages; SHA-256 984882e4020e3ab01b9399b1f68326ecac92b2edd8cf26c93d818f13db955cd6
 
-Build both PDFs and the merged reading copy with bash REBUILD.sh. The build
-uses TeX Live, latexmk, and Python 3 with pypdf. Either LaTeX entry point also
-builds on its own with latexmk -pdf. The bibliography sources and generated
-bibliographies are included.
+Repository-only convenience files
+---------------------------------
+manuscript/kbs-full.pdf        96-page combination of submitted PDFs
+manuscript/kbs-source.zip      Combined 44-file LaTeX, bibliography, figures,
+                               tables and figure-generation source archive.
+LaTeX entry points: PAIR_KBS_Main.tex and PAIR_KBS_Supplement.tex.
 
-The 12 vector PDF figures are ready to include in LaTeX. To regenerate them,
-run python3 figure_sources/draw_figures.py with Matplotlib, NumPy, and the
-Liberation Serif font installed. The plotted aggregates are in
-figure_sources/plot_data.json.
+To rebuild from the repository checkout:
+  python3 -m pip install pypdf
+  bash manuscript/build.sh
 
-Reproduction archive
+The submitted source includes frozen .bbl files and can be compiled with two
+passes of pdflatex per LaTeX entry point. A configured TeX Live installation
+is required. The 12 vector figures and the Matplotlib drawing script/data are
+included in the combined source archive.
 
-Paper2_KBS_Final_Writing_20261117.zip contains the frozen numerical evidence.
-Run RUN_PUBLIC_EVIDENCE.sh from the extracted archive with a new output
-directory to run the offline replays. The evidence release is
-PAIR-KBS-20261117-final-writing-v4. Its archive SHA-256 is
-5143e6416979e4cd0ae13634da06dad753d0e48869285f9da6230916276bc431.
-The SHA-256 of SCIENTIFIC_RELEASE_MANIFEST.json inside it is
-82b911175729dc2af31da57a404a86088aa0aed54528367e543fa4a7e74fe2f2.
+Reproduction archive (NOT hosted in GitHub)
+-------------------------------------------
+KBS_Reproduction.zip is a separately stored 217,964,454-byte ZIP with frozen
+numerical inputs, scripts and evidence records. Its SHA-256 is:
+  1881b092ef78bd6ef8b05883f0cf6857309f5e12fead826b1418aaee44719535
 
-The reproduction archive contains its own writing snapshot. Use the LaTeX
-files in this source bundle for the current manuscript. The historical public
-CTRPv2 and GDSC scoring snapshot is commit
-496d1a3f3ea80009033891811ffa11ed9f7cf334 in the PAIR companion repository.
+Its historical 26-stage PASS receipt and scientific file manifest are publicly
+available under evidence/KBS_20261119_REPLAY_VERIFICATION.json and
+evidence/KBS_20261119_SCIENTIFIC_RELEASE_MANIFEST.json.
 
-The author source bundle also includes the 64 source-to-paper mappings in
-author_check. The patch and receipts there document the preceding editorial
-revision.
+The receipt documents tests run on the archived evidence and does NOT mean the
+218 MB archive itself is publicly downloadable or that independent remote
+reproduction has been run on a new host. Original biological and benchmark
+source files remain subject to their providers' rights and terms.
