@@ -10,10 +10,7 @@ AMLB and TabArena. Supplementary Sections S17–S23 identify the exact benchmark
 snapshots. Sections S6, S15, S22 and S25 describe the molecular data sources
 and available replays.
 
-The research archive accompanying the manuscript is distributed separately.
-It contains the frozen analysis inputs, offline replay programs and verification
-records. Its version and checksums appear in the
-[source README](manuscript/README_SOURCE.txt).
+The complete frozen research archive (`KBS_Reproduction.zip`, 217,964,454 bytes) is held separately and is **not available for direct download from this GitHub repository**. It contains frozen analysis inputs, offline replay programs and verification records. Its archive SHA-256 is `1881b092ef78bd6ef8b05883f0cf6857309f5e12fead826b1418aaee44719535`. The archived 26-stage PASS receipt and scientific file SHA-256 manifest have been published under [`evidence/KBS_20261119_REPLAY_VERIFICATION.json`](evidence/KBS_20261119_REPLAY_VERIFICATION.json) and [`evidence/KBS_20261119_SCIENTIFIC_RELEASE_MANIFEST.json`](evidence/KBS_20261119_SCIENTIFIC_RELEASE_MANIFEST.json). These receipts do not constitute a complete public reproduction archive.
 
 The original scorer replay requires the frozen prediction matrices and other
 inputs identified in the [native data requirements](NATIVE_DATA_REQUIREMENTS.md)
