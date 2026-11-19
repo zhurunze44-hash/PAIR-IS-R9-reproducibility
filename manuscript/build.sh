@@ -11,8 +11,22 @@ case "$out/" in
 esac
 
 python3 -m zipfile -e "$src/kbs-source.zip" "$out"
-bash "$out/REBUILD.sh"
-cp -- "$out/PAIR_KBS_Main.pdf" "$out/kbs.pdf"
-cp -- "$out/PAIR_KBS_Supplement.pdf" "$out/kbs-supplement.pdf"
-cp -- "$out/PAIR_KBS_Complete.pdf" "$out/kbs-full.pdf"
+cd -- "$out"
+
+# Frozen .bbl files are included in the submitted source bundle.
+for entry in PAIR_KBS_Main PAIR_KBS_Supplement; do
+    pdflatex -interaction=nonstopmode -halt-on-error "$entry.tex" >/dev/null
+    pdflatex -interaction=nonstopmode -halt-on-error "$entry.tex" >/dev/null
+done
+
+cp -- PAIR_KBS_Main.pdf kbs.pdf
+cp -- PAIR_KBS_Supplement.pdf kbs-supplement.pdf
+python3 - <<'PY'
+from pypdf import PdfWriter
+w = PdfWriter()
+w.append("kbs.pdf")
+w.append("kbs-supplement.pdf")
+with open("kbs-full.pdf", "wb") as f:
+    w.write(f)
+PY
 echo "Built KBS documents in $out"
