@@ -23,17 +23,18 @@ passes of pdflatex per LaTeX entry point. A configured TeX Live installation
 is required. The 12 vector figures and the Matplotlib drawing script/data are
 included in the combined source archive.
 
-Reproduction archive (NOT hosted in GitHub)
--------------------------------------------
-KBS_Reproduction.zip is a separately stored 217,964,454-byte ZIP with frozen
-numerical inputs, scripts and evidence records. Its SHA-256 is:
+Reproduction archive (public GitHub Release asset)
+-------------------------------------------------
+KBS_Reproduction.zip is available at:
+https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility/releases/download/kbs-2026-11-19-reproduction/KBS_Reproduction.zip
+It is a 217,964,454-byte ZIP with frozen numerical inputs, scripts and evidence
+records. Its SHA-256 is:
   1881b092ef78bd6ef8b05883f0cf6857309f5e12fead826b1418aaee44719535
 
 Its historical 26-stage PASS receipt and scientific file manifest are publicly
 available under evidence/KBS_20261119_REPLAY_VERIFICATION.json and
 evidence/KBS_20261119_SCIENTIFIC_RELEASE_MANIFEST.json.
 
-The receipt documents tests run on the archived evidence and does NOT mean the
-218 MB archive itself is publicly downloadable or that independent remote
-reproduction has been run on a new host. Original biological and benchmark
+The receipt documents tests run on the archived evidence, but does NOT establish
+that independent remote reproduction has been run on a new host. Original biological and benchmark
 source files remain subject to their providers' rights and terms.
