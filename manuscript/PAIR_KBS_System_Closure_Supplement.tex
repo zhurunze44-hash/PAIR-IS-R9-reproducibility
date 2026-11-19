@@ -1,0 +1,39 @@
+\FloatBarrier
+\section{Conditional molecular objects and matched system verification}\label{sec:s22}
+\subsection{Exact inputs and newly instantiated reference witnesses}
+The processed response file \nolinkurl{p0_response.tsv} has SHA256 \texttt{\seqsplit{e76f58a6c9c92a31eb5f57c9b43d9dd88cdab3096684d17b8f646d06543e98c2}}. The original query table \nolinkurl{QUERY_RESULTS.parquet} has SHA256 \texttt{\seqsplit{31d1a33b84c49df325ef3480fe4ddbb400293c4ff819de03f94100f674502db8}}. Both bytes are supplied in the new K562 capsule and match the archived W90 recovery packet. The response contains $12{,}898$ regulator--event pairs, $32$ regulators and $1{,}140$ assay-event identifiers. The \texttt{V8EVT} strings are retained as opaque instrument/event identities, not authenticated genomic coordinates.
+
+Historical Q1 identities exhaust $2{,}744$ held-out pairs over $239$ events. Removing those events leaves $10{,}154$ reference rows and $901$ observed reference events in a connected two-way design. This recovers a candidate reference from query identities rather than an independently archived original TRAIN mask. The new OLS completion, coefficient ordering and adjoint witnesses are explicitly registered for the current demonstration. Original source operators $R_R,R_E$ and historical producer lineage remain unbound.
+
+The numerical construction eliminates reference-event intercepts and solves the regulator Laplacian $L$. With $R$ regulator indicators, $b_r=\sum_{i:r_i=r}(y_i-\bar y_{e_i})$ and the sum-zero gauge,
+\[
+\widehat\alpha=(L+\mathbf1\mathbf1^\top/R)^{-1}b.
+\]
+A qualified contrast has zero coefficient total for every held-out event and regulator coefficients $c_R$ summing to zero. Put $k=(L+\mathbf1\mathbf1^\top/R)^{-1}c_R$. Its adjoint witness is
+\[
+h_i=k_{r_i}-\frac{1}{n_{e_i}}\sum_{j:e_j=e_i}k_{r_j}.
+\]
+This is the registered OLS reference functional: $X_R^\top h=c$, and $h$ lies in the reference design's column space. A separate sparse LSMR fit checks the readouts, and an LSMR solve of $X_R^\top h=c$ checks the adjoint witness. The capsule reconstructs all $3{,}125$ structural states and $349$ retained values; the maximum value discrepancy is $2.27\times10^{-14}$. No original shared-source certificate is inferred from numerical agreement.
+
+\subsection{Selection, reference update and lifecycle}
+The demonstration fixes the first six retained Q2 and first six retained Q4 query identities in lexicographic order. All six Q2 examples share the CPSF1--CPSF2 regulator pair and use different measured assay events; they are not independent reference mechanisms. The R1 intervention removes the first support-preserving TRAIN row by native processed-row order (row $0$). The raw response table is unchanged. This is a declared reference intervention, not an observed new biological measurement or a recovered historical mask update.
+
+For each of the twelve query identities, the archive retains R0 and R1 objects, full signed terms, reference-row order, OLS rule, $h$ vector, numerical readout and qualification fields. The six Q2 values shift by $-0.0076316531$; the six balanced Q4 values remain exactly equal in this calculation. The maximum reference-witness residual is $1.44\times10^{-15}$; the maximum Schur-versus-LSMR completion-binding discrepancy is $1.44\times10^{-13}$. Source status remains \texttt{UNBOUND} for every record.
+
+The current view selects R1. The twelve R0 objects remain verifiable historical statements under R0, but cannot be reused as R1 assertions without revalidation. That lifecycle condition also applies to the six numerically unchanged Q4 values. A request requiring complete source qualification returns none of these molecular records. The exported status is \texttt{REFERENCE\_VERIFIED\_SOURCE\_UNBOUND}.
+
+\subsection{Joint graph and complete classical composition}
+The core graph before the sequential extension contains $896$ assertions: the unchanged $872$ evaluation assertions and $24$ versioned molecular objects. It has $1{,}734$ nodes and $16{,}031$ RDF statements. Regulator and assay-event nodes retain identity and signed-term bindings; molecular records point to reference definitions and witness arrays. Five of the supplied SPARQL queries return five changed mean comparisons, $22$ actual-missing-score certificates, four conditional numerical boundaries, two current-interface count rows and twelve superseded molecular records. The current count rows are \texttt{PAIR-Eval: 872} and \texttt{PAIR-KG: 12}. A sixth joint query returns twelve current molecular readouts and 22 conditional winner gaps, retaining distinct value-type labels and source/domain qualifications. The classical ledger reproduces the same 34-row numerical view.
+
+The matched classical comparator receives the same inputs, OLS target, lookup/score definitions, interval domain, tie rule, version metadata and incomplete-source fields. It computes OLS values through sparse LSMR, reconstructs DrEval scores with a separately written normalized-moment formula, and evaluates AMLB and TabArena intervals from their component bounds. Its complete SQLite ledger retains the full record payload, including contracts, source bindings, witnesses and unresolved fields. The comparison therefore does not remove provenance or version checking from the baseline.
+
+The audit covers $24$ molecular lifecycle operations, all $8{,}932$ DrEval fold/mean pair--metric comparisons, $22$ missing-score certificates and $687$ TabArena unit/task comparisons. All $9{,}665$ typed outcomes agree; the maximum numerical discrepancy is $1.50\times10^{-11}$. Both ledgers provide the same current-interface and scoped decision views. Both reject twelve stale R0-to-R1 reuse requests, and neither issues a fully source-qualified molecular assertion.
+
+The comparison plan and case inventory are retrospective and fixed before executing the final comparator; they are not a prospective preregistration. Cases share frozen data and are verification operations, not independent sampling units. Local cached SQLite/RDF query timings and shared-process memory diagnostics are provided separately from numerical construction and I/O. They do not establish an end-to-end deployment or runtime advantage. Full augmented-design $\mathcal L^*$ is not instantiated with invented source columns when original source maps are absent; the same-registered-estimator control retains that information boundary.
+
+\subsection{Execution and canonical release binding}
+Run \nolinkurl{RUN_PUBLIC_EVIDENCE.sh} with a new absolute output directory. In addition to the earlier fourteen stages, the current entrypoint verifies the molecular capsule, recomputes the RQ3 effect-size tables and executes the matched classical composition. The unified record checker also rejects rehashed molecular objects whose values or source status were altered. Six additional stages regenerate the native label-pilot inputs, replay exact cached-table certificates, verify source-bound disclosure semantics, recompute crossed target/measure controls, check source/action and prior qualifications, and build the new manuscript tables and figure (Sections~S23--S25). The outputs include the full operation table, source plan, numerical discrepancies and classical ledger.
+
+The release is \nolinkurl{PAIR-KBS-20261117-final-writing-v4}; the supplement filename and scientific-manifest SHA256 appear in the main availability statement. The manifest binds input archives and executable programs. A separate receipt binds the full ZIP and canonical PDF identities. ZIP PDFs define the canonical build; delivery metadata may alter preview bytes while preserving page content.
+
+Three final stages run the independent disclosure implementation, replay the scoped VMA query-function control, and validate the 64-unit source-to-manuscript mapping, bringing the offline entrypoint to 26 stages. Their checks and source bindings are reported in Section~S23.

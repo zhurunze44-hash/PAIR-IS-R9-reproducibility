@@ -1,4 +1,4 @@
-\begin{thebibliography}{40}
+\begin{thebibliography}{55}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -19,6 +19,12 @@ M.~H. Kowalski et~al.
 \newblock \emph{Cell}, 187:\penalty0 4408--4425.e23, 2024.
 \newblock \doi{10.1016/j.cell.2024.06.005}.
 
+\bibitem[Bernett et~al.(2026)]{bernett2026dreval}
+J.~Bernett et~al.
+\newblock {Critical evaluation of drug response prediction models with DrEval}.
+\newblock \emph{Nature Communications}, 17:\penalty0 4238, 2026.
+\newblock \doi{10.1038/s41467-026-72903-w}.
+
 \bibitem[Hogan et~al.(2021)Hogan, Blomqvist, Cochez, d'Amato, de~Melo,
   Guti\'errez, et~al.]{hogan2021knowledge}
 Aidan Hogan, Eva Blomqvist, Michael Cochez, Claudia d'Amato, Gerard de~Melo,
@@ -35,24 +41,6 @@ D.~R. Unni et~al.
 \newblock \emph{Clinical and Translational Science}, 15:\penalty0 1848--1855,
   2022.
 \newblock \doi{10.1111/cts.13302}.
-
-\bibitem[Shamshiri et~al.(2026)Shamshiri, Javaheri, Fahmideh, and
-  Hur]{shamshiri2026security}
-Samaneh Shamshiri, Danial Javaheri, Mahdi Fahmideh, and Junbeom Hur.
-\newblock A domain-specific knowledge graph for reasoning over {AI} security
-  threats and defenses.
-\newblock \emph{Knowledge-Based Systems}, 350:\penalty0 116492, 2026.
-\newblock \doi{10.1016/j.knosys.2026.116492}.
-
-\bibitem[Mohamed et~al.(2026)Mohamed, Shalaby, Kaladharan, Sen, G{\"u}venilir,
-  and Kodamullil]{mohamed2026orchestra}
-Ahmed~Hossameldin Mohamed, Karim~S. Shalaby, Abish Kaladharan, Sutrishna Sen,
-  Heval~Atas G{\"u}venilir, and Alpha~Tom Kodamullil.
-\newblock {KG-Orchestra}: An open-source multi-agent framework for
-  evidence-based biomedical knowledge graphs enrichment.
-\newblock \emph{Knowledge-Based Systems}, page 117316, 2026.
-\newblock \doi{10.1016/j.knosys.2026.117316}.
-\newblock Available online 4 November 2026.
 
 \bibitem[Green et~al.(2007)Green, Karvounarakis, and
   Tannen]{green2007provenance}
@@ -79,11 +67,72 @@ Aryak Sen, Silviu Maniu, and Pierre Senellart.
 \newblock URL
   \url{https://pierre.senellart.com/publications/sen2026provsql.pdf}.
 
-\bibitem[Bernett et~al.(2026)]{bernett2026dreval}
-J.~Bernett et~al.
-\newblock {Critical evaluation of drug response prediction models with DrEval}.
-\newblock \emph{Nature Communications}, 17:\penalty0 4238, 2026.
-\newblock \doi{10.1038/s41467-026-72903-w}.
+\bibitem[Searle(1971)]{searle1971linear}
+S.~R. Searle.
+\newblock \emph{{Linear Models}}.
+\newblock Wiley, 1971.
+
+\bibitem[Rao and Mitra(1971)]{rao1971generalized}
+C.~R. Rao and S.~K. Mitra.
+\newblock \emph{{Generalized Inverse of Matrices and Its Applications}}.
+\newblock Wiley, 1971.
+
+\bibitem[Semper et~al.(2026)Semper, Curado, Vicent, and
+  Tortosa]{semper2026robust}
+Marc Semper, Manuel Curado, Jose~F. Vicent, and Leandro Tortosa.
+\newblock A practical decision-support system for robust post-training model
+  selection in spatiotemporal forecasting.
+\newblock \emph{Knowledge-Based Systems}, 351:\penalty0 116673, 2026.
+\newblock \doi{10.1016/j.knosys.2026.116673}.
+
+\bibitem[W{\'o}jcik et~al.(2023)W{\'o}jcik, Kadzi{\'n}ski, and
+  Ciomek]{wojcik2023representative}
+Micha{\l} W{\'o}jcik, Mi{\l}osz Kadzi{\'n}ski, and Krzysztof Ciomek.
+\newblock Selection of a representative sorting model in a preference
+  disaggregation setting: A review of existing procedures, new proposals, and
+  experimental comparison.
+\newblock \emph{Knowledge-Based Systems}, 278:\penalty0 110871, 2023.
+\newblock \doi{10.1016/j.knosys.2023.110871}.
+
+\bibitem[Hutn{\'i}k and Pu{\v{s}}k{\'a}rov{\'a}(2026)]{hutnik2026localization}
+Ondrej Hutn{\'i}k and Nat{\'a}lia Pu{\v{s}}k{\'a}rov{\'a}.
+\newblock Context localization for generalized level-based evaluation in
+  knowledge-based systems.
+\newblock \emph{Knowledge-Based Systems}, 351:\penalty0 116832, 2026.
+\newblock \doi{10.1016/j.knosys.2026.116832}.
+
+\bibitem[Kinalioglu(2026)]{kinalioglu2026eprag}
+Ismail~Hakki Kinalioglu.
+\newblock {EPRAG}: An epistemic policy framework for action selection in
+  multi-source enterprise retrieval-augmented generation.
+\newblock \emph{Knowledge-Based Systems}, page 116929, 2026.
+\newblock \doi{10.1016/j.knosys.2026.116929}.
+
+\bibitem[Purohit et~al.(2025)Purohit, Chudasama, and Vidal]{purohit2025vanilla}
+Disha Purohit, Yashrajsinh Chudasama, and Maria-Esther Vidal.
+\newblock {VANILLA}: Validated knowledge graph completion---a
+  normalization-based framework for integrity, link prediction, and logical
+  accuracy.
+\newblock \emph{Knowledge-Based Systems}, 325:\penalty0 113939, 2025.
+\newblock \doi{10.1016/j.knosys.2025.113939}.
+
+\bibitem[Shamshiri et~al.(2026)Shamshiri, Javaheri, Fahmideh, and
+  Hur]{shamshiri2026security}
+Samaneh Shamshiri, Danial Javaheri, Mahdi Fahmideh, and Junbeom Hur.
+\newblock A domain-specific knowledge graph for reasoning over {AI} security
+  threats and defenses.
+\newblock \emph{Knowledge-Based Systems}, 350:\penalty0 116492, 2026.
+\newblock \doi{10.1016/j.knosys.2026.116492}.
+
+\bibitem[Mohamed et~al.(2026)Mohamed, Shalaby, Kaladharan, Sen, G{\"u}venilir,
+  and Kodamullil]{mohamed2026orchestra}
+Ahmed~Hossameldin Mohamed, Karim~S. Shalaby, Abish Kaladharan, Sutrishna Sen,
+  Heval~Atas G{\"u}venilir, and Alpha~Tom Kodamullil.
+\newblock {KG-Orchestra}: An open-source multi-agent framework for
+  evidence-based biomedical knowledge graphs enrichment.
+\newblock \emph{Knowledge-Based Systems}, page 117316, 2026.
+\newblock \doi{10.1016/j.knosys.2026.117316}.
+\newblock Available online 4 November 2026.
 
 \bibitem[Mazumder et~al.(2010)Mazumder, Hastie, and
   Tibshirani]{mazumder2010softimpute}
@@ -99,42 +148,6 @@ Tuan~L. Vo, Uyen Dang, Van Hua, Xuan-Hoang Nguyen, Thu Nguyen, and Bao Huynh.
 \newblock {PICA: Interpretable imputation for randomly missing data}.
 \newblock \emph{Information Sciences}, 749:\penalty0 123532, 2026.
 \newblock \doi{10.1016/j.ins.2026.123532}.
-
-\bibitem[Searle(1971)]{searle1971linear}
-S.~R. Searle.
-\newblock \emph{{Linear Models}}.
-\newblock Wiley, 1971.
-
-\bibitem[Rao and Mitra(1971)]{rao1971generalized}
-C.~R. Rao and S.~K. Mitra.
-\newblock \emph{{Generalized Inverse of Matrices and Its Applications}}.
-\newblock Wiley, 1971.
-
-\bibitem[Li et~al.(2026{\natexlab{a}})Li, Bai, Li, and Mi]{li2026clustering}
-Zhao Li, Yu-Zhang Bai, Lei-Jun Li, and Ju-Sheng Mi.
-\newblock {Three-Way clustering based on fuzzy centroids in incomplete
-  information systems with categorical data}.
-\newblock \emph{Knowledge-Based Systems}, 332:\penalty0 114940,
-  2026{\natexlab{a}}.
-\newblock \doi{10.1016/j.knosys.2025.114940}.
-
-\bibitem[Li et~al.(2026{\natexlab{b}})Li, Zhang, Li, Ni, Lu, and
-  Mart{\'i}nez]{li2026incomplete}
-Meijuan Li, Jiarong Zhang, Xufeng Li, Weixin Ni, Jincheng Lu, and Luis
-  Mart{\'i}nez.
-\newblock A three-way decision-making approach for incomplete heterogeneous
-  information systems: enhancing enterprise performance evaluation.
-\newblock \emph{Information Sciences}, 742:\penalty0 122935,
-  2026{\natexlab{b}}.
-\newblock \doi{10.1016/j.ins.2025.122935}.
-
-\bibitem[Zhang et~al.(2026)Zhang, Tu, Wan, Cheng, and Lev]{zhang2026adaptive}
-Jiali Zhang, Yan Tu, Zhongyong Wan, Linqi Cheng, and Benjamin Lev.
-\newblock An adaptive sequential three-way decision-making model via dynamic
-  fusion of incomplete mixed data considering misclassification penalty from
-  holistic and incremental perspectives.
-\newblock \emph{Information Sciences}, 727:\penalty0 122785, 2026.
-\newblock \doi{10.1016/j.ins.2025.122785}.
 
 \bibitem[Freeman(1975)]{freeman1975incomplete}
 G.~H. Freeman.
@@ -180,14 +193,6 @@ Lars Vogt.
 \newblock \emph{Scientific Data}, 13:\penalty0 936, 2026.
 \newblock \doi{10.1038/s41597-026-07588-3}.
 
-\bibitem[Purohit et~al.(2025)Purohit, Chudasama, and Vidal]{purohit2025vanilla}
-Disha Purohit, Yashrajsinh Chudasama, and Maria-Esther Vidal.
-\newblock {VANILLA}: Validated knowledge graph completion---a
-  normalization-based framework for integrity, link prediction, and logical
-  accuracy.
-\newblock \emph{Knowledge-Based Systems}, 325:\penalty0 113939, 2025.
-\newblock \doi{10.1016/j.knosys.2025.113939}.
-
 \bibitem[Gu et~al.(2025)Gu, Lanti, Corcoglioniti, Di~Panfilo, Mosca, Calvanese,
   and Xiao]{gu2025obdf}
 Zhenzhen Gu, Davide Lanti, Francesco Corcoglioniti, Marco Di~Panfilo,
@@ -205,38 +210,6 @@ Laura Menotti, Stefano Marchesin, Fabio Giachelle, and Gianmaria Silvello.
   2025.
 \newblock \doi{10.1007/s00799-025-00431-x}.
 
-\bibitem[van Waarde et~al.(2020)van Waarde, Eising, Trentelman, and
-  Camlibel]{vanwaarde2020informativity}
-H.~J. van Waarde, J.~Eising, H.~L. Trentelman, and M.~K. Camlibel.
-\newblock {Data informativity: a new perspective on data-driven analysis and
-  control}.
-\newblock \emph{IEEE Transactions on Automatic Control}, 65:\penalty0
-  4753--4768, 2020.
-\newblock \doi{10.1109/TAC.2020.2966717}.
-
-\bibitem[Bennouna et~al.(2025)Bennouna, Bennouna, Amin, and
-  Ozdaglar]{bennouna2025decision}
-Omar Bennouna, Amine Bennouna, Saurabh Amin, and Asuman Ozdaglar.
-\newblock What data enables optimal decisions? an exact characterization for
-  linear optimization.
-\newblock In \emph{Advances in Neural Information Processing Systems}, 2025.
-\newblock URL
-  \url{https://papers.nips.cc/paper_files/paper/2025/hash/f2865c76810f9f702f52fd3e4150a296-Abstract-Conference.html}.
-\newblock NeurIPS 2025, Main Conference Track.
-
-\bibitem[Ye et~al.(2026)Ye, Amin, and Ozdaglar]{ye2026decisionsufficient}
-Yuhan Ye, Saurabh Amin, and Asuman Ozdaglar.
-\newblock Learning decision-sufficient representations for linear optimization.
-\newblock In \emph{Proceedings of the Conference on Learning Theory}, volume
-  336 of \emph{Proceedings of Machine Learning Research}, 2026.
-\newblock URL \url{https://proceedings.mlr.press/v336/ye26a.html}.
-
-\bibitem[Shirdel et~al.(2026)Shirdel, Di~Mauro, and Liotta]{shirdel2026metrics}
-Mohammad Shirdel, Mario Di~Mauro, and Antonio Liotta.
-\newblock A framework for binary classification evaluation metrics.
-\newblock \emph{Information Sciences}, 749:\penalty0 123540, 2026.
-\newblock \doi{10.1016/j.ins.2026.123540}.
-
 \bibitem[Ahlmann-Eltze et~al.(2025)Ahlmann-Eltze, Huber, and
   Anders]{ahlmann2025baselines}
 C.~Ahlmann-Eltze, W.~Huber, and S.~Anders.
@@ -244,6 +217,13 @@ C.~Ahlmann-Eltze, W.~Huber, and S.~Anders.
   outperform simple linear baselines}.
 \newblock \emph{Nature Methods}, 22:\penalty0 1657--1661, 2025.
 \newblock \doi{10.1038/s41592-025-02772-6}.
+
+\bibitem[Wei et~al.(2026)]{wei2026benchmark}
+Z.~Wei et~al.
+\newblock {Benchmarking algorithms for generalizable single-cell perturbation
+  response prediction}.
+\newblock \emph{Nature Methods}, 23:\penalty0 451--464, 2026.
+\newblock \doi{10.1038/s41592-025-02980-0}.
 
 \bibitem[Vi\~nas Torn\'e et~al.(2026)Vi\~nas Torn\'e, Wiatrak, Piran, Fan,
   Jiang, Teichmann, Nitzan, and Brbi\'{c}]{vinas2026systema}
@@ -268,13 +248,6 @@ Yan Wu, Esther Wershof, Sebastian Schmon, Marcel Nassar, B{\l}a{\.{z}}ej
   \url{https://proceedings.neurips.cc/paper_files/paper/2025/hash/8aee537279a66ced96319dfca3c00002-Abstract-Datasets_and_Benchmarks_Track.html}.
 \newblock Datasets and Benchmarks Track.
 
-\bibitem[Wei et~al.(2026)]{wei2026benchmark}
-Z.~Wei et~al.
-\newblock {Benchmarking algorithms for generalizable single-cell perturbation
-  response prediction}.
-\newblock \emph{Nature Methods}, 23:\penalty0 451--464, 2026.
-\newblock \doi{10.1038/s41592-025-02980-0}.
-
 \bibitem[Miller et~al.(2026)Miller, Mejia, Leblanc, Swain, Wang, and
   de~Lima~Camillo]{miller2026calibrated}
 Henry~E. Miller, Gabriel~M. Mejia, Francis J.~A. Leblanc, Brendan Swain,
@@ -284,6 +257,171 @@ Henry~E. Miller, Gabriel~M. Mejia, Francis J.~A. Leblanc, Brendan Swain,
 \newblock \emph{Nature Biotechnology}, 2026.
 \newblock \doi{10.1038/s41587-026-03307-w}.
 \newblock Published online 1 October 2026.
+
+\bibitem[Gijsbers et~al.(2024)Gijsbers, Bueno, Coors, LeDell, Poirier, Thomas,
+  Bischl, and Vanschoren]{gijsbers2024amlb}
+Pieter Gijsbers, Marcos L.~P. Bueno, Stefan Coors, Erin LeDell, S\'{e}bastien
+  Poirier, Janek Thomas, Bernd Bischl, and Joaquin Vanschoren.
+\newblock {AMLB: an AutoML Benchmark}.
+\newblock \emph{Journal of Machine Learning Research}, 25\penalty0
+  (101):\penalty0 1--65, 2024.
+\newblock URL \url{https://www.jmlr.org/papers/v25/22-0493.html}.
+
+\bibitem[Erickson et~al.(2025)Erickson, Purucker, Tschalzev, Holzm\"{u}ller,
+  Desai, Salinas, and Hutter]{erickson2025tabarena}
+Nick Erickson, Lennart Purucker, Andrej Tschalzev, David Holzm\"{u}ller,
+  Prateek Desai, David Salinas, and Frank Hutter.
+\newblock {TabArena: A Living Benchmark for Machine Learning on Tabular Data}.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~38, 2025.
+\newblock \doi{10.52202/085713-0519}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2025/hash/1697e3fb412da11dc9488249f9e7bbc9-Abstract-Datasets_and_Benchmarks_Track.html}.
+
+\bibitem[Shirdel et~al.(2026)Shirdel, Di~Mauro, and Liotta]{shirdel2026metrics}
+Mohammad Shirdel, Mario Di~Mauro, and Antonio Liotta.
+\newblock A framework for binary classification evaluation metrics.
+\newblock \emph{Information Sciences}, 749:\penalty0 123540, 2026.
+\newblock \doi{10.1016/j.ins.2026.123540}.
+
+\bibitem[Reuel et~al.(2024)Reuel, Hardy, Smith, Lamparth, Hardy, and
+  Kochenderfer]{reuel2024betterbench}
+Anka Reuel, Amelia Hardy, Chandler Smith, Max Lamparth, Malcolm Hardy, and
+  Mykel~J. Kochenderfer.
+\newblock {BetterBench}: Assessing {AI} benchmarks, uncovering issues, and
+  establishing best practices.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~37, 2024.
+\newblock \doi{10.52202/079017-0685}.
+\newblock URL
+  \url{https://papers.nips.cc/paper_files/paper/2024/hash/26889e8359e7ef8a7f5d77457364ca55-Abstract-Datasets_and_Benchmarks_Track.html}.
+
+\bibitem[Singh et~al.(2025)Singh, Nan, Wang, Dsouza, Kapoor, {\"U}st{\"u}n,
+  Koyejo, Deng, Longpre, Smith, Ermis, Fadaee, and
+  Hooker]{singh2025leaderboard}
+Shivalika Singh, Yiyang Nan, Alex Wang, Daniel Dsouza, Sayash Kapoor, Ahmet
+  {\"U}st{\"u}n, Sanmi Koyejo, Yuntian Deng, Shayne Longpre, Noah~A. Smith,
+  Beyza Ermis, Marzieh Fadaee, and Sara Hooker.
+\newblock The leaderboard illusion.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~38, 2025.
+\newblock \doi{10.52202/085713-2620}.
+\newblock URL
+  \url{https://papers.nips.cc/paper_files/paper/2025/hash/70a93f260a51123b3c0e33ecd1b4de97-Abstract-Datasets_and_Benchmarks_Track.html}.
+
+\bibitem[Kong et~al.(2025)Kong, Liu, Racharak, Sun, Ma, and
+  Nguyen]{kong2025weightaware}
+Wei-Kun Kong, Xin Liu, Teeradaj Racharak, Guanqun Sun, Qiang Ma, and Le-Minh
+  Nguyen.
+\newblock Weight-aware tasks for evaluating knowledge graph embeddings.
+\newblock \emph{Knowledge-Based Systems}, 320:\penalty0 113596, 2025.
+\newblock \doi{10.1016/j.knosys.2025.113596}.
+
+\bibitem[van Waarde et~al.(2020)van Waarde, Eising, Trentelman, and
+  Camlibel]{vanwaarde2020informativity}
+H.~J. van Waarde, J.~Eising, H.~L. Trentelman, and M.~K. Camlibel.
+\newblock {Data informativity: a new perspective on data-driven analysis and
+  control}.
+\newblock \emph{IEEE Transactions on Automatic Control}, 65:\penalty0
+  4753--4768, 2020.
+\newblock \doi{10.1109/TAC.2020.2966717}.
+
+\bibitem[Bennouna et~al.(2025)Bennouna, Bennouna, Amin, and
+  Ozdaglar]{bennouna2025decision}
+Omar Bennouna, Amine Bennouna, Saurabh Amin, and Asuman Ozdaglar.
+\newblock What data enables optimal decisions? an exact characterization for
+  linear optimization.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2025.
+\newblock URL
+  \url{https://papers.nips.cc/paper_files/paper/2025/hash/f2865c76810f9f702f52fd3e4150a296-Abstract-Conference.html}.
+\newblock NeurIPS 2025, Main Conference Track.
+
+\bibitem[Ye et~al.(2026)Ye, Amin, and Ozdaglar]{ye2026decisionsufficient}
+Yuhan Ye, Saurabh Amin, and Asuman Ozdaglar.
+\newblock Learning decision-sufficient representations for linear optimization.
+\newblock In \emph{Proceedings of the Conference on Learning Theory}, volume
+  336 of \emph{Proceedings of Machine Learning Research}, pages 6924--6975,
+  2026.
+\newblock URL \url{https://proceedings.mlr.press/v336/ye26a.html}.
+
+\bibitem[Li et~al.(2026{\natexlab{a}})Li, Bai, Li, and Mi]{li2026clustering}
+Zhao Li, Yu-Zhang Bai, Lei-Jun Li, and Ju-Sheng Mi.
+\newblock {Three-Way clustering based on fuzzy centroids in incomplete
+  information systems with categorical data}.
+\newblock \emph{Knowledge-Based Systems}, 332:\penalty0 114940,
+  2026{\natexlab{a}}.
+\newblock \doi{10.1016/j.knosys.2025.114940}.
+
+\bibitem[Li et~al.(2026{\natexlab{b}})Li, Zhang, Li, Ni, Lu, and
+  Mart{\'i}nez]{li2026incomplete}
+Meijuan Li, Jiarong Zhang, Xufeng Li, Weixin Ni, Jincheng Lu, and Luis
+  Mart{\'i}nez.
+\newblock A three-way decision-making approach for incomplete heterogeneous
+  information systems: enhancing enterprise performance evaluation.
+\newblock \emph{Information Sciences}, 742:\penalty0 122935,
+  2026{\natexlab{b}}.
+\newblock \doi{10.1016/j.ins.2025.122935}.
+
+\bibitem[Zhang et~al.(2026)Zhang, Tu, Wan, Cheng, and Lev]{zhang2026adaptive}
+Jiali Zhang, Yan Tu, Zhongyong Wan, Linqi Cheng, and Benjamin Lev.
+\newblock An adaptive sequential three-way decision-making model via dynamic
+  fusion of incomplete mixed data considering misclassification penalty from
+  holistic and incremental perspectives.
+\newblock \emph{Information Sciences}, 727:\penalty0 122785, 2026.
+\newblock \doi{10.1016/j.ins.2025.122785}.
+
+\bibitem[Hara et~al.(2024)Hara, Matsuura, Honda, and Ito]{hara2024vma}
+Satoshi Hara, Mitsuru Matsuura, Junya Honda, and Shinji Ito.
+\newblock Active model selection: A variance minimization approach.
+\newblock \emph{Machine Learning}, 113:\penalty0 8327--8345, 2024.
+\newblock \doi{10.1007/s10994-024-06603-1}.
+
+\bibitem[Okanovic et~al.(2025)Okanovic, Kirsch, Kasper, Hoefler, Krause, and
+  G{\"u}rel]{okanovic2025selector}
+Patrik Okanovic, Andreas Kirsch, Jannes Kasper, Torsten Hoefler, Andreas
+  Krause, and Nezihe~Merve G{\"u}rel.
+\newblock All models are wrong, some are useful: Model selection with limited
+  labels.
+\newblock In \emph{Proceedings of the 28th International Conference on
+  Artificial Intelligence and Statistics}, volume 258, pages 2035--2043, 2025.
+\newblock URL \url{https://proceedings.mlr.press/v258/okanovic25a.html}.
+
+\bibitem[Kay et~al.(2025)Kay, Van~Horn, Maji, Sheldon, and Beery]{kay2025coda}
+Justin Kay, Grant Van~Horn, Subhransu Maji, Daniel Sheldon, and Sara Beery.
+\newblock Consensus-driven active model selection.
+\newblock In \emph{Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pages 4594--4604, 2025.
+\newblock URL
+  \url{https://openaccess.thecvf.com/content/ICCV2025/html/Kay_Consensus-Driven_Active_Model_Selection_ICCV_2025_paper.html}.
+
+\bibitem[Kuboyama(2026)]{kuboyama2026labels}
+Tetsuji Kuboyama.
+\newblock How many labels does model choice need? certificates and budgets for
+  selective prediction, 2026.
+\newblock URL \url{https://arxiv.org/abs/2609.18622v1}.
+\newblock Preprint, arXiv:2609.18622v1.
+
+\bibitem[Li and Chen(2026)]{li2026ownership}
+Ao~Li and Weitong Chen.
+\newblock Reusing statistical guarantees under change: Selection costs and
+  event ownership, 2026.
+\newblock URL \url{https://arxiv.org/abs/2610.09391v1}.
+\newblock Preprint, arXiv:2610.09391v1.
+
+\bibitem[Bargiela and Pedrycz(2003)]{bargiela2003granular}
+Andrzej Bargiela and Witold Pedrycz.
+\newblock \emph{Granular Computing: An Introduction}.
+\newblock Springer, New York, 2003.
+\newblock \doi{10.1007/978-1-4615-1033-8}.
+
+\bibitem[Zhang and Zhang(2014)]{zhang2014quotient}
+Ling Zhang and Bo~Zhang.
+\newblock \emph{Quotient Space Based Problem Solving: A Theoretical Foundation
+  of Granular Computing}.
+\newblock Morgan Kaufmann, 2014.
+\newblock ISBN 9780124103870.
+\newblock URL
+  \url{https://shop.elsevier.com/books/quotient-space-based-problem-solving/zhang/978-0-12-410387-0}.
 
 \bibitem[Van~Nostrand et~al.(2020)]{vannostrand2020rbp}
 E.~L. Van~Nostrand et~al.
@@ -306,17 +444,14 @@ J.~M. Replogle et~al.
 \newblock \emph{Cell}, 185:\penalty0 2559--2575.e28, 2022.
 \newblock \doi{10.1016/j.cell.2022.05.013}.
 
-\bibitem[Rees et~al.(2016)]{rees2016ctrp}
-M.~G. Rees et~al.
-\newblock {Correlating chemical sensitivity and basal gene expression reveals
-  mechanism of action}.
-\newblock \emph{Nature Chemical Biology}, 12:\penalty0 109--116, 2016.
-\newblock \doi{10.1038/nchembio.1986}.
-
-\bibitem[Iorio et~al.(2016)]{iorio2016gdsc}
-F.~Iorio et~al.
-\newblock {A landscape of pharmacogenomic interactions in cancer}.
-\newblock \emph{Cell}, 166:\penalty0 740--754, 2016.
-\newblock \doi{10.1016/j.cell.2016.06.017}.
+\bibitem[McDonnell et~al.(2024)McDonnell, Plech, Livesey, Gerasimavicius, Owen,
+  Hall, FitzPatrick, Marsh, and Kudla]{mcdonnell2024pax6}
+Alexander~F. McDonnell, Marcin Plech, Benjamin~J. Livesey, Lukas
+  Gerasimavicius, Liusaidh~J. Owen, Hildegard~Nikki Hall, David~R. FitzPatrick,
+  Joseph~A. Marsh, and Grzegorz Kudla.
+\newblock Deep mutational scanning quantifies {DNA} binding and predicts
+  clinical outcomes of {PAX6} variants.
+\newblock \emph{Molecular Systems Biology}, 20, 2024.
+\newblock \doi{10.1038/s44320-024-00043-8}.
 
 \end{thebibliography}

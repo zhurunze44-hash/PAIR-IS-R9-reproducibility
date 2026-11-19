@@ -1,33 +1,50 @@
 #!/usr/bin/env python3
-"""Check GitHub correspondence with the unchanged Gemini KBS materials."""
-from pathlib import Path
-import hashlib,json,re,zipfile
+"""Check the current manuscript files, source archive and public entry points."""
 
-root=Path(__file__).resolve().parents[1]
-record=json.loads((root/'evidence/KBS_FILE_ALIGNMENT.json').read_text())
-assert record['scientific_text_changed'] is False
+import hashlib
+import json
+from pathlib import Path
+import re
+import zipfile
+
+root = Path(__file__).resolve().parents[1]
+record = json.loads((root / 'evidence/KBS_FILE_ALIGNMENT.json').read_text())
+release = json.loads((root / 'RELEASE_STATUS.json').read_text())
+
 assert record['scientific_results_changed'] is False
-assert (record['main_pages'],record['supplement_pages'])==(26,46)
-for entry in record['files']:
-    p=root/entry['repository_path']
-    assert p.is_file(),entry['repository_path']
-    assert hashlib.sha256(p.read_bytes()).hexdigest()==entry['sha256'],entry['repository_path']
-capsule=record['generated_software_capsule']
-assert hashlib.sha256((root/capsule['path']).read_bytes()).hexdigest()==capsule['sha256']
-for name in ['Manuscript_Source.zip','Supplementary_Source.zip']:
-    with zipfile.ZipFile(root/'submission'/name) as z:
-        assert z.testzip() is None
-        for entry in z.namelist():
-            assert z.read(entry)==(root/'manuscript'/entry).read_bytes(),(name,entry)
-main=(root/'manuscript/PAIR_KBS_Main.tex').read_text()
+for field in ('title', 'main_pages', 'supplement_pages', 'complete_pages'):
+    assert record[field] == release[field], field
+assert record['complete_pages'] == record['main_pages'] + record['supplement_pages']
+
+files = record['files']
+for path, digest in files.items():
+    assert hashlib.sha256((root / path).read_bytes()).hexdigest() == digest, path
+
+source = record['source_zip']
+assert source == release['current_source']
+expected_members = {path.removeprefix('manuscript/') for path in files
+                    if path not in {*record['pdfs'], source}}
+with zipfile.ZipFile(root / source) as archive:
+    assert archive.testzip() is None
+    assert sorted(archive.namelist()) == sorted(expected_members)
+    for member in archive.namelist():
+        assert archive.read(member) == (root / 'manuscript' / member).read_bytes(), member
+
+title = record['title']
+main = (root / 'manuscript/PAIR_KBS_Main.tex').read_text()
+supplement = (root / 'manuscript/PAIR_KBS_Supplement.tex').read_text()
 assert '\\journal{Knowledge-Based Systems}' in main
-assert record['title'] in main
-assert not list((root/'manuscript').glob('*IS_R9*'))
-metadata=(root/'submission/Metadata.txt').read_text()
-assert 'TARGET JOURNAL: Knowledge-Based Systems' in metadata
-assert record['title'] in metadata
-for p in [root/'README.md',root/'REPRODUCIBILITY.md',root/'submission/README.md']:
-    for link in re.findall(r'\]\(([^)]+)\)',p.read_text()):
-        if re.match(r'^[a-z]+://',link) or link.startswith('#'):continue
-        assert (p.parent/link.split('#',1)[0]).exists(),(p.name,link)
-print(f'PASS_GEMINI_KBS_ALIGNMENT: {len(record["files"])} original file identities, source ZIPs and KBS entry points agree')
+assert f'\\providecommand{{\\PaperTitle}}{{{title}}}' in main
+assert title in supplement
+assert f'title: {json.dumps(title)}' in (root / 'CITATION.cff').read_text()
+
+docs = ['README.md', 'DATA_AND_CODE_AVAILABILITY.md', 'REPRODUCIBILITY.md',
+        'SUBMISSION_SOFTWARE_COVERAGE.md', 'submission/README.md']
+for name in docs:
+    doc = root / name
+    for target in re.findall(r'\]\(([^)]+)\)', doc.read_text()):
+        if re.match(r'^[a-z]+://', target) or target.startswith('#'):
+            continue
+        assert (doc.parent / target.split('#', 1)[0]).exists(), (name, target)
+
+print(f'PASS KBS alignment: {len(files)} files, {len(expected_members)} source members and public links')

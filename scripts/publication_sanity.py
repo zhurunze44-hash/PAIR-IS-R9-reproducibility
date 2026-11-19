@@ -5,7 +5,7 @@ import json,hashlib,sys
 root=Path(__file__).resolve().parent.parent
 required=[
  'manuscript/PAIR_KBS_Main.tex','manuscript/PAIR_KBS_Supplement.tex',
- 'manuscript/references.bib','manuscript/figures/figure_01.pdf',
+ 'manuscript/references.bib','manuscript/figures/comparison_contract.pdf',
  'verification/independent_contract_checks.py',
  'verification/G0_G2_native_fair_baseline.py',
  'verification/test_G0_G2_synthetic.py',

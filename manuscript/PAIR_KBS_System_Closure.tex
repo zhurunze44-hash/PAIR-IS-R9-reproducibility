@@ -1,0 +1,23 @@
+\FloatBarrier
+\subsection{Joint assertions, reference updates and classical conformance}\label{subsec:result-system}
+The joint workflow carries the molecular and evaluation results through the same assertion lifecycle. From the conditionally recovered K562 reference in RQ2, we select the first six Q2 and six Q4 identities lexicographically and register each under R0 and an R1 reference formed by deleting the first support-preserving TRAIN row. The $24$ records retain signed coefficients, OLS bindings, explicit adjoint witnesses and readouts, with maximum reference-witness residual $1.44\times10^{-15}$. Their original source matrices remain unbound.
+
+The six Q2 examples share the CPSF1--CPSF2 pair and shift by $-0.007632$; all balanced Q4 values stay unchanged. At the ATP5G3 event, the Q2 readout changes from $0.143213$ to $0.135582$ (Table~\ref{tab:boundexamples}). These are effects of the same declared reference intervention. The twelve R0 records remain available as history; reusing any of them under R1 requires revalidation, including those with unchanged numbers. Core queries retrieve twelve current molecular objects and $872$ evaluation assertions, with separate reference and source qualifications (Section~S22).
+
+An information-matched classical workflow combines independent OLS/residual calculations, score moments, interval comparisons, a complete provenance/version ledger and SQLite queries. Both systems receive identical inputs, available witnesses, missing-source fields and admissible domains. Across $9{,}665$ operations, typed states agree and the maximum numerical discrepancy is $1.50\times10^{-11}$ (Table~\ref{tab:matchedsystems}). Both reject twelve stale-reference reuse requests and preserve the same scoped query results. The conformance test confirms that \method combines provenance, version control, and decision certification while reproducing the classical workflow within the stated tolerance.
+
+\begin{table}[htbp]
+\centering\small\setstretch{1.04}
+\caption{Information-matched classical composition versus PAIR on frozen evidence. Counts are verification operations, not independent experimental samples. Source and production fields are supplied equally to both systems. Numerical agreement uses tolerance $10^{-9}$.}
+\label{tab:matchedsystems}
+\begin{tabularx}{\textwidth}{@{}L{0.22\textwidth}N{0.12\textwidth}N{0.15\textwidth}X@{}}
+\toprule
+\PAIRTableHead{Family} & \PAIRTableHead{Operations} & \PAIRTableHead{State disagreements} & \PAIRTableHead{Common outcome}\\\midrule
+K562 reference lifecycle & $24$ & $0$ & Twelve current reference-verified/source-unbound relations; twelve stale reuse requests.\\
+DrEval measure audit & $8{,}932$ & $0$ & All fold/mean pair--metric comparisons; $66$ changed orders retained.\\
+AMLB missing fold & $22$ & $0$ & The same conditional winner--challenger interval certificates.\\
+TabArena numerical scope & $687$ & $0$ & The same observed/conditional comparisons and unresolved historical-producer fields.\\\bottomrule
+\end{tabularx}
+\end{table}
+
+The extended graph contains $922$ assertions: $24$ versioned molecular objects and $898$ evaluation objects, including $26$ label-disclosure certificates. It has $1{,}812$ nodes and $16{,}837$ RDF statements. Explicit disclosure fields expose the winner, labels read, pool size, exact endpoints and digital cost unit; SPARQL and a separate SQLite ledger return the same $26$ budget rows. The source-bound checker reconstructs first stopping and rejects rehashed records with altered completion or cost semantics. Thus a relation readout, a repaired model preference and a disclosure budget can be inspected through the same contract-and-witness interface. Operational checks exercise that interface: the core checker rejects six constructed altered or rehashed records, and the disclosure checker rejects $104$ rehashed semantic alterations and $26$ requests that substitute a new wet measurement for archived-label disclosure. These finite checks verify the implemented reuse predicates; the $9{,}665$-operation classical comparison separately tests numerical conformance. Together, the queries and checks expose which comparison is current, what evidence qualifies it, and which declared update can be verified (Sections~S22 and~S23).

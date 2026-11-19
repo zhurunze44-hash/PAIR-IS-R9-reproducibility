@@ -1,0 +1,14 @@
+\begin{table}[htbp]
+\centering\small\setstretch{1.02}
+\caption{Five mean normalized-$R^2$ reversals. Deltas use model A minus model B; larger normalized $R^2$ is preferred. LOFO is the number of ten leave-one-fold deletions retaining the reversal.}
+\begin{tabularx}{\linewidth}{@{}L{0.06\linewidth}XN{0.12\linewidth}N{0.12\linewidth}N{0.09\linewidth}N{0.09\linewidth}@{}}
+\toprule
+\PAIRTableHead{Case} & \PAIRTableHead{A / B} & \PAIRTableHead{Unchecked} & \PAIRTableHead{Repaired} & \PAIRTableHead{Min keys} & \PAIRTableHead{LOFO}\\\midrule
+C1 & EnsembleMF / RandomForestAEMolGNet & +0.000765 & -0.001172 & 6 & 3\\
+C2 & GradientBoosting / PharmaFormer & -0.001099 & +0.000950 & 5 & 2\\
+C3 & GradientBoosting / Precily & +0.006112 & -0.000054 & 40 & 3\\
+C4 & MultiViewXGBoost (gex+mut+fingerp.) / XGBoost & -0.000801 & +0.000465 & 8 & 1\\
+C5 & PharmaFormer / Precily & +0.007211 & -0.001004 & 56 & 4\\
+\bottomrule
+\end{tabularx}
+\end{table}

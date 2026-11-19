@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering\small\setstretch{1.02}\setlength{\tabcolsep}{3.5pt}
+\caption{Six-task log-loss control (percent labels). VMA denotes the published query function under the common strict certificate, with its matched random sampler. Hindsight uses all answers.}
+\label{tab:loglosscontrols}
+\begin{tabularx}{\textwidth}{@{}XN{0.13\textwidth}N{0.15\textwidth}N{0.15\textwidth}N{0.15\textwidth}@{}}
+\toprule
+\PAIRTableHead{Task} & \PAIRTableHead{VMA} & \PAIRTableHead{Matched R} & \PAIRTableHead{Adaptive} & \PAIRTableHead{Hindsight}\\\midrule
+\nolinkurl{anneal} & 98.99 & 99.14 & 97.00 & 96.33\\
+\nolinkurl{maternal_health_risk} & 95.41 & 94.31 & 77.22 & 67.46\\
+\nolinkurl{splice} & 99.74 & 99.81 & 98.87 & 92.39\\
+\nolinkurl{students_dropout_and_academic_success} & 97.43 & 97.89 & 76.00 & 58.24\\
+\nolinkurl{website_phishing} & 98.24 & 98.27 & 87.14 & 79.16\\
+\nolinkurl{MIC} & 96.51 & 97.07 & 80.95 & 74.96\\
+\bottomrule
+\end{tabularx}
+\end{table}

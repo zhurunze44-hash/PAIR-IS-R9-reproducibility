@@ -1,192 +1,75 @@
 {
-  "date": "2026-11-12",
+  "title": "PAIR: A Framework for Verifiable Quantitative Knowledge Representation and Model Comparison under Incomplete Evidence",
   "target_journal": "Knowledge-Based Systems",
-  "title": "PAIR: Verifiable quantitative knowledge and model comparison from incomplete experimental references",
-  "scope": "GitHub alignment only; Gemini manuscript, supplementary content, submission wording and original scoring code preserved",
-  "main_pages": 26,
-  "supplement_pages": 46,
-  "scientific_text_changed": false,
-  "scientific_results_changed": false,
-  "source_archive_members_match_canonical_source": true,
-  "files": [
-    {
-      "repository_path": "manuscript/PAIR_KBS_Main.pdf",
-      "source_archive_file": "01_Submission/Manuscript.pdf",
-      "sha256": "028ab2a49e412292ab044de44862bf14eff36494c3c68ceff3c7897d3a72480b",
-      "byte_identical_to_gemini_kbs_pdf": true
-    },
-    {
-      "repository_path": "manuscript/PAIR_KBS_Supplement.pdf",
-      "source_archive_file": "01_Submission/Supplementary_Information.pdf",
-      "sha256": "9e7c747211f6c840fff83cc68494265bb53aa323b531c3c6e10d357512c558cb",
-      "byte_identical_to_gemini_kbs_pdf": true
-    },
-    {
-      "repository_path": "manuscript/PAIR_KBS_Addendum.tex",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "b39ad411b0987b91a01c0fc540e1016abcaff44bddabc1d20c02fcfc8d2cb4c2",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/PAIR_KBS_Main.bbl",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "3018cb2ee4931a133dd76ef6f1a712bffdeb1913e1edfa118c3faebe6ec32745",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/PAIR_KBS_Main.tex",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "37b615e53bd9dc93c1fe6d0a13a0c36656bc091b3f702c62bdd4675d94fda062",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/PAIR_KBS_Supplement.bbl",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "cb39a4a89148b398dc87bfa03d1e091f13692d74236f8ae738c6d020ba7ca80c",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/PAIR_KBS_Supplement.tex",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "52bfb2dc58a3da15855e9c095df65d26cfb054b65ed542559241f431c081c996",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/authors.tex",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "dd2edf2727cd2c7d6c6f820102b5855731290f27732dde7602e571357b11ebfa",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/elsarticle.cls",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "ba7a1f25626a79fb39b53888dd826c4ae14d20db5429e236abdaaaf2fdf897ab",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/figures/figure_01.pdf",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "b7ae36455eecd2f3124480827abb49e2a183d17bf9b143d4e9e3f1c6b63a444a",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/figures/figure_02.pdf",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "4c91105c37fa6f3b68148decbe283e8a6cf296ec0b9d58e33685363a0f88d6e8",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/figures/figure_03.pdf",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "ad8c5f638c7593c1415b6edddeb2a0665fa0fd6a6b131950f12f4644bcb9efc9",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/figures/figure_04.pdf",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "2d0db355d34100e061bf2d9ddfb85c0d5b55dc7f0be012cbf88d4691006c2450",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/figures/supp_figure_01.pdf",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "d579b8c6c0bce51685bde14375ea3bbdaf890a7eaa822493f04f70d5588e4028",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/figures/supp_figure_02.pdf",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "72d67c6769555529f2b6415f850dd0dad75c1a5f24217b33d7da53add9302572",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/figures/supp_figure_03.pdf",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "885e827a0648ceb0a41daddca19437da91d03c773b2cb64c53c4c85108eaf4aa",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/figures/supp_figure_04.pdf",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "e39bd4ea447c5400014330c3198b7e71e21e50c02dafe4a3c791f6d26f55152e",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/metadata.tex",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "8b988fb6845ba2eac060ca77ae5a63e6a949543546a80169d9c2ee8497bacbd9",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/references.bib",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "9591693c8d5b13d55674c3224c74ad3d803e13997badda03eb2c83d2a0324961",
-      "content_changed": false
-    },
-    {
-      "repository_path": "manuscript/unsrtnat.bst",
-      "source": "Recovered compact KBS source matching the Gemini 26-page PDF",
-      "sha256": "2b257bc5d35c5716691f67615b3b29cc718d05b6b998f87473c924dec0a652e9",
-      "content_changed": false
-    },
-    {
-      "repository_path": "submission/Cover_Letter.docx",
-      "source_archive_file": "01_Submission/Cover_Letter.docx",
-      "sha256": "0a5440043077c8e5c20da7a3159f213e4172881930c33734d9664dfabe6c5f8f",
-      "content_changed": false
-    },
-    {
-      "repository_path": "submission/Declaration_of_Interest.docx",
-      "source_archive_file": "01_Submission/Declaration_of_Interest.docx",
-      "sha256": "10c7e6a97f0ceb8f3cbf2b3dbfd77d524245faf6a41aab8a4a1f415cea7952c8",
-      "content_changed": false
-    },
-    {
-      "repository_path": "submission/Figure_Captions.txt",
-      "source_archive_file": "01_Submission/Figure_Captions.txt",
-      "sha256": "9c6638a6e8bce6f8dec6534f0f8c2d2085890b407c78908f909c33409f65f3eb",
-      "content_changed": false
-    },
-    {
-      "repository_path": "submission/Highlights.docx",
-      "source_archive_file": "01_Submission/Highlights.docx",
-      "sha256": "438abada62699427376da123d33c98fc7732274131479925dc9f47998fed1174",
-      "content_changed": false
-    },
-    {
-      "repository_path": "submission/Highlights.txt",
-      "source_archive_file": "01_Submission/Highlights.txt",
-      "sha256": "bc3d37cd6746fd1b1800895f4c017cfe5f3559efba7974f3f92e29f162771875",
-      "content_changed": false
-    },
-    {
-      "repository_path": "submission/Manuscript_Source.zip",
-      "source_archive_file": "01_Submission/Manuscript_Source.zip",
-      "sha256": "c33da88805bed19d3af019c721999d511e62b44ad1a0934024867f84886d4c70",
-      "content_changed": false
-    },
-    {
-      "repository_path": "submission/Metadata.txt",
-      "source_archive_file": "01_Submission/Metadata.txt",
-      "sha256": "a3efbcaa38077b2caf0b63c43bba22482e916ba2dfb90b202a7a101ed3bebddc",
-      "content_changed": false
-    },
-    {
-      "repository_path": "submission/Supplementary_Source.zip",
-      "source_archive_file": "01_Submission/Supplementary_Source.zip",
-      "sha256": "ce1c580b64d60709ee987748533b983380ca51c37a8eb2538e51b67b5b221cc8",
-      "content_changed": false
-    },
-    {
-      "repository_path": "submission/Title_Page.docx",
-      "source_archive_file": "01_Submission/Title_Page.docx",
-      "sha256": "ea77f72a3765ae0356b22f2298e1badc4726a658cad8a088d39b5e111c3cec12",
-      "content_changed": false
-    }
+  "main_pages": 35,
+  "supplement_pages": 60,
+  "complete_pages": 95,
+  "editorial_changes": [
+    "Title",
+    "Figure 1 and caption",
+    "Data and code availability"
   ],
-  "generated_software_capsule": {
-    "path": "submission/Supplementary_Code.zip",
-    "sha256": "7f9aebce9bde6cb863cf01ba7a26bbc20057e88964a2ab242da83899e99e8ff8",
-    "original_scoring_and_verification_implementations_changed": false
+  "previous_manuscript_commit": "ae3697aeb23ee42621b314a8a1b8b9c812f74ee9",
+  "date": "2026-11-19",
+  "scientific_results_changed": false,
+  "pdfs": [
+    "manuscript/kbs.pdf",
+    "manuscript/kbs-supplement.pdf",
+    "manuscript/kbs-full.pdf"
+  ],
+  "source_zip": "manuscript/kbs-source.zip",
+  "files": {
+    "manuscript/PAIR_KBS_Addendum.tex": "27e0bfc60e25786cbd52b6b8ccdd7f5b944ce111b4e62b970a4c6b0bbfdb806b",
+    "manuscript/PAIR_KBS_Bound_Examples.tex": "502cb2c1f66c30ee23b4829cf7b09488fe7fddfcca364a839370ba41b5618e0b",
+    "manuscript/PAIR_KBS_Disclosure_Results.tex": "158cc0b25a6e2759d39cee6f4ecef7aa384be2807b10f203df0f7e5083405331",
+    "manuscript/PAIR_KBS_Evaluation_Contracts.tex": "9505c575000c91337fde753bf8f8e3b3e583782b0fb99f929cfe06543e38d803",
+    "manuscript/PAIR_KBS_Evidence_Extension_Supplement.tex": "18480681bfd4445ac29cf15d22d22f2e47607f8587ba28736eaef925987bf846",
+    "manuscript/PAIR_KBS_Main.bbl": "85f86988fc7ea30ebde2d27592ac7d930edef22401149b44b9add3cb1d5ebcd0",
+    "manuscript/PAIR_KBS_Main.tex": "6a9442fed4f5f0516dc9155a0a8b02c9fb07bbea75920ba3278300cb1ba4e5af",
+    "manuscript/PAIR_KBS_Public_Evaluation_Results.tex": "5edde4fdd1d58d40f1f542f94cf8cfa99ff6417bb9966ebcef4c816302667b61",
+    "manuscript/PAIR_KBS_Public_Evaluation_Supplement.tex": "0180d6bada74358002ec3c2ff0dadaf4a0db3e7d2caed567675fc7d8307733c7",
+    "manuscript/PAIR_KBS_Sequential_Evidence.tex": "5b5f73405a2919c2a8ebadfa7f3365ee2d3037e3d240c50467a50ea387de7c97",
+    "manuscript/PAIR_KBS_Supplement.bbl": "a26542686dfe1bfab0e460542e4ce31303511b68b52a7b1aeca4a7b947a3bae4",
+    "manuscript/PAIR_KBS_Supplement.tex": "0da05696f355d5aef616d611a70cb3ac4a3ffb91f6f60e80958ee12d1b2f1e6a",
+    "manuscript/PAIR_KBS_System_Closure.tex": "3000ccbeaee2d85de8117dd943a3f77798c7db3dc6408ac2445ff77b35a362e0",
+    "manuscript/PAIR_KBS_System_Closure_Supplement.tex": "61db6da1e4403da45686f55a0cc074bc93ccc740ba13bd605d14179f9fa32829",
+    "manuscript/README_SOURCE.txt": "eda54c035eac356efab571b599ec9754cdfa113b783a04bb9d9c0f52577c7e4a",
+    "manuscript/REBUILD.sh": "d28d4d1f6b848e6121c185b1c17adb5ed6ce161aadb947e1c2132863d58d9491",
+    "manuscript/authors.tex": "dd2edf2727cd2c7d6c6f820102b5855731290f27732dde7602e571357b11ebfa",
+    "manuscript/editorial/merge_pdfs.py": "9b46e59986218313b74e78cfa30a495c3b9c876f806ab976761d1c10b83d617e",
+    "manuscript/elsarticle.cls": "ba7a1f25626a79fb39b53888dd826c4ae14d20db5429e236abdaaaf2fdf897ab",
+    "manuscript/figure_sources/draw_figures.py": "4cc58c6f22510595668381fc2cdeac68e6dc6c3bdff330a97f2fe80b0398aba5",
+    "manuscript/figure_sources/plot_data.json": "e170142ee94231a0175e317e9cb1faaec18dfb077309b279eef207b23aaa4c44",
+    "manuscript/figures/comparison_contract.pdf": "f597f9afa763ef68534111007b14fd55975af05fa2e80ec999de949dc809e1fe",
+    "manuscript/figures/figure_01.pdf": "6227d6d3bf2853a4e18e3482a079bf03d827f745315e337ef06bfecc33ee8103",
+    "manuscript/figures/figure_02.pdf": "759849008773dfe9e323fbd952bc2b975a5dcbfc1fd247f1b34acc2a3a501ce4",
+    "manuscript/figures/figure_03.pdf": "ab5fd7566c8c5c1487d537df03e1d34bd19cf21296e4d029ab3b2d2fdf0f5042",
+    "manuscript/figures/figure_04.pdf": "6b8d42037075686ce3dfb7c16bc0e55dd5e68b036656c64a828f641a35fe6aa7",
+    "manuscript/figures/public_target_comparison.pdf": "585a790c49928a762530e443916535a4b0b81e6e13b4913bf1245912998a978b",
+    "manuscript/figures/repair_and_materiality.pdf": "b682fad85337c2fc712f8ae20eb62a7a11e0b0031f0932b1215e02ee811b875e",
+    "manuscript/figures/sequential_disclosure.pdf": "c0ffd5cc2015fafa44cc696ce434a02a65871589e1d82632168f6b87252c2ffc",
+    "manuscript/figures/sequential_disclosure.png": "5d6e72d2d4f9b02dfd200bc1e59953695f3cf3a88b1e47984e6dbcd59e4eed2b",
+    "manuscript/figures/supp_figure_01.pdf": "ce0dc9b66be89a7887e32f3ba850c0fbf6e5cabb9b13475c559fccf172be7e46",
+    "manuscript/figures/supp_figure_02.pdf": "e89aac41cf76ee8ff0e4bd3624e9a11b778b11044c8b14174f43621966224a8d",
+    "manuscript/figures/supp_figure_03.pdf": "19782377a49c0da08ab013a166ebc6d04e3aa8627aca6af91fee8bafe802078d",
+    "manuscript/figures/supp_figure_04.pdf": "df76bc5575ffc37d63a831900ecdb77d09ed81255efd073c35270a043ec7768b",
+    "manuscript/kbs-full.pdf": "5fcc617897ca5bee404018051a594c4381af3a8dea151d27639bc72134794f69",
+    "manuscript/kbs-source.zip": "bdef5d23cf56c78ade6df8af4a5817700b0ab9939a4a19faa80ca6bcc6e324ed",
+    "manuscript/kbs-supplement.pdf": "e2d77ebca4e5fc4b37341476af106edfdb09a98e55069fd24c83ad86a0d40a37",
+    "manuscript/kbs.pdf": "aadad0377bb0c82d50d840f27317ca30377e973a7a55608a3f2015f44e0fa35b",
+    "manuscript/metadata.tex": "8b988fb6845ba2eac060ca77ae5a63e6a949543546a80169d9c2ee8497bacbd9",
+    "manuscript/references.bib": "11a5c30e909d77ab7f8b86cb6a1da5075dde9943acc46d246d6f1a1023de2426",
+    "manuscript/table_style.tex": "eb277124fef7d38cb466b69ca4306f69afb2476f72e05c4eafdf1c261ee64ccf",
+    "manuscript/tables/disclosure_policy_summary.tex": "7ef0cb4140dcb4d131ba81f2c02dfeeb5b3644ac1452adda8a585486fc7c4111",
+    "manuscript/tables/disclosure_tasks.tex": "d50025eb4215cdb02090a3570e204aefddb57fbba64fefc19f1eead5841a2dc4",
+    "manuscript/tables/historical_rq3_controls.tex": "72b67046e56704ae1757c80544dac2875ae28f29aed0c39c70beb0cc7af5d540",
+    "manuscript/tables/logloss_disclosure_controls.tex": "086dd9cf4b5d371e5c1344505a76e60a2a61bf47758c1faca283e0e87d39f34d",
+    "manuscript/tables/mean_repair_materiality.tex": "e744cf5a400add55beeb8f9088142e417b99844138c1791e0fe2acc6905cbf20",
+    "manuscript/tables/pax6_source_qualification.tex": "c79aa6e07194ba81b91dff8003c54c7a176b19f8c077f6ef19d70aea028bd2bf",
+    "manuscript/tables/pearson_open_intervals.tex": "0015e038d90438b6d71b5daaf384f0a8f966a16a86c247828de594e7eea37824",
+    "manuscript/tables/tabarena_task_coverage.tex": "1114d529e5e00b998897742a343e69219e184d491cebb9c85c01e4da0c684e99",
+    "manuscript/tables/target_measure_crossed.tex": "440305558ba999b5d393c25c6d47f60f8ba3a19a7890a901cea8f9f01cc64400",
+    "manuscript/tables/task_deletion_full.tex": "f1d1542531c100456c87749f27670bccbcc02824e19cfc4f5f93e63a8d6d5735",
+    "manuscript/unsrtnat.bst": "2b257bc5d35c5716691f67615b3b29cc718d05b6b998f87473c924dec0a652e9"
   }
 }

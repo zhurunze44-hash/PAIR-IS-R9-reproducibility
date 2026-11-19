@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering\small\setstretch{1.02}\setlength{\tabcolsep}{3.5pt}
+\caption{Mean fraction of archived labels disclosed to the same strict certificate (percent; task-equal weighting). Policies are classical controls.}
+\label{tab:disclosurepolicies}
+\begin{tabularx}{\textwidth}{@{}XN{0.16\textwidth}N{0.16\textwidth}N{0.18\textwidth}@{}}
+\toprule
+\PAIRTableHead{Policy} & \PAIRTableHead{All 26} & \PAIRTableHead{20 AUC} & \PAIRTableHead{6 log loss}\\\midrule
+Random (50 seeds) & 95.76 & 95.16 & 97.73\\
+Predictive entropy & 92.15 & 90.15 & 98.83\\
+Interval width & 77.97 & 74.47 & 89.63\\
+Fixed expected gain & 68.67 & 59.87 & 97.99\\
+Adaptive expected gain & \textbf{65.44} & \textbf{59.21} & \textbf{86.20}\\
+\bottomrule
+\end{tabularx}
+\end{table}

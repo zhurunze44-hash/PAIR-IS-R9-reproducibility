@@ -1,6 +1,6 @@
 # Reproducing the KBS companion materials
 
-## Public software checks
+## Public verification
 
 ```bash
 git clone https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility.git
@@ -13,32 +13,35 @@ python3 reproduction/original_scorers/verify_scorer_source.py
 python3 scripts/verify_kbs_alignment.py
 ```
 
-These commands run the existing exact-algebra and synthetic checks, native-input
-verifier tests, scorer-source checksums and current KBS file correspondence.
-The original verification and scoring implementations are unchanged.
+The commands check the exact-algebra and synthetic fixtures, native-input
+verifier, scorer-source checksums and the current manuscript package. The
+[environment note](ENVIRONMENT.md) describes the public test environment.
 
-## Manuscript build
+## Manuscript and figures
+
+With TeX Live, `latexmk` and Python 3 with `pypdf` installed, run:
 
 ```bash
 bash manuscript/build.sh
 ```
 
-The main document and supplement build in `output/manuscript-build/` using the
-included BBL files. Install a complete TeX Live distribution with
-`texlive-latex-extra`, `texlive-fonts-recommended` and `texlive-science`.
-The archived PDFs are the original Gemini KBS files; rebuilding in another TeX
-environment can change font rendering, line breaks and PDF metadata.
+The build extracts the [source bundle](manuscript/kbs-source.zip) and writes
+`kbs.pdf`, `kbs-supplement.pdf` and `kbs-full.pdf` to
+`output/manuscript-build/`. The checked-in PDFs are the reference copies.
 
-## Original data replay
+Run `python3 manuscript/figure_sources/draw_figures.py` to render the vector
+figures from the supplied plotting data. The script uses Matplotlib, NumPy and
+Liberation Serif. The papers build directly with the supplied vector PDFs.
 
-The 29 frozen SHA256/size identities remain in `evidence/native_input_pins.json`;
-their historical claim mapping remains in `evidence/CLAIM_TO_ARTIFACT_MAP.tsv`.
-Follow [reproduction/README.md](reproduction/README.md) for original-byte checks
-and saved-count diagnostics, and the
-[original scorer guide](reproduction/original_scorers/README.md) for CTRPv2/GDSC
-commands on a host with the corresponding original input matrices.
+## Empirical replay
 
-The recorded author-server replay and its resource-specific availability scope
-are preserved in `evidence/P2_R9_PUBLIC_RESCORE_RECEIPT.json`. Historical version
-names in receipts and source pins identify those original artifacts.
-The KBS alignment does not change their scientific interpretation.
+The [data and code availability statement](DATA_AND_CODE_AVAILABILITY.md)
+identifies the available inputs. The [source README](manuscript/README_SOURCE.txt)
+identifies the separately distributed evidence archive. Run its offline replay
+from an extracted copy after installing its stated Python dependencies.
+
+For original CTRPv2 and GDSC replay, consult the
+[scorer guide](reproduction/original_scorers/README.md) and
+[original input identities](evidence/native_input_pins.json). The historical
+[replay receipt](evidence/P2_R9_PUBLIC_RESCORE_RECEIPT.json) records the
+author-server results.

@@ -1,0 +1,91 @@
+\subsection{Preserving the observation measure through evaluation}\label{subsec:measure}
+Reference qualification specifies which response components a comparison addresses. Its numerical meaning also depends on which observations receive weight. We represent the evaluation contract as
+\begin{equation}\label{eq:comparisoncontract}
+\mathcal C=(\tau,\nu,s,\alpha,\mathcal G),
+\end{equation}
+where $\tau$ binds the response target, reference version, completion and source maps; $\nu$ binds the evaluation units and their weights; $s$ specifies the metric and its orientation; $\alpha$ specifies aggregation across folds or tasks; and $\mathcal G$ declares the admissible changes over which a decision is to hold. A reference completion, a baseline-lookup correction and deletion of a task define different sets $\mathcal G$. They are registered separately.
+
+Let $\Omega$ be the declared set of evaluation-unit identities and write $\nu=\sum_{i\in\Omega}w_i\delta_i$. The weights are those used by the metric: unit masses for a sum or normalized masses for a mean. Stable identity is part of the contract. A native row identifier, a unique compound--cell--fold key, and a key--truth--multiplicity class provide different resolutions of identity and are recorded as such.
+
+\begin{proposition}[Observation-measure preservation]\label{prop:measure}
+Suppose a materialized evaluation table has rows $j\in\Omega'$ with weights $w'_j$ and a verified map $f:\Omega'\to\Omega$ to declared input units. It preserves the score integral of every unitwise function $g:\Omega\to\R$ if and only if
+\begin{equation}\label{eq:measurepreserve}
+\sum_{j:f(j)=i}w'_j=w_i\quad\text{for every }i\in\Omega.
+\end{equation}
+If each stage of a sequence satisfies this identity and preserves the declared target values and predictions under the unit maps, their composition preserves every such score integral.
+\end{proposition}
+\begin{proof}
+Regrouping gives $\sum_jw'_jg(f(j))=\sum_i[\sum_{j:f(j)=i}w'_j]g(i)$. Equality with $\sum_iw_ig(i)$ for every $g$ is equivalent to Eq.~\eqref{eq:measurepreserve}, by testing the indicator of each unit. Composition follows by applying this regrouping identity at each stage.
+\end{proof}
+
+Equation~\eqref{eq:measurepreserve} is the finite-measure form of a bag-semantics check. A many-to-one baseline lookup that retains every original prediction row is a sufficient way to preserve a once-weighted table. If a lookup duplicates row $i$ by a factor $c_i$, the effective masses become proportional to $c_iw_i$. Uniform duplication can leave a normalized metric unchanged; nonuniform duplication changes the empirical distribution. Filtering an uncovered baseline assigns zero mass to the omitted unit. The checker therefore records baseline coverage, right-key uniqueness, retained row identities and effective weights before evaluating a score. Conflicting baseline values are refused until a richer key or a justified aggregation rule is supplied.
+
+\subsection{Repair witnesses and model-decision certificates}\label{subsec:decisioncert}
+A comparison record stores the models, contract identifier, numerical preference, evidence bindings and a task-specific verification witness. We use an error orientation, with smaller values preferred; a larger-is-better metric can be negated. For a declared change $\gamma\in\mathcal G$, let
+\begin{equation}\label{eq:generaldecision}
+\begin{aligned}
+\Delta_{A,B}(\gamma)&=\alpha\!\left(s_A(\gamma)\right)-\alpha\!\left(s_B(\gamma)\right),\\
+[\underline\Delta,\overline\Delta]&=\left[\inf_{\gamma\in\mathcal G}\Delta_{A,B}(\gamma),\ \sup_{\gamma\in\mathcal G}\Delta_{A,B}(\gamma)\right].
+\end{aligned}
+\end{equation}
+The record certifies $A$ when $\overline\Delta<0$, certifies $B$ when $\underline\Delta>0$, and retains a boundary outcome otherwise. Ties, variable strict orders and an unverified production step remain distinguishable fields. In particular, a numerical preference may be unchanged in two observed replays while its historical scoring producer remains unresolved.
+
+\paragraph{Duplicate-key repair}
+For fixed predictions and a common truth--multiplicity support, let $d_k$ be the difference of the two models' original SSE contributions over all records of key $k$. When the lookup multiplier is $c_k$,
+\begin{equation}\label{eq:joinshift}
+D=\sum_kd_k,\qquad D_c=\sum_kc_kd_k
+ =D+\sum_k(c_k-1)d_k.
+\end{equation}
+Subtracting the same baseline from truth and prediction preserves each residual. A baseline join can nevertheless change the SSE comparison through these effective weights. For a correction set $S$, put $u_k=(c_k-1)d_k$; the corrected difference is $D_c-\sum_{k\in S}u_k$.
+
+\begin{proposition}[Minimum key correction for a strict SSE reversal]\label{prop:minrepair}
+Suppose $D_cD<0$. Let $\sigma=\operatorname{sign}(D_c)$ and order the positive helpful contributions $\sigma u_k>0$ as $v_{(1)}\ge v_{(2)}\ge\cdots$. The minimum number of lookup keys whose correction reverses the unchecked strict SSE order is
+\begin{equation}\label{eq:minkeys}
+k^*=\min\left\{k:\sum_{j=1}^kv_{(j)}>|D_c|\right\}.
+\end{equation}
+The same order certificate applies to one-fold $R^2$ when both models share a strictly positive denominator.
+\end{proposition}
+\begin{proof}
+The contribution removed by any $k$ helpful keys is at most the sum of the $k$ largest helpful contributions; unhelpful keys cannot increase it. The first prefix exceeding $|D_c|$ is feasible, and every smaller cardinality is excluded.
+\end{proof}
+
+Pearson and averages of foldwise $R^2$ require additional moments. For Pearson we retain weighted first and second moments and cross-products; for a foldwise $R^2$ comparison we retain SSE and the target centered sum of squares. Key corrections update these sufficient statistics. A feasible repair is accompanied by a checked score, while a minimality claim additionally requires a lower-bound proof. The implementation uses interval bounds and bounded search for Pearson and a per-fold bound with cardinality allocation for mean $R^2$ (Supplementary Section~S18). An unfinished search retains a lower--upper cardinality interval. The one-fold SSE prefix rule is not substituted for these nonlinear comparisons.
+
+\paragraph{Missing scores and task-level robustness}
+For a missing fold score, $\mathcal G$ specifies its legitimate numerical domain while all observed scores remain fixed. Under a mean-within-task-rank rule, only finitely many task-rank regimes occur as the missing score crosses competitors' task means. Evaluating these regimes, including their tie boundaries, provides a conditional winner certificate.
+
+For implementation, let $[L_m,U_m]$ enclose the aggregate error or mean rank of model $m$ over the same declared domain. The sufficient checks
+\begin{equation}\label{eq:intervalcert}
+ U_A<\min_{B\ne A}L_B,\qquad
+ \max_{m\in K}U_m<\min_{j\notin K}L_j
+\end{equation}
+certify, respectively, the unique winner $A$ and a fixed top-$|K|$ member set $K$. These follow by comparing the enclosed scores for every admissible completion. Separate marginal extrema need not occur at the same completion, so this certificate can be conservative. We retain both the analytic interval certificate and complete rank-regime enumeration for the observed missing-fold case.
+
+For a separate task-deletion analysis, let $A$ be the original unique winner and define $d_t=\operatorname{rank}_B(t)-\operatorname{rank}_A(t)$, with smaller ranks preferred. Deleting a set $S$ of complete tasks leaves the pairwise rank-sum difference
+\begin{equation}\label{eq:taskdeletion}
+D(S)=\sum_td_t-\sum_{t\in S}d_t.
+\end{equation}
+The minimum strict overturn is the first descending prefix of $d_t$ exceeding $\sum_td_t$, subject to retaining at least one task. Average ranks are integers or half-integers, so doubled ranks permit an integer proof. This intervention changes the task population and is reported as a conditional stress test; it is distinct from completing an actually absent score.
+
+\input{PAIR_KBS_Sequential_Evidence.tex}
+
+\subsection{From an input contract to a reusable assertion}\label{subsec:workflow}
+Table~\ref{tab:verificationworkflow} connects the two interfaces to one assertion lifecycle. Molecular records supply $(a,h,z)$ and reference/source bindings; model records supply predictions or scores, evaluation-unit identities and a completion domain. JSON Lines and JSON-LD exports link each assertion to its contract, outcome, numerical witness and hashed source members. A changed target receives a new contract, a repair binds both measures, and exact disclosure refines the current evidence state. The assertion identity includes the bound contract and numerical outcome. A reuse request specifies the required reference/source qualification and completion domain; the checker reconstructs the corresponding predicate from its source members. Thus unchanged values under different reference versions remain distinguishable, while truthful disclosure under a fixed contract refines the evidence supporting the same decision target. Source qualification, numerical validity and historical producer status are separate predicates.
+
+\begin{table}[htbp]
+\centering\small\setstretch{1.02}
+\caption{Verification procedure implemented by the local contrast checker and public-evidence adapter. Domain-specific numerical routines supply the witnesses; the common representation binds their conditions to the released assertion.}
+\label{tab:verificationworkflow}
+\begin{tabularx}{\textwidth}{@{}L{0.06\textwidth}L{0.26\textwidth}X@{}}
+\toprule
+\PAIRTableHead{Step} & \PAIRTableHead{Operation} & \PAIRTableHead{Verification output}\\\midrule
+1 & Bind the comparison & Reference/source version; observation identity and weights; target, metric, grouping, missingness/tie policy and admissible changes.\\
+2 & Qualify the reference & For a supplied contrast, check the registered completion and four local witness identities; for a score, bind the resolved target.\\
+3 & Audit materialization & Compare unit masses before/after lookup or filtering; retain coverage and conflicting-value outcomes.\\
+4 & Verify the decision & Recompute the preference and repair witness, or evaluate its bounds over the declared completion domain. Preserve an open bound when the evidence is insufficient.\\
+5 & Emit the assertion & Bind models or measured entities, contract identity, outcome, numerical witness and source-member digests. Keep production provenance as a separate field.\\
+6 & Query or update & Return only assertions satisfying the requested contract and predicate. Truthful archived-field disclosure refines the current completion domain; a changed reference, measure, target or new measurement requires a correspondingly rebound and reverified assertion.\\\bottomrule
+\end{tabularx}
+\end{table}
+
+Queries retrieve changed mean comparisons, completion-certified winners, unresolved numerical boundaries and label-disclosure budgets. Verification reconstructs the corresponding predicates and rejects rehashed assertions whose values or domain semantics disagree with the source. Source identity, numerical validity and production status remain separate fields.

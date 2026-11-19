@@ -1,4 +1,4 @@
-\begin{thebibliography}{33}
+\begin{thebibliography}{38}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -246,7 +246,8 @@ Omar Bennouna, Amine Bennouna, Saurabh Amin, and Asuman Ozdaglar.
 Yuhan Ye, Saurabh Amin, and Asuman Ozdaglar.
 \newblock Learning decision-sufficient representations for linear optimization.
 \newblock In \emph{Proceedings of the Conference on Learning Theory}, volume
-  336 of \emph{Proceedings of Machine Learning Research}, 2026.
+  336 of \emph{Proceedings of Machine Learning Research}, pages 6924--6975,
+  2026.
 \newblock URL \url{https://proceedings.mlr.press/v336/ye26a.html}.
 
 \bibitem[Kossen et~al.(2021)Kossen, Farquhar, Gal, and
@@ -256,5 +257,46 @@ Jannik Kossen, Sebastian Farquhar, Yarin Gal, and Tom Rainforth.
 \newblock In \emph{Proceedings of the 38th International Conference on Machine
   Learning}, volume 139, pages 5753--5763, 2021.
 \newblock URL \url{https://proceedings.mlr.press/v139/kossen21a.html}.
+
+\bibitem[Hara et~al.(2024)Hara, Matsuura, Honda, and Ito]{hara2024vma}
+Satoshi Hara, Mitsuru Matsuura, Junya Honda, and Shinji Ito.
+\newblock Active model selection: A variance minimization approach.
+\newblock \emph{Machine Learning}, 113:\penalty0 8327--8345, 2024.
+\newblock \doi{10.1007/s10994-024-06603-1}.
+
+\bibitem[Okanovic et~al.(2025)Okanovic, Kirsch, Kasper, Hoefler, Krause, and
+  G{\"u}rel]{okanovic2025selector}
+Patrik Okanovic, Andreas Kirsch, Jannes Kasper, Torsten Hoefler, Andreas
+  Krause, and Nezihe~Merve G{\"u}rel.
+\newblock All models are wrong, some are useful: Model selection with limited
+  labels.
+\newblock In \emph{Proceedings of the 28th International Conference on
+  Artificial Intelligence and Statistics}, volume 258, pages 2035--2043, 2025.
+\newblock URL \url{https://proceedings.mlr.press/v258/okanovic25a.html}.
+
+\bibitem[Kay et~al.(2025)Kay, Van~Horn, Maji, Sheldon, and Beery]{kay2025coda}
+Justin Kay, Grant Van~Horn, Subhransu Maji, Daniel Sheldon, and Sara Beery.
+\newblock Consensus-driven active model selection.
+\newblock In \emph{Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pages 4594--4604, 2025.
+\newblock URL
+  \url{https://openaccess.thecvf.com/content/ICCV2025/html/Kay_Consensus-Driven_Active_Model_Selection_ICCV_2025_paper.html}.
+
+\bibitem[Kuboyama(2026)]{kuboyama2026labels}
+Tetsuji Kuboyama.
+\newblock How many labels does model choice need? certificates and budgets for
+  selective prediction, 2026.
+\newblock URL \url{https://arxiv.org/abs/2609.18622v1}.
+\newblock Preprint, arXiv:2609.18622v1.
+
+\bibitem[McDonnell et~al.(2024)McDonnell, Plech, Livesey, Gerasimavicius, Owen,
+  Hall, FitzPatrick, Marsh, and Kudla]{mcdonnell2024pax6}
+Alexander~F. McDonnell, Marcin Plech, Benjamin~J. Livesey, Lukas
+  Gerasimavicius, Liusaidh~J. Owen, Hildegard~Nikki Hall, David~R. FitzPatrick,
+  Joseph~A. Marsh, and Grzegorz Kudla.
+\newblock Deep mutational scanning quantifies {DNA} binding and predicts
+  clinical outcomes of {PAX6} variants.
+\newblock \emph{Molecular Systems Biology}, 20, 2024.
+\newblock \doi{10.1038/s44320-024-00043-8}.
 
 \end{thebibliography}

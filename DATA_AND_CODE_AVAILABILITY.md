@@ -1,26 +1,23 @@
 # Data and code availability
 
-The public companion repository is
-https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility.
-The current files accompany the KBS manuscript, with the existing URL retained
-for continuity of earlier software citations.
+This repository provides the current KBS manuscript, its LaTeX and figure
+sources, public verification scripts, and the original CTRPv2 and GDSC
+scoring programs. See the [scorer guide](reproduction/original_scorers/README.md)
+for the pinned historical implementation.
 
-Included materials are the unchanged Gemini KBS main and supplementary PDFs,
-matching compact LaTeX sources, bibliography and BBL files, vector figures,
-submission documents, existing verification software, 29 frozen input SHA256
-identities, original CTRPv2/GDSC scorers and the historical scoring-replay receipt.
-`evidence/KBS_FILE_ALIGNMENT.json` records the manuscript/source correspondence.
+Public evaluation inputs come from [DrEval, Zenodo record 23916090](https://zenodo.org/records/23916090),
+AMLB and TabArena. Supplementary Sections S17–S23 identify the exact benchmark
+snapshots. Sections S6, S15, S22 and S25 describe the molecular data sources
+and available replays.
 
-The historical author-server receipt records matching 700/700 CTRPv2 and
-420/420 GDSC2 metric fields. Those scorer source files and the receipt are
-retained byte-for-byte. This repository alignment changes document placement
-and version references; it does not rerun the underlying experiments.
+The research archive accompanying the manuscript is distributed separately.
+It contains the frozen analysis inputs, offline replay programs and verification
+records. Its version and checksums appear in the
+[source README](manuscript/README_SOURCE.txt).
 
-Large frozen prediction matrices and historical producer inputs follow the
-availability scope described in the paper and original evidence documents.
-Use `NATIVE_DATA_REQUIREMENTS.md`, `evidence/native_input_pins.json` and
-`reproduction/original_scorers/README.md` to identify the inputs for an
-authorized replay. Third-party resources retain their provider terms.
-
-Use the exact commit when identifying the repository snapshot. The original
-software rights notice and data redistribution conditions remain in effect.
+The original scorer replay requires the frozen prediction matrices and other
+inputs identified in the [native data requirements](NATIVE_DATA_REQUIREMENTS.md)
+and [input pins](evidence/native_input_pins.json). The
+[historical replay receipt](evidence/P2_R9_PUBLIC_RESCORE_RECEIPT.json) records
+700 matching CTRPv2 fields and 420 matching GDSC2 fields. Third-party data
+remain subject to their original provider terms. See the [rights notice](RIGHTS_NOTICE.md).

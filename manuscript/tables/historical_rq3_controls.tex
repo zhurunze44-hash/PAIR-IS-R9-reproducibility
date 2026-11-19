@@ -1,0 +1,14 @@
+\begin{table}[htbp]
+\centering\small\setstretch{1.08}
+\caption{Benchmark ranking changes and cross-fold persistence under \paireval (RQ3). Reversals are directed pair--metric outcomes; the denominator for persistence is ten folds.}
+\label{tab:rq3_summary}
+\begin{tabularx}{\textwidth}{@{}L{0.22\textwidth}L{0.15\textwidth}L{0.13\textwidth}X@{}}
+\toprule
+\PAIRTableHead{Cohort and support} & \PAIRTableHead{Median reversal n$R^2$/n$r$} & \PAIRTableHead{Persistent outcomes} & \PAIRTableHead{Ranking and confirmation result}\\\midrule
+CTRPv2: 7 models, registered model-specific supports & $0.500/0.357$ & $5$ ($3/2$ by metric) & Archived fixed-prediction realization on registered supports; mean n$R^2$ leader shifts from MultiOmicsNeuralNetwork to DIPK.\\
+GDSC2: 6-model common support & $0.30/0.30$ & $0$ & Fold sensitivity exceeds $0.10$, but $0$ persistent pairs ($\ge 7/10$); prespecified two-part primary confirmation is not met.\\
+GDSC1: 6-model common support & $0.37/0.33$ & $0$ & Secondary cohort; fold-level sensitivity occurs with $0$ persistent pairs and cannot substitute for GDSC2.\\
+Fingerprint-only common support: GDSC2 / GDSC1 & $0.33/0.33$; $0.42/0.33$ & $0$ in both & Secondary support expansion preserves $0$ persistent outcomes in both cohorts.\\
+Symmetric-HPO control: 560 jobs & Not summarized here & $1$ of $5$ historical outcomes & Only MultiOmicsNeuralNetwork--RandomForest n$R^2$ retains $\ge 7/10$-fold persistence under new training.\\\bottomrule
+\end{tabularx}
+\end{table}

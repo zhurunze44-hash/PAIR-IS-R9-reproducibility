@@ -1,0 +1,18 @@
+\paragraph{Binding a relation and a model decision}
+Table~\ref{tab:boundexamples} instantiates the common fields for a molecular relation and a model decision. The first binds signed measurements to a registered reference; the second binds a model preference to a measured population and repair witness. The molecular source status is retained alongside its conditional readout.
+
+\begin{table}[htbp]
+\centering\small\setstretch{1.03}
+\caption{Two actual contract instances in the joint graph. The molecular example is a conditional processed-input relation, with original source operators unbound. Full identifiers and numerical witnesses are retained in the accompanying records.}
+\label{tab:boundexamples}
+\begin{tabularx}{\textwidth}{@{}L{0.10\textwidth}L{0.42\textwidth}X@{}}
+\toprule
+\PAIRTableHead{Field} & \PAIRTableHead{Molecular relation} & \PAIRTableHead{Model comparison}\\\midrule
+$\tau$ & CPSF1 minus CPSF2 at assay event \nolinkurl{V8EVT|ATP5G3|-|5851|5850}; consensus response and registered OLS reference R1. & EnsembleMF versus RandomForestAEMolGNet; fixed baseline-normalized response and predictions.\\
+$\nu$ & Two measured query rows and the ordered $10{,}153$-row reference; signs enter the linear readout. & Common $112{,}066$-row multiset; each original prediction row retained once after lookup repair.\\
+$s,\alpha$ & $a^\top Y_E-h^\top Y_R$; one complete signed comparison. & Normalized $R^2$ within each fold; arithmetic mean across ten folds.\\
+$\mathcal G$ & Fixed reference identity per assertion; a declared reference update creates a new binding. & Correct lookup multiplicities while keeping predictions and native observation multiplicities fixed.\\
+Witness & Explicit $a,h$, reference and completion bindings, and readout identity; source status \texttt{UNBOUND}. & Corrected score moments and six-key minimum repair witness; source snapshot and scoring path bound.\\
+Outcome & R1 readout $0.135582$; reference verified, source unbound. & A-minus-B mean margin changes from $+0.000765$ to $-0.001172$ after complete lookup repair.\\\bottomrule
+\end{tabularx}
+\end{table}

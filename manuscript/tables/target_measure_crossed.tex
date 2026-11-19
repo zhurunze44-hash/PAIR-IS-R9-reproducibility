@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering\small\setstretch{1.02}\setlength{\tabcolsep}{3.5pt}
+\caption{Strict pair-order sensitivities in the frozen 29-model, ten-fold crossed analysis. Undefined Pearson scores are omitted; means require ten defined folds.}
+\label{tab:crossedmeasure}
+\begin{tabularx}{\textwidth}{@{}L{0.25\textwidth}XL{0.13\textwidth}N{0.1\textwidth}N{0.11\textwidth}@{}}
+\toprule
+\PAIRTableHead{Before} & \PAIRTableHead{After} & \PAIRTableHead{Metric} & \PAIRTableHead{Fold} & \PAIRTableHead{Mean}\\\midrule
+FULL native & FULL joined & MSE & 24 & 2\\
+FULL native & FULL joined & Pearson & 19 & 0\\
+ID native & ID refit joined & MSE & 19 & 1\\
+ID native & ID refit joined & Pearson & 20 & 1\\
+FULL native & ID native & MSE & 207 & 19\\
+FULL native & ID native & Pearson & 135 & 10\\
+FULL joined & ID refit joined & MSE & 200 & 18\\
+FULL joined & ID refit joined & Pearson & 140 & 11\\
+Fixed ID joined & ID refit joined & MSE & 0 & 0\\
+Fixed ID joined & ID refit joined & Pearson & 0 & 0\\
+ID native & Refit ID restored weights & MSE & 0 & 0\\
+ID native & Refit ID restored weights & Pearson & 0 & 0\\
+\bottomrule
+\end{tabularx}
+\end{table}

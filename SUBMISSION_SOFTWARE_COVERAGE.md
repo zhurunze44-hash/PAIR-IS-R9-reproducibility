@@ -2,14 +2,11 @@
 
 | Directory or file | Contents |
 |---|---|
-| `manuscript/` | Original Gemini KBS main PDF, supplementary PDF, matching compact sources, bibliography, BBL files and vector figures |
-| `submission/` | Original KBS cover letter, highlights, title page, declaration, metadata, captions and matching source ZIPs |
-| `verification/` | Existing exact-algebra and synthetic comparator checks |
-| `reproduction/` | Existing native-input verification, count diagnostics and original independent scorers |
-| `evidence/` | Existing historical receipts and source pins, plus KBS file correspondence |
+| [manuscript/](manuscript/) | Current paper, supplement, LaTeX, bibliography, tables, and editable figure sources |
+| [verification/](verification/) | Exact-algebra and synthetic checks |
+| [reproduction/](reproduction/) | Native-input verification and original CTRPv2 and GDSC scorers |
+| [evidence/](evidence/) | Manuscript checksums and historical source pins and receipts |
+| [submission/](submission/) | Submission documents for the 12 November manuscript |
 
-The repository update aligns filenames, entry points, citation information and
-documentation with the KBS paper. Scientific manuscript text, reported results,
-submission wording, original scorers and historical receipts are unchanged.
-The code and input coverage remains the scope described in the paper and the
-original availability documents.
+See [data and code availability](DATA_AND_CODE_AVAILABILITY.md) for empirical
+replay coverage.

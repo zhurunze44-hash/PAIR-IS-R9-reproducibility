@@ -1,6 +1,14 @@
 # KBS repository alignment
 
-Date: 12 November 2026.
+## 19 November 2026
+
+- Updated the current paper and supplement to the 35- and 60-page versions.
+- Aligned the title, workflow figure and data and code availability statement
+  with the editable sources and compiled PDFs.
+- Added a combined PDF and a source bundle with editable figures and tables.
+- Updated the citation, build instructions and manuscript file checksums.
+
+## 12 November 2026
 
 - Replaced the active IS manuscript directory with the original Gemini KBS
   paper: 26-page main article and 46-page supplement.

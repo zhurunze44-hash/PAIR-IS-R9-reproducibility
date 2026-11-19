@@ -13,7 +13,7 @@ Table~\ref{tab:native-type} retains the actual archived query distribution. The 
 \caption{Retrospective K562 fold-0 type distribution. The table records one fixed reference support.}
 \label{tab:native-type}
 \begin{tabularx}{\textwidth}{@{}Xrrl@{}}
-\toprule Query type & Requests & Retained & Frozen eligibility label\\\midrule
+\toprule \PAIRTableHead{Query type} & \PAIRTableHead{Requests} & \PAIRTableHead{Retained} & \PAIRTableHead{Frozen eligibility label}\\\midrule
 Q1: single cell & 2,744 & 0 & Not identifiable\\
 Q2: same-event contrast & 222 & 222 & Comparative assertable\\
 Q3: same-perturbation contrast & 32 & 0 & Not identifiable\\
@@ -38,7 +38,7 @@ Binary estimability depends on connectivity, whereas precision depends continuou
 \caption{Structural eligibility under six retrospective K562 supports. Correct classical graph connectivity and exact row-space criteria attain 100\% label accuracy in every row.}
 \label{tab:graph-stress-s}
 \begin{tabularx}{\textwidth}{@{}Xrrr@{}}
-\toprule Design condition & Nonestimable requests & Accept-all accuracy & Type-only accuracy\\\midrule
+\toprule \PAIRTableHead{Design condition} & \PAIRTableHead{Nonestimable requests} & \PAIRTableHead{Accept-all accuracy} & \PAIRTableHead{Type-only accuracy}\\\midrule
 Original connected support & 0 & 100.00\% & 24.10\%\\
 Remove 18 event-vertex TRAIN edges & 236,877 & 97.67\% & 26.43\%\\
 Remove 4 perturbation-vertex TRAIN edges & 81,042 & 99.20\% & 23.64\%\\
@@ -74,7 +74,7 @@ The retrospective event hash partitions $561$ TRAIN, $277$ CAL and $302$ TEST ev
 \caption{Retrospective, event-held-out Q4 selection results. Reported error is wrong direction among accepted TEST rectangles; rules are evaluated on the same held-out event panel.}
 \label{tab:q4-selection}
 \begin{tabularx}{\textwidth}{@{}Xrrr@{}}
-\toprule Rule & TEST coverage & Error among accepted & Error fraction over all TEST\\\midrule
+\toprule \PAIRTableHead{Rule} & \PAIRTableHead{TEST coverage} & \PAIRTableHead{Error among accepted} & \PAIRTableHead{Error fraction over all TEST}\\\midrule
 Classical pooled absolute residual & 7.56\% & 11.84\% & 0.894\%\\
 Regulator-scale MAD & 6.65\% & 13.03\% & 0.867\%\\
 Regulator-pair-scale MAD & 7.09\% & 11.30\% & 0.801\%\\
@@ -158,8 +158,8 @@ The archived matched synthetic fixture contains $89$ models: $1$ always rejected
 Table~\ref{tab:evidence-ledger} connects the main findings to their evidence level. Exact-rational scripts, processed-data arithmetic, metadata geometry and source-bound assay replay have distinct inputs and interpretation.
 \begin{longtable}{@{}L{0.20\textwidth}L{0.35\textwidth}L{0.36\textwidth}@{}}
 \caption{Consolidated findings and reproduction scope.}\label{tab:evidence-ledger}\\
-\toprule Study & Retained result & Evidence scope\\\midrule\endfirsthead
-\toprule Study & Retained result & Evidence scope\\\midrule\endhead
+\toprule \PAIRTableHead{Study} & \PAIRTableHead{Retained result} & \PAIRTableHead{Evidence scope}\\\midrule\endfirsthead
+\toprule \PAIRTableHead{Study} & \PAIRTableHead{Retained result} & \PAIRTableHead{Evidence scope}\\\midrule\endhead
 S1/S16 algebraic checks & Exact-rational completion, source and loss witnesses & Constructed verification via \nolinkurl{verification/independent_contract_checks.py}.\\
 RQ1 subspace retention & K562 $2{,}635/9{,}945$; ENCODE $56{,}395/973{,}298$ & Dimensions accumulated over mask exposures, with frozen processed-data summaries.\\
 RQ1 replicate structure & K562 $\widehat S=0.082$--$0.128$; HEK293T $0.026$--$0.054$ & Aggregate cross-channel structure on assay-specific scales.\\

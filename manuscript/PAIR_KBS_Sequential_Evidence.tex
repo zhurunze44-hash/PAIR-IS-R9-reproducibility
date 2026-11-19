@@ -1,0 +1,22 @@
+\subsection{Sequential evidence states under a fixed comparison contract}\label{subsec:sequential}
+A comparison can become decidable as archived evidence is disclosed. Let $E_t$ contain the disclosed field identities and values, and let $\mathcal G(E_t;\mathcal C)$ contain all completions consistent with those observations under the fixed contract. Each exact archived-field disclosure restricts this set to completions that agree with the newly revealed value.
+
+\begin{proposition}[Persistence under truthful disclosure]\label{prop:disclosure}
+If the actual frozen outcome belongs to $\mathcal G(E_0;\mathcal C)$ and each disclosure returns its exact archived value, the outcome remains in every subsequent completion set. A strict model preference holding throughout one such set remains valid under every later truthful disclosure, regardless of the acquisition policy.
+\end{proposition}
+\begin{proof}
+Each disclosure intersects the previous set with a constraint satisfied by the actual outcome. The sets are nested and retain that outcome. A universal strict inequality over one set also holds over each of its subsets.
+\end{proof}
+
+\paragraph{Shared-label certificates for fixed predictions.}
+On a fixed pool of $n$ canonical rows, let $v_i(c)$ be the contribution to the advantage of model $A$ when row $i$ has class $c$. For log loss, with the cache's fixed normalization and clipping, set $v_i(c)=\log p_A(c\mid x_i)-\log p_B(c\mid x_i)$. Then $D=\sum_i v_i(y_i)=n(L_B-L_A)$. If $O$ is the disclosed set, its sharp endpoints over shared unknown labels are
+\[
+ \underline D=\sum_{i\in O}v_i(y_i)+\sum_{i\notin O}\min_c v_i(c),\qquad
+ \overline D=\sum_{i\in O}v_i(y_i)+\sum_{i\notin O}\max_c v_i(c).
+\]
+The two models use the same label completion, rather than independent worst cases for their losses. For binary AUC, let $r_{mi}$ denote the average rank of model $m$'s frozen score. Its advantage has numerator $D=\sum_i 2(r_{Ai}-r_{Bi})y_i$ and positive denominator $2n_+n_-$. Thus the sign is certified by optimizing this integer numerator subject to $1\leq\sum_i y_i\leq n-1$. The implementation enforces this class-nondegeneracy constraint as well as disclosed labels. Both endpoint problems have ordinary linear-programming formulations.
+
+A positive lower endpoint certifies $A$ and a negative upper endpoint certifies $B$. The log-loss replay uses the frozen numerator tolerance $10^{-8}$; AUC uses strict integer signs. The executable verifier encodes the cached contrast table and tolerance as exact dyadic integers. Its certificate therefore concerns that table; the original cache-to-metric replay supplies the separate numerical binding. Policy probabilities affect the order of disclosure, while the certificate does not assume that they are calibrated.
+
+\paragraph{Binding the action as well as its answer.}
+Each sequential assertion records the fixed pool, metric, completion domain, action type, revealed row identities, endpoint witness and cost unit. Revealing an old label is charged as one archived record in the replay. A new assay observation needs an observation model linking its return to the bound outcome, along with its batch and cost contract. Updating a reference or replacing an old measurement can change $\tau$ and requires a new comparison version. This typing makes certificate persistence and the meaning of an acquisition budget independently checkable.

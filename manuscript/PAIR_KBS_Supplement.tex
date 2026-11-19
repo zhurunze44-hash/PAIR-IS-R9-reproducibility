@@ -1,5 +1,5 @@
 \documentclass[11pt]{article}
-\usepackage[margin=0.87in]{geometry}
+\usepackage[a4paper,margin=0.87in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
 \usepackage{amsmath,amssymb,mathtools,amsthm}
@@ -15,6 +15,7 @@
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xurl}
+\usepackage{placeins}
 \hypersetup{pdfauthor={Runze Zhu; Guanfeng Li},pdftitle={PAIR Supplementary Information}}
 \newcommand{\method}{PAIR\xspace}\newcommand{\pairkg}{PAIR-KG\xspace}\newcommand{\paireval}{PAIR-Eval\xspace}
 \newcommand{\compiler}{PAIR-Compile\xspace}\newcommand{\R}{\mathbb{R}}
@@ -23,12 +24,13 @@
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\thefigure}{S\arabic{figure}}
 \renewcommand{\theequation}{S\arabic{equation}}
-\setstretch{1.10}\setlength{\parindent}{1em}\setlength{\parskip}{0pt}
+\setstretch{1.08}\setlength{\parindent}{1em}\setlength{\parskip}{0pt}
 \setlength{\emergencystretch}{2em}
 \renewcommand{\arraystretch}{1.22}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \renewcommand{\tabularxcolumn}[1]{>{\raggedright\arraybackslash}p{#1}}
 \captionsetup{font=small,labelfont=bf,skip=9pt}
+\input{table_style.tex}
 \setlist{nosep,leftmargin=*}\raggedbottom
 \renewcommand{\topfraction}{0.92}
 \renewcommand{\textfraction}{0.08}
@@ -39,16 +41,16 @@
 \setlength{\@fpbot}{0pt plus 1fil}
 \makeatother
 \setcounter{tocdepth}{1}
-\title{\textbf{Supplementary Information}\\[0.6em]\large PAIR: Verifiable quantitative knowledge and model comparison from incomplete experimental references}
+\title{\textbf{Supplementary Information}\\[0.6em]\large PAIR: A Framework for Verifiable Quantitative Knowledge Representation and Model Comparison under Incomplete Evidence}
 \author{Runze Zhu \quad Guanfeng Li$^{*}$\\[0.4em]
 \small School of Information Engineering, Ningxia University, Yinchuan, China\\[0.25em]
 \small $^{*}$Corresponding author: \texttt{ligf@nxu.edu.cn}}
 \date{}
 \begin{document}
 \maketitle
-\noindent This Supplementary Information provides the complete algebraic derivations, molecular-screen preprocessing protocols, pharmacogenomic evaluation procedures, conditional decision certificates, and reproducibility manifests supporting the main manuscript. Sections~S1--S4 present the foundational subspace geometry and primary empirical analyses; Section~S5 develops conditional quadratic decision and information certificates; Section~S6 documents verification scripts, SHA256 artifact digests, and reproducibility scopes; Section~S7 synthesizes methodological relationships to classical estimability, provenance, and evaluation frameworks; Section~S8 reports the post-hoc comparison-supervision diagnostic; Section~S9 analyzes reference-version sensitivity across inner splits; Sections~S10--S15 (\texttt{PAIR\_KBS\_Addendum.tex}) detail query-type stratification, reference-support effective resistance, four-cell selection dependence, source-ledger refinement, bounded-polytope LP controls, and the consolidated evidence ledger; and Section~S16 characterizes universal completion invariance across the full generalized-inverse family.
+\noindent This Supplementary Information provides the complete algebraic derivations, molecular-screen preprocessing protocols, pharmacogenomic evaluation procedures, conditional decision certificates, and reproducibility manifests supporting the main manuscript. Sections~S1--S4 present the foundational subspace geometry and primary empirical analyses; Section~S5 develops conditional quadratic decision and information certificates; Section~S6 documents verification scripts, SHA256 artifact digests, and reproducibility scopes; Section~S7 synthesizes methodological relationships to classical estimability, provenance, and evaluation frameworks; Section~S8 reports the post-hoc comparison-supervision diagnostic; Section~S9 analyzes reference-version sensitivity across inner splits; Sections~S10--S15 (\texttt{PAIR\_KBS\_Addendum.tex}) detail query-type stratification, reference-support effective resistance, four-cell selection dependence, source-ledger refinement, bounded-polytope LP controls, and the consolidated evidence ledger; Section~S16 characterizes universal completion invariance across the full generalized-inverse family; and Sections~S17--S21 document the public common-support target study, observation-measure audit, repair witnesses, missing-score/task bounds, canonical prediction replay and integrated comparison-object implementation.
 
-\begingroup\small\setstretch{1.0}\setlength{\cftbeforesecskip}{1pt}
+\begingroup\small\setstretch{0.94}\setlength{\cftbeforesecskip}{0pt}
 \tableofcontents\endgroup
 \clearpage
 
@@ -131,7 +133,45 @@ F_1&(1,0)&3&0\\
 F_2&(0,1)&1&1
 \end{array}.
 \]
-Thus identical rows, responses and query coefficients can produce different completed numbers \emph{and} different source-safety verdicts under two valid but distinct completion operators. Under this source ledger, $F_1$ yields a source-safe readout ($J_1=0, z_{F_1}=3$) whereas $F_2$ leaves uncancelled source exposure ($J_2=1, z_{F_2}=1$), demonstrating why $F_R$ must be registered before outcome inspection. The exact identity $h_kX_R=aX_E$ and both source readouts are verified in exact rational arithmetic by \texttt{VERIFY\_COMPLETION\_SOURCE\_CASE.py}.
+Thus identical rows, responses and query coefficients can produce different completed numbers \emph{and} different source-safety verdicts under two valid but distinct completion operators. Under this source ledger, $F_1$ yields a source-safe readout ($J_1=0, z_{F_1}=3$) whereas $F_2$ leaves uncancelled source exposure ($J_2=1, z_{F_2}=1$), demonstrating why $F_R$ must be registered before outcome inspection. The exact identity $h_kX_R=aX_E$ and both source readouts are verified in exact rational arithmetic by \nolinkurl{verification/independent_contract_checks.py}.
+
+\subsubsection{Registered-completion source gate $\mathcal{L}(F_R)$ versus classical augmented-design estimability $\mathcal{L}^*$}
+\label{supp:registered-vs-augmented}
+Let $U = X_E N_R$ where $N_R$ spans $\ker(X_R)$, and fix a registered generalized-inverse completion operator $F_R \in \mathfrak{F}(X_R)$ satisfying $X_R F_R X_R = X_R$. Under $F_R$, the PAIR-KG joint qualification gate is
+\[
+\mathcal{L}(F_R) = \left\{ a \in \R^{n_E} : a^\top U = 0,\; a^\top J_{F_R} = 0 \right\}, \qquad J_{F_R} = R_E - X_E F_R R_R.
+\]
+By contrast, in a classical augmented linear model that treats both $\theta \in \R^p$ and the declared source vector $u \in \R^q$ as joint fixed effects under the augmented reference design $[X_R\ \ R_R]$ and evaluation design $[X_E\ \ R_E]$, the maximal subspace of simultaneously reference-estimable and source-canceling evaluation contrasts is
+\[
+\mathcal{L}^* = \left\{ a \in \R^{n_E} : \exists h \in \R^{n_R}\ \text{such that}\ h^\top X_R = a^\top X_E\ \text{and}\ h^\top R_R = a^\top R_E \right\}.
+\]
+
+\begin{proposition}[Inclusion and strictness of the registered-completion gate]\label{prop:LFR_subset_Lstar}
+For every valid generalized inverse $F_R \in \mathfrak{F}(X_R)$, the registered-completion source-safe subspace satisfies
+\[
+\mathcal{L}(F_R) \subseteq \mathcal{L}^*,
+\]
+and the inclusion can be strict ($\mathcal{L}(F_R) \subsetneq \mathcal{L}^*$).
+\end{proposition}
+\begin{proof}
+Suppose $a \in \mathcal{L}(F_R)$. Because $a^\top U = 0$, Theorem~1 implies $a^\top X_E = c^\top X_R$ for some $c \in \R^{n_R}$. Define the registered witness $h^\top = a^\top X_E F_R \in \R^{1 \times n_R}$. Using $X_R F_R X_R = X_R$, we have
+\[
+h^\top X_R = a^\top X_E F_R X_R = c^\top X_R F_R X_R = c^\top X_R = a^\top X_E.
+\]
+Moreover, $a^\top J_{F_R} = a^\top (R_E - X_E F_R R_R) = a^\top R_E - h^\top R_R = 0$, so $h^\top R_R = a^\top R_E$. Thus $h$ witnesses $a \in \mathcal{L}^*$, establishing $\mathcal{L}(F_R) \subseteq \mathcal{L}^*$.
+
+To see that the inclusion can be strict, consider the following constructed mathematical counterexample (not a biological assay result):
+\[
+X_R = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \qquad R_R = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \qquad X_E = \begin{bmatrix} 1 \end{bmatrix}, \qquad R_E = \begin{bmatrix} 1 \end{bmatrix}, \qquad a = 1.
+\]
+If the registered completion operator is the unweighted Moore--Penrose pseudoinverse $F_R = X_R^+ = \begin{bmatrix} 1/2 & 1/2 \end{bmatrix}$, then the registered witness is $h^\top = a^\top X_E F_R = \begin{bmatrix} 1/2 & 1/2 \end{bmatrix}$, which yields a nonzero source residual
+\[
+a^\top J_{F_R} = a^\top R_E - h^\top R_R = 1 - \begin{bmatrix} 1/2 & 1/2 \end{bmatrix}\begin{bmatrix} 1 \\ 0 \end{bmatrix} = \frac{1}{2} \neq 0.
+\]
+Hence $a \notin \mathcal{L}(X_R^+)$ and PAIR-KG refuses the query as \texttt{SOURCE\_UNSAFE} under $F_R = X_R^+$. However, choosing the alternative linear lift $h_\star = \begin{bmatrix} 1 & 0 \end{bmatrix}^\top$ satisfies both $h_\star^\top X_R = 1 = a^\top X_E$ and $h_\star^\top R_R = 1 = a^\top R_E$, so $a \in \mathcal{L}^*$.
+\end{proof}
+
+\noindent\textbf{Methodological interpretation.} Proposition~\ref{prop:LFR_subset_Lstar} clarifies the exact operational boundary of PAIR-KG: $\mathcal{L}(F_R)$ certifies whether the \emph{already-registered estimator} $\widehat{\theta}_R = F_R Y_R$ cancels the declared sources, whereas $\mathcal{L}^*$ characterizes whether \emph{there exists any} linear reference lift that cancels the sources in an augmented fixed-effect design. Consequently, a fixed-$F_R$ gate can have narrower acceptance coverage than $\mathcal{L}^*$ and is never claimed to outperform classical augmented-design estimability in coverage; conversely, narrower coverage does not make queries passing $\mathcal{L}(F_R)$ unsafe or erroneous, because every $a \in \mathcal{L}(F_R)$ is guaranteed to belong to $\mathcal{L}^*$ and to be source-invariant under its bound completion $F_R$.
 
 \subsubsection{Query-local verification witness and composition closure}
 \label{supp:localwitness}
@@ -182,7 +222,7 @@ A terminal records why a requested assertion is emitted or refused. Table~\ref{t
 \small
 \begin{tabularx}{\textwidth}{@{}L{0.25\textwidth}X@{}}
 \toprule
-Terminal & Meaning \\
+\PAIRTableHead{Terminal} & \PAIRTableHead{Meaning} \\
 \midrule
 \texttt{MEASUREMENT\_ONLY} & A study result exists, but the requested relation has not been promoted to an assertion. \\
 \texttt{ATOMIC\_ASSERTABLE} & A single atomic relation is measured, identifiable, source-safe and numerically resolved. \\
@@ -200,7 +240,7 @@ Terminal & Meaning \\
 \subsection{Numerical validation and rank agreement}
 The historical bottom-up audit record reports reconstruction of the K562 fold-0 reference design as a $10{,}154\times933$ matrix. Exact bipartite connectivity, SVD and pivoted rank-revealing QR all give rank 932. An early implementation incorrectly used the diagonal of an \emph{unpivoted} QR factorization as a rank diagnostic and returned rank 268. This was a numerical-certification defect, not a change in the underlying legal subspace.
 
-Version 1.0.1 introduced pivoted RRQR, retained SVD and null-space checks, propagated solver disagreement to \texttt{NUMERICALLY\_UNRESOLVED}, and applied the frozen scale-aware legality tolerance. The repaired unit suite passed 39/39 tests. There were zero status changes or quantitative-answer changes. That historical record reports independent recomputation of all 3,125 statuses and all 349 quantitative answers to numerical precision. The frozen query-results SHA256 is \texttt{\seqsplit{31d1a33b84c49df325ef3480fe4ddbb400293c4ff819de03f94100f674502db8}}; the V1.0.1 compiler tarball SHA256 is \texttt{\seqsplit{c00b98e35694fda855a2f7a7b48823279322e52f1941d02cba3a8bac1facfd07}}. These identities and reported outcomes are historical evidence. The current archive does not supply the complete query coefficient, completion and source-operator payload needed to rerun that certification. Its independent native support and reference-target reconstruction has a different scope (S6.2).
+Version 1.0.1 introduced pivoted RRQR, retained SVD and null-space checks, propagated solver disagreement to \texttt{NUMERICALLY\_UNRESOLVED}, and applied the frozen scale-aware legality tolerance. The repaired unit suite passed 39/39 tests. There were zero status changes or quantitative-answer changes. That historical record reports independent recomputation of all 3,125 statuses and all 349 quantitative answers to numerical precision. The frozen query-results SHA256 is \texttt{\seqsplit{31d1a33b84c49df325ef3480fe4ddbb400293c4ff819de03f94100f674502db8}}; the V1.0.1 compiler tarball SHA256 is \texttt{\seqsplit{c00b98e35694fda855a2f7a7b48823279322e52f1941d02cba3a8bac1facfd07}}. These identities and reported outcomes are historical evidence. The current release supplies the original query table and processed response in the conditional K562 capsule (S22). Original source operators and historical completion/producer lineage remain unbound, so full source certification is distinct from this numerical replay. Its independent native support and reference-target reconstruction has a different scope (S6.2).
 
 
 
@@ -240,7 +280,7 @@ For an admissible unresolved completion $u\in\operatorname{col}(U)$, the test ta
 \[
 \|(\hat y+u)-(y+u)\|_2^2=\|\hat y-y\|_2^2,
 \]
-so score invariance does not prove target uniqueness. Pooled Pearson and $R^2$ are generally not invariant to nonconstant held-out-group offsets. This distinction motivates the separate labels \texttt{TARGET\_EVIDENCE\_IDENTIFIABLE}, \texttt{TARGET\_COMPLETION\_DEPENDENT\_SCORE\_INVARIANT} and \texttt{SCORE\_COMPLETION\_DEPENDENT}.
+so score invariance does not prove target uniqueness. Pooled Pearson and $R^2$ are generally not invariant to nonconstant held-out-group offsets. This distinction motivates the separate labels \nolinkurl{TARGET_EVIDENCE_IDENTIFIABLE}, \texttt{TARGET\_COMPLETION\_DEPENDENT\_SCORE\_INVARIANT} and \texttt{SCORE\_COMPLETION\_DEPENDENT}.
 
 
 \subsubsection{Joint reference and source space}
@@ -316,8 +356,8 @@ The ENCODE-derived panel uses 235 RBP perturbation experiments, 506,626 skipped-
 
 
 \subsection{Legal dimensions, replicate structure and K562 requests}
-\subsubsection{Composite-only geometry}
-Across the 150 frozen K562 inner splits, 9,945 held-out regulator--event instances are individually unsupported under the train-defined two-way reference. The rank increment is 7,310, leaving 2,635 independent composite-only directions. Thus 26.50\% of the unsupported coordinate dimension remains available as legal comparative structure. Across 20 ENCODE masks, 973,298 held-out instances are individually unsupported, the rank increment is 916,903, and 56,395 composite-only directions remain (5.79\%).
+\subsubsection{Compound-only geometry}
+Across the 150 frozen K562 inner splits, 9,945 held-out regulator--event instances are individually unsupported under the train-defined two-way reference. The rank increment is 7,310, leaving 2,635 independent compound-only directions. Thus 26.50\% of the unsupported coordinate dimension remains available as legal comparative structure. Across 20 ENCODE masks, 973,298 held-out instances are individually unsupported, the rank increment is 916,903, and 56,395 compound-only directions remain (5.79\%).
 
 \subsubsection{Processed-channel common-structure summary}
 For a full-row-rank source-safe legal basis $B$ with $\rank(B)>0$, and $G=(BB^\top)^{-1}$ and completed replicate vectors $z_1,z_2$, the reported basis-invariant summary is
@@ -347,7 +387,7 @@ The external validation required source-native author-released artifacts rather 
 \small
 \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}L{0.27\textwidth}>{\raggedright\arraybackslash}L{0.19\textwidth}>{\raggedright\arraybackslash}X@{}}
 \toprule
-Artifact & Authority & Frozen role \\
+\PAIRTableHead{Artifact} & \PAIRTableHead{Authority} & \PAIRTableHead{Frozen role} \\
 \midrule
 Raw bulk & Figshare+ DOI 20029387, file 35773070 & Authentic bulk object; rejected for source-aware primary analysis because gem-group identity is absent. \\
 KD6 manifest & Figshare+ DOI 20022944, file 35773886 & Library/FASTQ/BAM manifest with gemgroup labels; not used to reconstruct hidden single-cell source identities. \\
@@ -433,7 +473,7 @@ The four query families have distinct eligibility states, summarized in Table~\r
 \small
 \begin{tabularx}{\textwidth}{@{}L{0.12\textwidth}L{0.16\textwidth}L{0.16\textwidth}X@{}}
 \toprule
-Family & Identifiable & Source-safe & Interpretation \\
+\PAIRTableHead{Family} & \PAIRTableHead{Identifiable} & \PAIRTableHead{Source-safe} & \PAIRTableHead{Interpretation} \\
 \midrule
 Q1 & No & No & Atomic pair effect is not a reference-invariant relation and also retains declared control dependence. \\
 Q2 & No & Yes & Shared control cancels, proving source-safety does not imply identifiability. \\
@@ -509,13 +549,13 @@ The original archived-prediction subset alone did not contain reference masks. T
 
 
 \subsection{ENCODE estimand-dependent ordering}
-The frozen ENCODE comparison uses the same stored M1 additive, M2 SVD-50 and M3 additive-plus-LR-25 predictions on two legal components. Composite-only loss is 0.004313275, 0.002321316 and 0.003172774 for M1, M2 and M3, respectively; unitwise-supported loss is 0.005812259, 0.004293260 and 0.004060695. Their descriptive orders differ: M2 $<$ M3 $<$ M1 on composite-only components and M3 $<$ M2 $<$ M1 on unitwise support, demonstrating that selecting the evaluated estimand component reorders fixed splicing predictors without altering their emitted predictions.
+The frozen ENCODE comparison uses the same stored M1 additive, M2 SVD-50 and M3 additive-plus-LR-25 predictions on two legal components. Compound-only loss is 0.004313275, 0.002321316 and 0.003172774 for M1, M2 and M3, respectively; unitwise-supported loss is 0.005812259, 0.004293260 and 0.004060695. Their descriptive orders differ: M2 $<$ M3 $<$ M1 on compound-only components and M3 $<$ M2 $<$ M1 on unitwise support, demonstrating that selecting the evaluated estimand component reorders fixed splicing predictors without altering their emitted predictions.
 
 
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=\textwidth]{figures/supp_figure_04.pdf}
-\caption{Fixed ENCODE splicing predictions (M1 additive, M2 SVD-50, and M3 additive-plus-LR-25) evaluated on unitwise-supported versus composite-only identifiable components, illustrating estimand-dependent predictor ordering.}
+\caption{Fixed ENCODE splicing predictions (M1 additive, M2 SVD-50, and M3 additive-plus-LR-25) evaluated on unitwise-supported versus compound-only identifiable components, illustrating estimand-dependent predictor ordering.}
 \label{fig:sencode}
 \end{figure}
 
@@ -542,9 +582,9 @@ The official Springer Nature Figshare DrEval Source Data artifact was bound as a
 \end{center}
 Published scores were reproduced before quotient scoring. LPO remained the identity control. LCO was stable on the integrity-valid three-model panel ($\tilde\tau=1$, median reversal $0$). LDO used seven non-naive models on their registered model-specific post-merge supports and produced:
 \begin{center}
-\begin{tabular}{@{}lccc@{}}
+\begin{tabular}{@{}lrrr@{}}
 \toprule
-Metric & Median $\tau$ & Median reversal & Persistent pairs \\
+\PAIRTableHead{Metric} & \PAIRTableHead{Median $\tau$} & \PAIRTableHead{Median reversal} & \PAIRTableHead{Persistent pairs} \\
 \midrule
 normalized $R^2$ & 0.000 & 0.500 & 3 \\
 normalized Pearson & 0.286 & 0.357 & 2 \\
@@ -573,7 +613,7 @@ Nine of ten folds in each resource had the ordinary within-held-out-drug quotien
 \small
 \begin{tabular}{@{}lcccccc@{}}
 \toprule
-Resource & nR2 $\tilde\tau$ & nR2 rev. & nPearson $\tilde\tau$ & nPearson rev. & Persistent & Top change \\
+\PAIRTableHead{Resource} & \PAIRTableHead{nR2 $\tilde\tau$} & \PAIRTableHead{nR2 rev.} & \PAIRTableHead{nPearson $\tilde\tau$} & \PAIRTableHead{nPearson rev.} & \PAIRTableHead{Persistent} & \PAIRTableHead{Top change} \\
 \midrule
 GDSC2 & 0.40 & 0.30 & 0.40 & 0.30 & 0 & 7/10 \\
 GDSC1 & 0.27 & 0.37 & 0.33 & 0.33 & 0 & 7/10 \\
@@ -619,7 +659,7 @@ The general quotient was compared fold-by-fold with the simple within-held-out-d
 \small
 \begin{tabular}{@{}lll@{}}
 \toprule
-Fold class & Structural result & Frozen ranking consequence \\
+\PAIRTableHead{Fold class} & \PAIRTableHead{Structural result} & \PAIRTableHead{Frozen ranking consequence} \\
 \midrule
 18/20 GDSC folds & Equivalent within tolerance & Identical by construction \\
 GDSC1 fold 5 & Tilted, equal rank; $\sin\theta\approx0.0126641$ & No disagreement \\
@@ -832,13 +872,9 @@ These boundaries are tested in eight named mathematical fixtures, 60 integer-des
 
 \section{Reproducibility and verification coverage}
 \paragraph{Materials available with this submission.}
-The KBS submission supplies the main and supplementary LaTeX sources, bibliography, vector figures, and the deterministic framework-drawing script. Public verification and original scorer source are available in the companion repository at commit \nolinkurl{496d1a3f3ea80009033891811ffa11ed9f7cf334}; an export of that software snapshot accompanies the submission. It includes \nolinkurl{verification/independent_contract_checks.py}, the matched-input synthetic comparator checks, the original CTRPv2/GDSC2 scorer programs, input requirements and the author-server rescore receipt. The large prediction matrices and the complete historical K562 producer inputs are not in this distribution.
+The integrated reproduction archive supplies the manuscript sources, figures, public source bindings, frozen public evaluation inputs, numerical witnesses and comparison-object adapter described in Sections~S17--S21. The original CTRPv2/GDSC scoring snapshot remains under \nolinkurl{public_scoring_snapshot/reproduction/original_scorers/}, with its pinned companion repository at \nolinkurl{496d1a3f3ea80009033891811ffa11ed9f7cf334}. Historical APA/LDO original producer inputs are distinct from the new public panels.
 
-The remainder of this section documents the broader historical research archive. Its dated directories and commands identify previously retained materials and execution coverage; they do not imply that every named path is present in the submission ZIP or public software export. Local software checks, archived empirical receipts and complete original-producer replay have the distinct scopes specified below.
-
-\noindent\textbf{Archive-scope note.} This section describes older, separately archived author-side reproduction packages. Their directory names and commands identify past execution environments; they are not a promise that every referenced script or original input appears in the standalone manuscript source ZIP. A separate author-only provenance bundle preserves the historic research archive. Full independently runnable public deposition remains a submission gate.
-
-
+The remainder of S6 retains the earlier author-side archive's dated execution descriptions. Its commands and receipts document that historical work; they do not mean every original producer payload is present in the current distribution or was re-executed for this integrated revision. The runnable public-data subset and its actual integrated execution are specified in S21.
 
 \subsection{Constructed verification and interpretation}
 The author-side extension includes a restricted quadratic-loss compiler, a separate checker that does not call the generator, and a deterministic verification driver. The six rational fixtures cover common reference action, truth-only action, a changing loss difference with one strict winner, a tie boundary, indefinite curvature and a linear term in the null space of a singular positive-semidefinite matrix. Each fixture has independent original-loss witness replay and exact rational coefficient and repair-rank checks. A further 100 random affine contracts check loss reconstruction, row permutation and repeated-observation multiplicity. Shared-reference $R^2$, common-baseline, maximal-invariant, discarded-invariant-information, minimal-information, small-nonzero-term and invalid-domain controls bring the total to 115 checks, all passing.
@@ -850,7 +886,7 @@ The random seed is 20261010 and is a software-fixture seed, not a predictive-mod
 \caption{Constructed rational verification fixtures for quadratic loss-difference certificates and calibration ranks.}
 \begin{tabularx}{\linewidth}{@{}lXc@{}}
 \toprule
-Contract or polynomial & Certified behavior & Calibration dimension \\
+\PAIRTableHead{Contract or polynomial} & \PAIRTableHead{Certified behavior} & \PAIRTableHead{Calibration dimension} \\
 \midrule
 Shared reference & Full loss difference constant & 0 \\
 Truth-only reference & Both strict orders attainable & 1 \\
@@ -875,7 +911,7 @@ The archived research package distinguishes executable reproduction from inherit
 \small
 \begin{tabularx}{\linewidth}{@{}L{0.28\linewidth}L{0.22\linewidth}X@{}}
 \toprule
-Component & Supplied execution & Scope \\
+\PAIRTableHead{Component} & \PAIRTableHead{Supplied execution} & \PAIRTableHead{Scope} \\
 \midrule
 Claim information & 75 constructed cases & Repeats the supplied classical estimability/precision fixtures; no biological covariance is estimated. \\
 Quadratic certificates & 115 checks & Repeats the six rational and 100 random-contract blocks plus controls; no new biomedical validation. \\
@@ -886,7 +922,7 @@ Other K562/HEK/ENCODE operators, Replogle V3 and DrEval/WP5 & Pending original-p
 \end{tabularx}
 \end{center}
 
-The original reproducibility package (not this standalone IS manuscript ZIP) documents the following historical command:
+The original reproducibility package (not this standalone KBS manuscript ZIP) documents the following historical command:
 \begin{quote}\small\ttfamily
 python3 reproduce\_all.py --output /absolute/new\_directory
 \end{quote} Any actual rerun requires a new output directory outside the archived release. The driver checks exact program/input hashes, then executes only the supplied mathematical verifiers, read-only archived-APA replayers and G2-table derivation. Original count and status fields must agree exactly; floating summary values are compared with the declared roundoff tolerances. The historical receipt records which outputs were actually reproduced. This command executes the supplied reproduction subset without training a predictor.
@@ -904,7 +940,7 @@ The supplied \texttt{reproduce\_all.py} runs the unchanged mathematical/APA repr
 
 
 \subsubsection{Native APA input, reference and program-feasibility verification}
-The native return preserves the processed-response hash (\texttt{p0\_response.tsv}), the 150 inner masks, the 50 outer masks and \texttt{panel\_methods.py}. The processed response contains 12,898 regulator--event pairs, 32 regulators and 1,140 events. All 150 inner partitions match their corresponding outer TRAIN set exactly; pair UIDs, role disjointness and all 644,900 stored outer-degree entries were checked. Independent graph-component and event-count calculations reproduce 9,945 unsupported inner validation exposures, rank-increment sum 7,310 and composite-only dimension sum 2,635. All unsupported rows involve an event absent from inner TRAIN. All 129,000 outer TEST exposures are point estimable. These sums describe repeated split exposures, not independent biological sample sizes.
+The native return preserves the processed-response hash (\texttt{p0\_response.tsv}), the 150 inner masks, the 50 outer masks and \texttt{panel\_methods.py}. The processed response contains 12,898 regulator--event pairs, 32 regulators and 1,140 events. All 150 inner partitions match their corresponding outer TRAIN set exactly; pair UIDs, role disjointness and all 644,900 stored outer-degree entries were checked. Independent graph-component and event-count calculations reproduce 9,945 unsupported inner validation exposures, rank-increment sum 7,310 and compound-only dimension sum 2,635. All unsupported rows involve an event absent from inner TRAIN. All 129,000 outer TEST exposures are point estimable. These sums describe repeated split exposures, not independent biological sample sizes.
 
 \paragraph{Instrument identities and cross-study matching.}
 The 1,140 K562 event labels use \texttt{V8EVT} identifiers; historical event-catalog audits describe their trailing integer fields as experiment-specific instrument/feature indices, not genomic cleavage-site coordinates. A symbol match or a compatible index range does not authenticate a shared polyadenylation event, an indexing base, or a source-row-to-genome mapping. Cross-study same-event claims require an authoritative binding to the genomic assembly, strand and PAS endpoints, together with a compatible response estimand. This metadata clarification does not restore the query-specific completion and source-operator inputs needed for complete independent replay of the historical 3,125-request / 349-retained program.
@@ -937,7 +973,7 @@ The directory \nolinkurl{12_FINAL_INTEGRATION_20261024/reference_capsule} preser
 Complete \emph{original-producer} replay of the historical external program would require the following artifacts. A conditional processed-response numerical reconstruction of the 3,125-query fold-0 panel is now available, but it does not close the remaining native provenance requirements. The current release provides a bounded subset, with its executable coverage and missing inputs stated in S6.2; this inventory is not a claim that every artifact is redistributed.
 \begin{enumerate}
 \item the exact manuscript source and compiled PDFs;
-\item the full K562 query-result payload matching its frozen hash, the V1.0.1 compiler archive, ordered query coefficients, fixed completion operators and the original source ledger;
+\item the V1.0.1 compiler archive, original fixed completion operators and source ledger beyond the byte-bound query table, processed responses and newly instantiated conditional witnesses now included in S22;
 \item Replogle source-recovery reports and raw/normalized source hashes;
 \item V2 supersession record and V3 measurement-contract files;
 \item eligible-universe, 256-gene panel and query-freeze hashes;
@@ -952,9 +988,9 @@ Complete \emph{original-producer} replay of the historical external program woul
 
 
 \subsection{Software and figure provenance}
-OpenAI ChatGPT with Codex assistance was used for manuscript organization, translation, mathematical exposition, verification code and deterministic vector-drawing code. Google Gemini (model version not retained) supplied the subsequent editorial restructuring used in this revision. The framework schematic was prepared with OpenAI ChatGPT (GPT-6.1 through Codex; November 2026) assistance for deterministic drawing code. Earlier exact model versions were not all retained; the 25 October 2026 editorial record identifies GPT-6.1 (\texttt{gpt-6.1-sol-wm}; OpenAI). Authors review the arguments, attributions and computational outputs and take responsibility for the paper.
+The generative-AI declaration in the main manuscript covers editorial, LaTeX, verification-code and deterministic drawing-code assistance. Resource-specific evidence and execution records in this Supplement document the scope of software verification.
 
-The architectural schematic is regenerated by \nolinkurl{draw_framework_KBS.py}; vector PDF, editable SVG and PNG exports are supplied. The empirical result figures are frozen vector PDFs associated with the archived numerical summaries. The current source distribution does not include every original plot generator or raw plotting input. The writing revision changes no experimental response or frozen prediction.
+The submitted figures are vector PDFs. The 15-November source figures preserve their framework layout, non-colour reference-support markers and empirical plotting geometry. Their original revision program and baseline inputs remain in the retained source archive. The integrated revision adds deterministic vector figures from the frozen public tables using \nolinkurl{editorial/make_figures.py}. Original experimental responses and predictions are unchanged; new plots visualize the additional public analyses.
 
 \subsection{Summary of frozen confirmation states}
 Across the empirical benchmark suites, the frozen confirmation outcomes are summarized as follows: (i) the Replogle Perturb-seq quantitative compilation benchmark satisfies all pre-registered reference and source-cancellation gates across all $100{,}000$ registered four-cell query designs (\texttt{\seqsplit{PASS\_\_PAIR\_KG\_EXTERNAL\_QUANTITATIVE\_VALIDATION}}, with the equal-weight source gate structurally non-binding on the V3 additive scale); (ii) the CTRPv2 seven-model leave-drug-out benchmark exhibits a $0.500$ median $\mathrm{n}R^2$ reversal fraction and $5$ persistent ($\ge 7/10$ folds) directed pair--metric reversals; (iii) the GDSC2 confirmation benchmark exhibits a $0.300$ median reversal fraction (exceeding the $\ge 0.10$ sensitivity threshold) but $0$ pairs reaching the $\ge 7/10$-fold persistence gate; and (iv) the 560-job symmetric-HPO retraining control reproduces $1$ of the $5$ historical persistent CTRPv2 pair--metric reversals at the $\ge 7/10$-fold threshold.
@@ -969,11 +1005,11 @@ Across the empirical benchmark suites, the frozen confirmation outcomes are summ
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.70\textwidth}@{}}
 \caption{Evidence roles and authorized interpretations.}\\
 \toprule
-Application & Role and supported interpretation \\
+\PAIRTableHead{Application} & \PAIRTableHead{Role and supported interpretation} \\
 \midrule
 \endfirsthead
 \toprule
-Application & Role and supported interpretation \\
+\PAIRTableHead{Application} & \PAIRTableHead{Role and supported interpretation} \\
 \midrule
 \endhead
 K562 APA & \textbf{Established.} Internal benchmark geometry, relation compilation, replicate-common structure \par\smallskip\textbf{PAIR scope.} Supports non-atomic legal relations and quantitative compilation; 349 legal comparative queries are not 349 independent biological discoveries.  \\
@@ -996,10 +1032,10 @@ This is a comparison of published method scopes, not a head-to-head runtime or a
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.70\textwidth}@{}}
 \caption{Existing capability, proposed composition and evidence ceiling. Classical and benchmark identities are given in the main bibliography; the additional statement/provenance references are also cited here.}\\
 \toprule
-Prior work & Established capability and PAIR scope \\
+\PAIRTableHead{Prior work} & \PAIRTableHead{Established capability and PAIR scope} \\
 \midrule
 \endfirsthead
-\toprule Prior work & Established capability and PAIR scope \\
+\toprule \PAIRTableHead{Prior work} & \PAIRTableHead{Established capability and PAIR scope} \\
 \midrule\endhead
 Estimability / generalized inverse (Searle; Rao--Mitra; \texttt{estimability}) & \textbf{Established.} Row-space uniqueness, null-space checks, estimable subspaces and rejection of non-estimable predictions. \par\smallskip\textbf{PAIR scope.} Fixed completion, source maps, typed relation objects and downstream actions are recorded together. K562 query states demonstrate execution; the underlying linear theory is classical.  \\
 Incomplete two-way designs / network flows~\cite{freeman1975incomplete,jochmans2019network,chen2025flows} & \textbf{Established.} Interaction spaces, graph-based fixed effects, electrical-flow estimation and support-dependent difficulty. \par\smallskip\textbf{PAIR scope.} Frozen biological queries retain non-atomic directions and separate legality from precision. No new graph theorem or superior estimator is claimed.  \\
@@ -1081,9 +1117,9 @@ All compared predictions use the same TEST operator and denominator. TEST outcom
 \centering\small
 \caption{Post-hoc K562 comparison-supervision diagnostic across ten outer masks. Lower normalized contrast loss is better.}
 \label{tab:posthoccomparison}
-\begin{tabularx}{\textwidth}{@{}Xcc@{}}
+\begin{tabularx}{\textwidth}{@{}Xrr@{}}
 \toprule
-Method & Mean loss & Mask range\\\midrule
+\PAIRTableHead{Method} & \PAIRTableHead{Mean loss} & \PAIRTableHead{Mask range}\\\midrule
 Zero interaction / any additive prediction & 1.0000 & 1.0000--1.0000\\
 Raw-response rank-four model, calibrated & 0.8354 & 0.8206--0.8524\\
 Four-term supervision, calibrated & 0.8364 & 0.8078--0.8621\\
@@ -1119,7 +1155,7 @@ This archived exploratory case illustrates why a numerical relation must identif
 \label{tab:referenceversion}
 \begin{tabularx}{\textwidth}{@{}Xr@{}}
 \toprule
-Quantity & Count or value\\\midrule
+\PAIRTableHead{Quantity} & \PAIRTableHead{Count or value}\\\midrule
 Overlapping TRAIN-reference splits & 150\\
 Candidate-query exposures & 4,032\\
 Distinct query keys & 1,529\\
@@ -1164,9 +1200,13 @@ The theorem concerns universal invariance over \emph{all} generalized inverses, 
 The companion verification script \nolinkurl{verification/independent_contract_checks.py} executes exact rational arithmetic checks on the following documented constructed witnesses: the $(3,1)$ readouts and $(0,1)$ source residuals under two legal generalized inverses $F_1, F_2$; the balanced four-cell contrast with $a^\top X_E=0$ and invariant readout $2$; the nonuniform-source four-cell refusal; the ambient-versus-quotient loss reversal $(200,2)$ versus projected $(0,2)$; and the exact equivalence between row-space inclusion and null-space orthogonality.
 
 
+\input{PAIR_KBS_Public_Evaluation_Supplement.tex}
+\input{PAIR_KBS_System_Closure_Supplement.tex}
+\input{PAIR_KBS_Evidence_Extension_Supplement.tex}
+
 \medskip
 \renewcommand{\refname}{Supplementary references}
-\begingroup\small\setstretch{1.0}
+\begingroup\small\setstretch{0.96}\setlength{\bibsep}{0pt}
 \bibliographystyle{unsrtnat}
 \bibliography{references}
 \endgroup

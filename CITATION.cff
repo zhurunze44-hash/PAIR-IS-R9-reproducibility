@@ -1,12 +1,12 @@
 cff-version: 1.2.0
 message: "Cite the PAIR KBS manuscript and record the repository commit used."
-title: "PAIR: Verifiable quantitative knowledge and model comparison from incomplete experimental references"
+title: "PAIR: A Framework for Verifiable Quantitative Knowledge Representation and Model Comparison under Incomplete Evidence"
 type: software
 authors:
   - family-names: Zhu
     given-names: Runze
   - family-names: Li
     given-names: Guanfeng
-version: "2026.11.12-kbs-alignment"
+version: "2026.11.19"
 repository-code: "https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility"
 url: "https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility"
