@@ -48,7 +48,7 @@ See the [reproduction guide](REPRODUCIBILITY.md),
 [submitted-file checksums](evidence/KBS_FILE_ALIGNMENT.json), and
 [full evidence archive verification receipt](evidence/KBS_20261119_REPLAY_VERIFICATION.json).
 
-**Availability boundary:** The separately held 217,964,454-byte `KBS_Reproduction.zip` is **not hosted in this GitHub repository**. The public verification receipt reports 26 completed offline stages using the archived inputs, but that receipt is not a substitute for distributing those inputs. Its SHA-256 and scientific file manifest are recorded in [the source README](manuscript/README_SOURCE.txt) and [scientific release manifest](evidence/KBS_20261119_SCIENTIFIC_RELEASE_MANIFEST.json).
+**Complete frozen evidence archive:** [`KBS_Reproduction.zip` (217,964,454 bytes)](https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility/releases/download/kbs-2026-11-19-reproduction/KBS_Reproduction.zip) is publicly available as a [versioned GitHub Release attachment](https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility/releases/tag/kbs-2026-11-19-reproduction), separate from the Git tree. SHA-256: `1881b092ef78bd6ef8b05883f0cf6857309f5e12fead826b1418aaee44719535`. Its [26-stage offline verification receipt](evidence/KBS_20261119_REPLAY_VERIFICATION.json), [source README](manuscript/README_SOURCE.txt), and [scientific release manifest](evidence/KBS_20261119_SCIENTIFIC_RELEASE_MANIFEST.json) are also available. Archived validation receipts do not by themselves establish that a new independent host has successfully rerun the study. Reuse or redistribution of third-party material remains subject to the original licenses and permissions.
 
 ## Data and scoring code
 
