@@ -1,0 +1,321 @@
+{
+  "status": "PASS_INTEGRATED_PUBLIC_EVIDENCE_REPLAY",
+  "steps": [
+    {
+      "step": "original_science_geometry",
+      "exit_code": 0
+    },
+    {
+      "step": "original_contract_verifier",
+      "exit_code": 0
+    },
+    {
+      "step": "exact_reference_and_measure_fixtures",
+      "exit_code": 0
+    },
+    {
+      "step": "R1_frozen_prediction_and_witness_replay",
+      "exit_code": 0
+    },
+    {
+      "step": "R1_full_public_target_scores",
+      "exit_code": 0
+    },
+    {
+      "step": "R2_selected_witnesses_and_minima",
+      "exit_code": 0
+    },
+    {
+      "step": "R2_missing_baseline_witness",
+      "exit_code": 0
+    },
+    {
+      "step": "R4_AMLB_and_R3_full_offline",
+      "exit_code": 0
+    },
+    {
+      "step": "R6_raw_predictions_and_nested_R5",
+      "exit_code": 0
+    },
+    {
+      "step": "K562_conditional_molecular_objects",
+      "exit_code": 0
+    },
+    {
+      "step": "RQ3_effect_sizes",
+      "exit_code": 0
+    },
+    {
+      "step": "compile_comparison_records",
+      "exit_code": 0
+    },
+    {
+      "step": "check_comparison_record_semantics",
+      "exit_code": 0
+    },
+    {
+      "step": "final_missing_score_and_margin_checks",
+      "exit_code": 0
+    },
+    {
+      "step": "verify_compiled_records",
+      "exit_code": 0
+    },
+    {
+      "step": "verify_graph_queries",
+      "exit_code": 0
+    },
+    {
+      "step": "matched_classical_composition",
+      "exit_code": 0
+    },
+    {
+      "step": "native_label_pilot",
+      "exit_code": 0
+    },
+    {
+      "step": "exact_sequential_disclosure",
+      "exit_code": 0
+    },
+    {
+      "step": "source_bound_disclosure_contracts",
+      "exit_code": 0
+    },
+    {
+      "step": "crossed_target_measure",
+      "exit_code": 0
+    },
+    {
+      "step": "source_actions_and_prior_sensitivity",
+      "exit_code": 0
+    },
+    {
+      "step": "independent_disclosure_implementation",
+      "exit_code": 0
+    },
+    {
+      "step": "fresh_VMA_query_function",
+      "exit_code": 0
+    },
+    {
+      "step": "manuscript_evidence_outputs",
+      "exit_code": 0
+    },
+    {
+      "step": "final_result_to_manuscript_coverage",
+      "exit_code": 0
+    }
+  ],
+  "scope": "Frozen delivered numerical evidence and current composition adapter; no new training, new assay measurement, original historical APA/LDO producer replay, or independent institutional replication.",
+  "R1_public_target": {
+    "status": "PASS_FROZEN_PUBLIC_TARGET_PANEL_REPLAY",
+    "model_fold_checks": 400,
+    "max_absolute_field_difference": 2.9103830456733704e-11,
+    "panels": {
+      "all34": {
+        "common_unique_rows": 106696,
+        "non_naive_models": 29,
+        "median_R2_raw_to_ID_reversal": 0.04556650246305419,
+        "median_Pearson_raw_to_ID_reversal": 0.02832512315270936,
+        "persistent_pairs": 3,
+        "leaders": {
+          "r2_raw": "SingleDrugRandomForest",
+          "r2_dreval": "SingleDrugRandomForest",
+          "r2_id": "EnsembleMF",
+          "pearson_dreval": "EnsembleMF",
+          "pearson_id": "EnsembleMF"
+        }
+      },
+      "classic5": {
+        "common_unique_rows": 210741,
+        "non_naive_models": 5,
+        "median_R2_raw_to_ID_reversal": 0.1,
+        "median_Pearson_raw_to_ID_reversal": 0.05,
+        "persistent_pairs": 0,
+        "leaders": {
+          "r2_raw": "RandomForest",
+          "r2_dreval": "RandomForest",
+          "r2_id": "RandomForest",
+          "pearson_dreval": "RandomForest",
+          "pearson_id": "RandomForest"
+        }
+      }
+    },
+    "target_measure_support_nesting": {
+      "unique_keys": 106696,
+      "common_multiset_keys": 109298,
+      "common_original_rows": 112066,
+      "exact_singleton_key_set_match": true
+    },
+    "metric_semantics": "FULL is ordinary R2/Pearson on y,p; ID is R2/Pearson on Qy,Qp. Baseline-normalized unprojected metrics are computed separately.",
+    "scope": "Recomputed from frozen common-unique prediction arrays using sparse least-squares projection. Does not refit predictive models, reacquire public raw archives or provide external institutional replication."
+  },
+  "comparison_records": {
+    "status": "PASS_SCOPED_COMPARISON_RECORD_COMPILATION",
+    "assertions": 896,
+    "kinds": {
+      "target-switch": 3,
+      "measure-repair": 66,
+      "conditional-task-deletion": 94,
+      "conditional-missing-score": 22,
+      "prediction-replay": 687,
+      "molecular-relation": 24
+    },
+    "graph_nodes": 1734,
+    "scope": "Composition adapter over frozen verified evidence; no new trained model, new empirical event, universal historical-producer certification or performance comparison with another knowledge system."
+  },
+  "sequential_disclosure": {
+    "status": "PASS_EXACT_CACHED_TABLE_DISCLOSURE",
+    "tasks": 26,
+    "labels": 43007,
+    "paths": 1404,
+    "wrong_certificates": 0,
+    "independent_LP_endpoints": 104,
+    "maximum_LP_difference": 5.684341886080802e-14,
+    "hidden_future_label_checks": 104,
+    "label_certificate_records": 26,
+    "scope": "Classical acquisition on archived fixed pools; exact dyadic arithmetic on the cached contrast table, not a transcendental-logarithm enclosure or experimental-cost guarantee."
+  },
+  "disclosure_contracts": {
+    "status": "PASS_SOURCE_BOUND_DISCLOSURE_CONTRACTS",
+    "records": 26,
+    "rehashed_semantic_forgeries_rejected": 104,
+    "new_wet_measurement_operations_rejected": 26,
+    "combined_assertions": 922,
+    "combined_graph_nodes": 1812,
+    "combined_RDF_triples": 16837,
+    "RDF_SQLite_budget_query_rows_agree": 26,
+    "algorithm_superiority_claimed": false
+  },
+  "source_action_qualification": {
+    "status": "PASS_FROZEN_SOURCE_ACTION_AND_PRIOR_QUALIFICATION",
+    "PAX6_manifest_files": 61,
+    "prior_policy_tasks_recomputed": 104,
+    "prior_task_equal_means": {
+      "model_A": 0.6380998857579321,
+      "model_B": 0.7305680203710995,
+      "pool_A_B": 0.6543620868770206,
+      "uniform": 0.7796504465758646
+    },
+    "VMA_frozen_rows_reaggregated": 600,
+    "VMA_task_equal_mean": {
+      "VMA_official_query_nojit": 0.9771930635933822,
+      "random_matched_sampler": 0.9774767072955757
+    },
+    "VMA_algorithm_rerun_in_this_revision": false,
+    "PAX6_qualified_model_pair": false,
+    "PAX6_joint_completion_domain_bound": false,
+    "PAX6_wet_costs_bound": false,
+    "PAX6_role": "source/action qualification example only",
+    "wet_savings_claimed": false
+  },
+  "independent_disclosure": {
+    "status": "PASS",
+    "tasks": 26,
+    "labels": 43007,
+    "paths": 1404,
+    "exact_prefix_checks": 2808,
+    "mismatches": [],
+    "hindsight_minima_verified": 6,
+    "model_wins": {
+      "Mitra_GPU": 23,
+      "LightGBM": 3
+    },
+    "task_equal_mean_fraction": {
+      "random": 0.9575611730657099,
+      "entropy": 0.9215362752433299,
+      "width": 0.7796739649308695,
+      "expected_gain": 0.6866528676755841,
+      "adaptive_expected_gain": 0.6543620868770206
+    },
+    "mean_paired_relative_reduction": 0.32092420206729544,
+    "maximum_metric_algebra_difference": 1.5265566588595902e-16,
+    "maximum_cached_log_contrast_regeneration_difference": 8.881784197001252e-16,
+    "independence": "No production policy, bound, or stopping implementation imported. Direct greedy selection and sorted-cardinality AUC optimization; exact arithmetic on archived contrast bits.",
+    "scope": "Frozen two-model finite-pool disclosure only; not a population or new-experiment guarantee."
+  },
+  "fresh_VMA_query": {
+    "status": "PASS_SCOPED_QUERY_FUNCTION_REPLAY",
+    "paths": 600,
+    "files": {
+      "VMA_logloss_acquisition_runs.csv": {
+        "byte_identical": true,
+        "sha256": "b2b1328de31ff128878e659d026decd5dbbd49d60ee2b553cbaa8fbe67fe746f"
+      },
+      "VMA_logloss_task_summary.csv": {
+        "byte_identical": true,
+        "sha256": "454de224fc04f4c75758f973df6b460cb7de5ab34eccd102989f1fcb98b5bb93"
+      }
+    },
+    "scope": "Same strict finite-pool certificate and loss adapter; no full VMA/LURE replication."
+  },
+  "molecular_objects": {
+    "status": "PASS_K562_CONDITIONAL_RELATION_WITNESSES",
+    "queries_checked": 3125,
+    "retained_numeric_replays": 349,
+    "max_historical_readout_abs_error": 2.2773449792623524e-14,
+    "versioned_objects": 24,
+    "current_objects": 12,
+    "source_qualified_objects": 0,
+    "full_historical_producer_recertified": false
+  },
+  "matched_classical": {
+    "status": "PASS_MATCHED_CLASSICAL_AND_PAIR_CONFORMANCE",
+    "cases": 9665,
+    "families": [
+      {
+        "family": "K562 reference lifecycle",
+        "cases": 24,
+        "state_disagreements": 0,
+        "maximum_numeric_difference": 1.1435297153639112e-14
+      },
+      {
+        "family": "DrEval measure audit",
+        "cases": 8932,
+        "state_disagreements": 0,
+        "maximum_numeric_difference": 3.552713678800501e-15
+      },
+      {
+        "family": "AMLB missing fold",
+        "cases": 22,
+        "state_disagreements": 0,
+        "maximum_numeric_difference": 0.0
+      },
+      {
+        "family": "TabArena numerical scope",
+        "cases": 687,
+        "state_disagreements": 0,
+        "maximum_numeric_difference": 1.5006662579253316e-11
+      }
+    ],
+    "state_disagreements": 0,
+    "maximum_numeric_difference": 1.5006662579253316e-11,
+    "maximum_DrEval_metric_formula_difference": 3.552713678800501e-15,
+    "DrEval_changed_comparisons": 66,
+    "query_views_equal": true,
+    "joint_conditional_value_rows": 34,
+    "current_interface_counts": [
+      [
+        "PAIR-Eval",
+        872
+      ],
+      [
+        "PAIR-KG",
+        12
+      ]
+    ],
+    "classical_complete_ledger_counts": {
+      "changed_mean": 5,
+      "missing_score": 22,
+      "numeric_boundaries": 4,
+      "superseded_molecular": 12,
+      "source_qualified_molecular": 0
+    },
+    "graph_cached_group_query_seconds_median": 0.04218234099971596,
+    "SQLite_cached_group_query_seconds_median": 0.000814721999631729,
+    "shared_process_peak_rss_kib": 184132,
+    "timing_scope": "Same-runtime cached query diagnostics only, not an end-to-end performance comparison.",
+    "algorithm_or_system_performance_gain_established": false,
+    "scope": "Same available contracts and complete ledger; original missing source operators are not fabricated."
+  }
+}
