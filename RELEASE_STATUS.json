@@ -15,7 +15,7 @@
   "historical_release_metadata": "evidence/historical/IS_R9_RELEASE_STATUS.json",
   "historical_scorer_receipt": "evidence/P2_R9_PUBLIC_RESCORE_RECEIPT.json",
   "may_claim_full_public_reproduction": false,
-  "journal_submission_performed": false,
+  "journal_submission_performed": true,
   "complete_pages": 96,
   "editorial_changes": [
     "Title",

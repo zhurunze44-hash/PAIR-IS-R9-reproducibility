@@ -22,12 +22,20 @@ for path, digest in files.items():
 
 source = record['source_zip']
 assert source == release['current_source']
-expected_members = {path.removeprefix('manuscript/') for path in files
-                    if path not in {*record['pdfs'], source}}
+source_files = set(files) - {*record['pdfs'], source}
+excluded = set(record['source_zip_excluded_frozen_files'])
+assert excluded <= source_files, sorted(excluded - source_files)
+expected_members = {path.removeprefix('manuscript/') for path in source_files - excluded}
 with zipfile.ZipFile(root / source) as archive:
     assert archive.testzip() is None
-    assert sorted(archive.namelist()) == sorted(expected_members)
-    for member in archive.namelist():
+    members = archive.namelist()
+    actual_members = set(members)
+    assert len(members) == len(actual_members), 'Duplicate source ZIP member names'
+    assert actual_members == expected_members, {
+        'missing': sorted(expected_members - actual_members),
+        'extra': sorted(actual_members - expected_members),
+    }
+    for member in members:
         assert archive.read(member) == (root / 'manuscript' / member).read_bytes(), member
 
 title = record['title']

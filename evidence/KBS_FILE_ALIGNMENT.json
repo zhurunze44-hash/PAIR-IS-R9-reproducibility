@@ -18,6 +18,11 @@
     "manuscript/kbs-full.pdf"
   ],
   "source_zip": "manuscript/kbs-source.zip",
+  "source_zip_excluded_frozen_files": [
+    "manuscript/REBUILD.sh",
+    "manuscript/editorial/merge_pdfs.py",
+    "manuscript/figures/sequential_disclosure.png"
+  ],
   "files": {
     "manuscript/PAIR_KBS_Addendum.tex": "27e0bfc60e25786cbd52b6b8ccdd7f5b944ce111b4e62b970a4c6b0bbfdb806b",
     "manuscript/PAIR_KBS_Bound_Examples.tex": "502cb2c1f66c30ee23b4829cf7b09488fe7fddfcca364a839370ba41b5618e0b",
