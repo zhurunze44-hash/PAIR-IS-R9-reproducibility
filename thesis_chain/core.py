@@ -70,12 +70,12 @@ class Contract:
                 raise ValueError("unknown protocol in slot")
             if s.kind == "shared_binary" and (
                     len(s.actions) != len(self.models) or
-                    any(v not in BINARY for v in s.actions)):
+                    any(type(v) is not int or v not in BINARY for v in s.actions)):
                 raise ValueError("shared-label action vectors must be binary")
             if s.kind == "independent_binary" and s.actions:
                 raise ValueError("independent scores must not carry action vectors")
         for g in self.groups:
-            if not g.key or not g.slots or g.price < 0:
+            if not g.key or not g.slots or type(g.price) is not int or g.price < 0:
                 raise ValueError("bad group id/price/contents")
             seen.extend(g.slots)
         if sorted(seen) != sorted(ids):
@@ -170,6 +170,26 @@ def pair_reference_witness(x_ref, x_eval, contrast, h, y_ref, y_eval,
 def _check_evidence(contract: Contract, evidence: Evidence):
     if not set(evidence.values) <= set(contract.slot_map):
         raise ValueError("foreign evidence slot")
+    for key, value in evidence.values.items():
+        slot = contract.slot_map[key]
+        if slot.kind == "shared_binary":
+            if type(value) is not int or value not in BINARY:
+                raise ValueError("illegal observed shared binary label")
+        elif not isinstance(value, (tuple, list)) or (
+                len(value) != len(contract.models)) or any(
+                type(z) is not int or z not in BINARY for z in value):
+            raise ValueError("illegal observed per-model score vector")
+
+
+def _check_paid_groups(contract: Contract, evidence: Evidence, paid):
+    paid = tuple(paid)
+    if len(set(paid)) != len(paid) or not set(paid) <= set(contract.group_map):
+        raise ValueError("unknown or duplicated paid groups")
+    expected = {slot for key in paid for slot in contract.group_map[key].slots}
+    if set(evidence.values) != expected:
+        raise ValueError("paid groups do not exactly match acquired evidence")
+    _check_evidence(contract, evidence)
+    return paid
 
 
 def pair_interval(contract: Contract, evidence: Evidence,
@@ -180,8 +200,10 @@ def pair_interval(contract: Contract, evidence: Evidence,
     a human-score slot has independently completable model cells.
     """
     _check_evidence(contract, evidence)
-    if protocol not in contract.protocols or a == b:
-        raise ValueError("unknown protocol or self comparison")
+    if (protocol not in contract.protocols or type(a) is not int or type(b) is not int
+            or not (0 <= a < len(contract.models))
+            or not (0 <= b < len(contract.models)) or a == b):
+        raise ValueError("unknown protocol, invalid model index or self comparison")
     lo = hi = 0
     for slot in contract.slots:
         if slot.protocol != protocol:
@@ -246,9 +268,6 @@ def no_common_strict_winner(contract: Contract, evidence: Evidence):
     if any(s.kind != "independent_binary" for s in contract.slots):
         raise ValueError("no-common characterization requires independent score cells")
     for a in range(len(contract.models)):
-        for_p = any(all(pair_interval(contract, evidence, p, a, b)[1] > 0
-                        for b in range(len(contract.models)) if b != a)
-                    for p in contract.protocols)
         # If a can win in EVERY protocol, a may be a common strict winner.
         if all(all(pair_interval(contract, evidence, p, a, b)[1] > 0
                    for b in range(len(contract.models)) if b != a)
@@ -273,7 +292,9 @@ def robust_erasure(contract: Contract, evidence: Evidence, paid, kind, model=Non
     True for *arbitrary replacement of all cells in up to r already paid
     groups* when legal completions factor over group cells. Cost not refunded.
     """
-    paid = tuple(paid)
+    if type(radius) is not int or radius < 0:
+        raise ValueError("group fault radius must be nonnegative integer")
+    paid = _check_paid_groups(contract, evidence, paid)
     if not statement(contract, evidence, kind, model):
         return False
     for n in range(1, min(radius, len(paid)) + 1):
@@ -308,6 +329,12 @@ def hindsight_min_cost(contract: Contract, archive: Archive, kind: str, model=No
     Uses the full fixed archive only for the retrospective purchased labels.
     This is not an online acquisition algorithm or proof of any rate gain.
     """
+    if archive._contract != contract:
+        raise ValueError("archive and certificate contract mismatch")
+    if (type(max_groups) is not int or max_groups < 0 or
+            type(group_fault) is not int or group_fault < 0 or
+            type(cell_flip) is not int or cell_flip < 0):
+        raise ValueError("invalid group count or fault specification")
     if len(contract.groups) > max_groups:
         raise ValueError("large-board exact solving requires an MILP/DP backend")
     if group_fault and cell_flip:
@@ -337,6 +364,8 @@ def hindsight_min_cost(contract: Contract, archive: Archive, kind: str, model=No
 
 def online_replay(contract: Contract, archive: Archive, order, kind, model=None):
     """Deterministic prefix replay using only the prefix-disclosed evidence."""
+    if archive._contract != contract:
+        raise ValueError("archive and certificate contract mismatch")
     paid = []
     for g in order:
         if g in paid or g not in contract.group_map:
