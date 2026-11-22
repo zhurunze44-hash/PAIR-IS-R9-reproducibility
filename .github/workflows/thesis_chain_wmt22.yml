@@ -1,0 +1,34 @@
+name: Independent real WMT22 ACL ternary cross-protocol audit
+on:
+  push:
+    branches: [thesis-deep-audit-20261122]
+    paths:
+      - 'thesis_chain/real_wmt22.py'
+      - 'thesis_chain/core.py'
+      - '.github/workflows/thesis_chain_wmt22.yml'
+  workflow_dispatch:
+jobs:
+  real-wmt22-human-evaluation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install scipy and required dependencies
+        run: |
+          python -m pip install -r requirements-verified.txt
+          python -m pip install 'scipy>=1.12,<2'
+      - name: Fetch pinned official ACL2025 published human score source
+        run: |
+          git clone https://github.com/SapienzaNLP/human-parity-mt-eval.git external_human
+          git -C external_human checkout 542fafa2a69d4434413a6cc53bacca6956382da5
+      - name: Run independent actual-human ternary WMT22 contract and minimum purchase verification
+        run: |
+          python -m thesis_chain.real_wmt22 --upstream-root external_human --report wmt22_aclmqm_esa_receipt.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: independent-wmt22-real-human-contract-milp
+          path: wmt22_aclmqm_esa_receipt.json
