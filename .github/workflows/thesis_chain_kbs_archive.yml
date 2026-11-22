@@ -51,3 +51,45 @@ jobs:
           print('MISSING_SAMPLE',missing[:15]);print('WRONG_SAMPLE',wrong[:10]);print('AMBIGUOUS_SAMPLE',ambiguous[:10])
           if wrong or ambiguous:raise SystemExit(1)
           PY
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fresh extract and independently execute all Paper2 archived verification stages
+        timeout-minutes: 12
+        run: |
+          python - <<'PY'
+          import zipfile,pathlib
+          z=zipfile.ZipFile('/tmp/KBS_Reproduction.zip')
+          for name in z.namelist():
+              p=pathlib.PurePosixPath(name)
+              if p.is_absolute() or '..' in p.parts:
+                  raise SystemExit('unsafe path: '+name)
+          z.extractall('/tmp/thesis_kbs_replay')
+          PY
+          python -m pip install -r /tmp/thesis_kbs_replay/requirements.txt
+          set +e
+          bash /tmp/thesis_kbs_replay/RUN_PUBLIC_EVIDENCE.sh "$GITHUB_WORKSPACE/kbs_fresh_result" > "$GITHUB_WORKSPACE/kbs_fresh_result.log" 2>&1
+          rc=$?
+          set -e
+          tail -n 100 "$GITHUB_WORKSPACE/kbs_fresh_result.log"
+          test "$rc" -eq 0
+      - name: Enumerate fresh Paper2 stage receipts, never copy archived historical PASS
+        if: always()
+        run: |
+          python - <<'PY'
+          import pathlib,json
+          root=pathlib.Path('kbs_fresh_result')
+          files=[str(p) for p in root.rglob('*') if p.is_file()] if root.is_dir() else []
+          print('INDEPENDENT_REPLAY_OUTPUT_FILES',len(files))
+          print('OUTPUT_EXAMPLES',files[:35])
+          candidates=[p for p in files if p.lower().endswith(('.json','.txt'))]
+          for p in candidates[:20]:
+              print('RESULT_FILE',p, 'bytes',pathlib.Path(p).stat().st_size)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: paper2-fresh-replay-log-and-receipts
+          path: |
+            kbs_fresh_result.log
+            kbs_fresh_result/**/*.json
