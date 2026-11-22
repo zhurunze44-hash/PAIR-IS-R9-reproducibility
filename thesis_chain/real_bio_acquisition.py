@@ -13,7 +13,7 @@ from .core import statement, online_replay, robust_erasure
 def execute(root: Path, tie_seed=0):
     native=load_original(root)
     panels,meta=native.read_native()
-    counters={"panels":0,"strict_model_winners":0,"strict_action_winners":0,
+    counters={"panels":0,"strict_model_winners":0,"strict_action_winners":0,"strict_action_classes":0,
               "verified_prefix_certificates":0,"verified_group_robust_prefixes":0,
               "fullboard_group_robust_winners":0,"total_prefix_spend":0}
     details=[]
@@ -25,6 +25,9 @@ def execute(root: Path, tie_seed=0):
         action_winners=[m for m in c.models if statement(c,all_labels,"strict_action",m)]
         counters["panels"]+=1;counters["strict_model_winners"]+=len(model_winners)
         counters["strict_action_winners"]+=len(action_winners)
+        groups_seen=tuple(tuple(group) for group in native.action_groups(X))
+        counters["strict_action_classes"]+=sum(
+            any(c.models[j] in action_winners for j in cls) for cls in groups_seen)
         # This is a fixed, pre-label purchase order from the frozen source
         # candidate index, with no access to labels before purchase.
         records=[]
@@ -61,7 +64,7 @@ def execute(root: Path, tie_seed=0):
             "label_source":"official published two files pinned by Git SHA and SHA256",
             "price_contract":"one candidate-label group costs one; shared across models",
             "purchase_rule":"fixed eligible candidate order, not adaptive",
-            "count_basis":"model identities counted separately from action classes",
+            "count_basis":"strict_action_winners counts model identities, strict_action_classes counts unique action signatures",
             "no_retrospective_optimality_claim":True,
             "no_prospective_data_claim":True,
             "counts":counters,"panels":details}
