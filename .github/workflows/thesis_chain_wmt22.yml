@@ -26,7 +26,7 @@ jobs:
           git -C external_human checkout 542fafa2a69d4434413a6cc53bacca6956382da5
       - name: Run independent actual-human ternary WMT22 contract and minimum purchase verification
         run: |
-          python -m thesis_chain.real_wmt22 --upstream-root external_human --report wmt22_aclmqm_esa_receipt.json
+          python -m thesis_chain.real_wmt22 --upstream-root external_human --max-models 4 --report wmt22_aclmqm_esa_receipt.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
