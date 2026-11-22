@@ -1,0 +1,43 @@
+name: Independent thesis Paper2 archive inspection
+on:
+  push:
+    branches: [thesis-deep-audit-20261122]
+  workflow_dispatch:
+jobs:
+  inspect-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and verify public frozen Paper2 evidence archive
+        run: |
+          curl --fail --location --retry 3 --max-time 300 --output /tmp/KBS_Reproduction.zip https://github.com/zhurunze44-hash/PAIR-IS-R9-reproducibility/releases/download/kbs-2026-11-19-reproduction/KBS_Reproduction.zip
+          echo '1881b092ef78bd6ef8b05883f0cf6857309f5e12fead826b1418aaee44719535  /tmp/KBS_Reproduction.zip' | sha256sum --check
+          python - <<'PY'
+          import json,zipfile
+          p='/tmp/KBS_Reproduction.zip'
+          with zipfile.ZipFile(p) as z:
+              names=[x.filename for x in z.infolist() if not x.is_dir()]
+              totals=sum(x.file_size for x in z.infolist() if not x.is_dir())
+              print('ARCHIVE_FILE_COUNT',len(names))
+              print('UNCOMPRESSED_BYTES',totals)
+              print('FIRST_35_FILENAMES',json.dumps(names[:35]))
+              print('MATCHING_READMES',json.dumps([n for n in names if n.lower().endswith(('readme.md','readme.txt'))][:30]))
+              print('MATCHING_RUNNERS',json.dumps([n for n in names if any(q in n.lower() for q in ('verify','replay','run_all','bootstrap')) and n.endswith(('.sh','.py'))][:45]))
+          PY
+      - name: Check published scientific source manifest bytes
+        run: |
+          python - <<'PY'
+          import zipfile,json,hashlib
+          z=zipfile.ZipFile('/tmp/KBS_Reproduction.zip')
+          m=json.load(open('evidence/KBS_20261119_SCIENTIFIC_RELEASE_MANIFEST.json'))['files']
+          names=set(z.namelist()); matched=0; missing=[];wrong=[];ambiguous=[]
+          for path,expected in m.items():
+              c=[n for n in names if n == path or n.endswith('/'+path)]
+              if len(c)==0:missing.append(path);continue
+              if len(c)>1:ambiguous.append(path);continue
+              matched+=1
+              if hashlib.sha256(z.read(c[0])).hexdigest()!=expected:wrong.append(path)
+          print('MANIFEST_FILES',len(m),'MATCHED',matched,'MISSING',len(missing),'MISMATCH',len(wrong),'AMBIGUOUS',len(ambiguous))
+          print('MISSING_SAMPLE',missing[:15]);print('WRONG_SAMPLE',wrong[:10]);print('AMBIGUOUS_SAMPLE',ambiguous[:10])
+          if wrong or ambiguous:raise SystemExit(1)
+          PY
