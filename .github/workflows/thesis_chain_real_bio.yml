@@ -1,0 +1,35 @@
+name: Thesis chain real PPI bridge
+on:
+  push:
+    branches:
+      - thesis-chain-integration-20261122
+  workflow_dispatch:
+jobs:
+  verify-native-pinned-public-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install fixed dependencies
+        run: |
+          python -m pip install -r requirements-verified.txt
+      - name: Verify constructed cross-paper contract and certificates
+        run: |
+          python -m unittest thesis_chain.test_chain -v
+          python -m thesis_chain.demo
+      - name: Clone frozen public PPI structural scoring code
+        run: |
+          git clone --depth 1 https://github.com/zhurunze44-hash/ISMB.git external_bio
+      - name: Download and verify pinned public HuRI and Y2H files
+        run: |
+          python external_bio/ISMB/tools/prepare_inputs.py --download
+      - name: Independent 71-panel certification equality check
+        run: |
+          python -m thesis_chain.real_bio --bio-root external_bio --report thesis_chain_real_bio_receipt.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: thesis-chain-real-bio-receipt
+          path: thesis_chain_real_bio_receipt.json
