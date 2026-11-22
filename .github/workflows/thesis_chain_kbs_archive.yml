@@ -24,6 +24,16 @@ jobs:
               print('MATCHING_READMES',json.dumps([n for n in names if n.lower().endswith(('readme.md','readme.txt'))][:30]))
               print('MATCHING_RUNNERS',json.dumps([n for n in names if any(q in n.lower() for q in ('verify','replay','run_all','bootstrap')) and n.endswith(('.sh','.py'))][:45]))
           PY
+      - name: Inspect public archived 26-stage runner without executing it
+        run: |
+          python - <<'PY'
+          import zipfile
+          with zipfile.ZipFile('/tmp/KBS_Reproduction.zip') as z:
+              for name in ('README.txt','RUN_PUBLIC_EVIDENCE.sh'):
+                  print('\n---',name,'---')
+                  lines=z.read(name).decode('utf-8').splitlines()
+                  print('\n'.join(lines[:210]))
+          PY
       - name: Check published scientific source manifest bytes
         run: |
           python - <<'PY'
@@ -32,7 +42,7 @@ jobs:
           m=json.load(open('evidence/KBS_20261119_SCIENTIFIC_RELEASE_MANIFEST.json'))['files']
           names=set(z.namelist()); matched=0; missing=[];wrong=[];ambiguous=[]
           for path,expected in m.items():
-              c=[n for n in names if n == path or n.endswith('/'+path)]
+              c=[path] if path in names else [n for n in names if n.endswith('/'+path)]
               if len(c)==0:missing.append(path);continue
               if len(c)>1:ambiguous.append(path);continue
               matched+=1
