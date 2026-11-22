@@ -28,8 +28,13 @@ jobs:
       - name: Independent 71-panel certification equality check
         run: |
           python -m thesis_chain.real_bio --bio-root external_bio --report thesis_chain_real_bio_receipt.json
+      - name: Real PPI paid-prefix certificate verification
+        run: |
+          python -m thesis_chain.real_bio_acquisition --bio-root external_bio --report thesis_chain_real_bio_acquisition_receipt.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: thesis-chain-real-bio-receipt
-          path: thesis_chain_real_bio_receipt.json
+          path: |
+            thesis_chain_real_bio_receipt.json
+            thesis_chain_real_bio_acquisition_receipt.json
