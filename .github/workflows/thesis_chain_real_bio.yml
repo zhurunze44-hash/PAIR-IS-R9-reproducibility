@@ -21,7 +21,8 @@ jobs:
           python -m thesis_chain.demo
       - name: Clone frozen public PPI structural scoring code
         run: |
-          git clone --depth 1 https://github.com/zhurunze44-hash/ISMB.git external_bio
+          git clone https://github.com/zhurunze44-hash/ISMB.git external_bio
+          git -C external_bio checkout 31f225bef208e1594366a58c94f30711d9643377
       - name: Download and verify pinned public HuRI and Y2H files
         run: |
           python external_bio/ISMB/tools/prepare_inputs.py --download
