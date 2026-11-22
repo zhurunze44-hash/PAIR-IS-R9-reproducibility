@@ -108,6 +108,13 @@ class ACLTernaryTests(unittest.TestCase):
         # This is intentionally LEGAL ONLY under independent pair-vote
         # completion, not as a realizable three-score ranking.
 
+    def test_unmeasured_model_pair_cannot_be_counted_as_a_tie(self):
+        c=Contract("v","fixed","pair votes",("a","b","c"),("P",),
+                   (Slot("only_ab","P","independent_ternary_pair",(0,1)),),
+                   (Group("group",("only_ab",)),))
+        with self.assertRaises(ValueError):
+            statement(c,Evidence({}),"no_common")
+
     def test_invalid_ternary_rejected(self):
         c,a=build([[[2,1,0]]])
         with self.assertRaises(ValueError):
