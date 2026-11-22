@@ -35,5 +35,29 @@ class ExactHumanMILPTests(unittest.TestCase):
             self.assertTrue(statement(c,a.buy(groups),"strict_model","GPT4-5shot"))
             self.assertLess(gap,1e-8)
 
+    def test_exact_robust_threshold_vs_brute_subset_oracle(self):
+        scores=np.array([[[2,1,0]]*3,[[2,0,1]]*3],dtype=float)
+        roster=["GPT4-5shot","B","C"]
+        for shared in (True,False):
+            c,a=build(roster,scores,shared)
+            oracle=hindsight_min_cost(c,a,"strict_model","GPT4-5shot",group_fault=1)
+            price,chosen,gap,_=exact_cost(c,scores,0,fault_groups=1)
+            self.assertEqual(price,oracle["cost"])
+            self.assertEqual(price,3 if shared else 6)
+            self.assertTrue(statement(c,a.buy(chosen),"strict_model","GPT4-5shot"))
+            self.assertLess(gap,1e-8)
+
+    def test_robust_infeasible_when_full_margin_is_one(self):
+        scores=np.array([[[2,0,1],[2,0,1],[0,1,0]],
+                         [[2,1,0],[2,1,0],[2,1,0]]],dtype=float)
+        for shared in (True,False):
+            c,a=build(["GPT4-5shot","B","C"],scores,shared)
+            full=a.buy(tuple(g.key for g in c.groups))
+            self.assertTrue(statement(c,full,"strict_model","GPT4-5shot"))
+            price,chosen,gap,_=exact_cost(c,scores,0,fault_groups=1)
+            self.assertIsNone(price)
+            oracle=hindsight_min_cost(c,a,"strict_model","GPT4-5shot",group_fault=1)
+            self.assertIsNone(oracle["cost"])
+
 if __name__=="__main__":
     unittest.main()
