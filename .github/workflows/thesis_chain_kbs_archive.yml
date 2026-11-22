@@ -2,6 +2,7 @@ name: Independent thesis Paper2 archive inspection
 on:
   push:
     branches: [thesis-deep-audit-20261122]
+    paths: ['.github/workflows/thesis_chain_kbs_archive.yml']
   workflow_dispatch:
 jobs:
   inspect-evidence:
