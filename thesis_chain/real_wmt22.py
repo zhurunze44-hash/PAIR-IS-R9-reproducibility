@@ -111,19 +111,28 @@ def cost_matrix(c,scores,win):
 def exact_cost(c,scores,win):
     A,rows=cost_matrix(c,scores,win)
     n=scores.shape[1]
-    out=milp(c=np.array([g.price for g in c.groups],dtype=float),
+    # Complementary exact formulation. y_g=1 means group g is NOT bought.
+    # Full-record margin for each rival is D. We may hide only those
+    # groups whose total lost worst-case gains <= D-1.
+    # This is algebraically identical to minimizing bought x=1-y above,
+    # but tiny residual budgets make it much easier to certify optimality.
+    slack=A.sum(axis=1)-(n+1.0)
+    if np.any(slack < -1e-8):
+        raise AssertionError("full scores cannot certify declared strict winner")
+    forced=np.any(A>slack[:,None]+1e-8,axis=0)
+    prices=np.array([g.price for g in c.groups],dtype=float)
+    out=milp(c=-prices,
              integrality=np.ones(len(c.groups),dtype=int),
-             bounds=Bounds(np.zeros(len(c.groups)),np.ones(len(c.groups))),
-             constraints=LinearConstraint(A,np.full(len(rows),n+1.0),
-                                          np.full(len(rows),np.inf)),
+             bounds=Bounds(np.zeros(len(c.groups)),(~forced).astype(float)),
+             constraints=LinearConstraint(A,np.zeros(len(rows)),slack),
              options={"mip_rel_gap":0.0,"time_limit":120.0})
     if not out.success or out.status!=0 or out.mip_gap>1e-8:
-        raise AssertionError(("real WMT exact solver not globally certified",
+        raise AssertionError(("real WMT exact complement solver not globally certified",
                               out.status,out.message,getattr(out,"mip_gap",None)))
-    selected=tuple(g.key for g,x in zip(c.groups,out.x) if x>0.5)
-    cost=int(round(float(out.fun)))
+    selected=tuple(g.key for g,y in zip(c.groups,out.x) if y<0.5)
+    cost=int(round(float(prices.sum()+out.fun)))
     if len(selected)!=cost:
-        raise AssertionError("unit-cost gap")
+        raise AssertionError("unit-cost complement mismatch")
     if not np.all(A @ np.array([int(g.key in selected) for g in c.groups])
                   >=n+1-1e-8):
         raise AssertionError("numerical witness fails direct linear check")
