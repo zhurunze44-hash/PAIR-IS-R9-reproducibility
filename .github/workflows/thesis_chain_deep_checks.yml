@@ -1,0 +1,44 @@
+name: Adversarial thesis integration and exact public PPI costs
+on:
+  push:
+    branches: [thesis-deep-audit-20261122]
+  workflow_dispatch:
+jobs:
+  independent-cross-paper-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install exact numerical dependencies
+        run: |
+          python -m pip install -r requirements-verified.txt
+          python -m pip install 'scipy>=1.12,<2'
+      - name: Independent adversarial, registered reference, completion and cost tests
+        run: |
+          python -m unittest thesis_chain.test_chain thesis_chain.test_adversarial thesis_chain.test_pair_kg -v
+          python -m thesis_chain.demo
+      - name: Check out frozen public PPI original structural producer
+        run: |
+          git clone https://github.com/zhurunze44-hash/ISMB.git external_bio
+          git -C external_bio checkout 31f225bef208e1594366a58c94f30711d9643377
+          python external_bio/ISMB/tools/prepare_inputs.py --download
+      - name: Verify source-native PPI certifier vs new typed adapter
+        run: |
+          python -m thesis_chain.real_bio --bio-root external_bio --report deep_bio_certifier_receipt.json
+      - name: Verify purchased-prefix actual paths on original PPI
+        run: |
+          python -m thesis_chain.real_bio_acquisition --bio-root external_bio --report deep_bio_purchase_receipt.json
+      - name: Independently solve original nominal and one-group-robust optimum
+        run: |
+          python -m thesis_chain.real_bio_optimal --bio-root external_bio --report deep_bio_exact_cost_receipt.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: thesis-adversarial-real-bio-exact-receipts
+          path: |
+            deep_bio_certifier_receipt.json
+            deep_bio_purchase_receipt.json
+            deep_bio_exact_cost_receipt.json
