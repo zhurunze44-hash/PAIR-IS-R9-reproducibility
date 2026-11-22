@@ -1,0 +1,29 @@
+name: WMT22 full 12-model one-group fault counterexample
+on:
+  push:
+    branches: [thesis-deep-audit-20261122]
+    paths:
+      - 'thesis_chain/real_wmt22_full_roster_fault.py'
+      - '.github/workflows/thesis_chain_wmt22_full_fault.yml'
+  workflow_dispatch:
+jobs:
+  genuine-human-full-roster-fault:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify official source commit
+        run: |
+          git clone https://github.com/SapienzaNLP/human-parity-mt-eval.git external_human
+          git -C external_human checkout 542fafa2a69d4434413a6cc53bacca6956382da5
+      - name: Independently check all 12 models and give a paid-group failure witness
+        run: |
+          python -m thesis_chain.real_wmt22_full_roster_fault --upstream-root external_human --report wmt22_full12_groupfault_counterexample.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wmt22-12model-source-grounded-groupfault-obstruction
+          path: wmt22_full12_groupfault_counterexample.json
