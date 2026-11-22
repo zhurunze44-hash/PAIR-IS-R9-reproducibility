@@ -4,6 +4,7 @@ on:
     branches: [thesis-deep-audit-20261122]
     paths:
       - 'thesis_chain/real_wmt22_full_roster_fault.py'
+      - 'thesis_chain/core.py'
       - '.github/workflows/thesis_chain_wmt22_full_fault.yml'
   workflow_dispatch:
 jobs:
