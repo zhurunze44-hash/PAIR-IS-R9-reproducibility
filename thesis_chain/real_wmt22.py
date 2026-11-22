@@ -38,19 +38,24 @@ def parse(path):
                               len(d),{k:len(v) for k,v in d.items()}))
     return d
 
-def prepare(root):
+def prepare(root,max_models=None):
     base=root/"data"/"annotations"/"wmt22"/"en-de"
     files=[base/name for name in EXPECTED_GIT_BLOBS]
     pins={p.name:source_bytes_check(p) for p in files}
     data=[parse(p) for p in files]
-    roster=sorted(set(data[0]) & set(data[1]) - {"refA"})
-    if len(roster)!=12 or MODEL not in roster:
-        raise AssertionError(("frozen model roster mismatch",roster))
+    full_roster=sorted((set(data[0]) & set(data[1])) - {"refA"})
+    if len(full_roster)!=12 or MODEL not in full_roster:
+        raise AssertionError(("frozen full model roster mismatch",full_roster))
+    if max_models is not None and (type(max_models) is not int or not 3 <= max_models <= 12):
+        raise ValueError("max_models must be 3..12")
+    roster=full_roster if max_models is None else full_roster[:max_models]
     if set(data[0])!=set(data[1]):
         raise AssertionError("protocol roster changed")
+    # Fix the 207 common items using ALL 12 models before any subgroup
+    # selection; do not retrospectively choose easier segments for 4 models.
     shared_indices=[i for i in range(557)
                     if all(data[p][m][i] is not None
-                           for p in range(2) for m in roster)]
+                           for p in range(2) for m in full_roster)]
     if len(shared_indices)!=207:
         raise AssertionError(("aligned common complete items mismatch",len(shared_indices)))
     scores=np.array([[[data[p][m][i] for m in roster] for i in shared_indices]
@@ -153,14 +158,16 @@ def chronological(c,a,scores,win):
             return len(chosen)
     raise AssertionError("full original scores did not reach strict winner")
 
-def run(root):
-    roster,scores,shared_indices,pins,margins=prepare(root)
+def run(root,max_models=None):
+    roster,scores,shared_indices,pins,margins=prepare(root,max_models)
     win=roster.index(MODEL)
     result={"status":"PASS_OR_RAISE","scope":"official released WMT22 en-de ESA-1 vs MQM-1, NOT WMT24/21 frozen ACL targets",
             "upstream_git_repo":"SapienzaNLP/human-parity-mt-eval",
             "upstream_commit":"542fafa2a69d4434413a6cc53bacca6956382da5",
             "source_files":pins,"eligible_aligned_segments":len(shared_indices),
-            "model_roster":roster,"strict_common_model":MODEL,
+            "model_roster":roster,
+            "roster_selection":"all 12" if max_models is None else f"fixed lexicographic first {max_models} of 12; not primary 12-model result",
+            "strict_common_model":MODEL,
             "full_pairwise_min_margin":min(margins.values()),
             "billing_contracts":{}}
     for shared in (True,False):
@@ -207,8 +214,9 @@ def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--upstream-root",required=True,type=Path)
     ap.add_argument("--report",required=True,type=Path)
+    ap.add_argument("--max-models",type=int)
     args=ap.parse_args()
-    result=run(args.upstream_root)
+    result=run(args.upstream_root,args.max_models)
     args.report.parent.mkdir(parents=True,exist_ok=True)
     args.report.write_text(json.dumps(result,indent=2,ensure_ascii=False)+"\n")
     print(json.dumps(result,indent=2,ensure_ascii=False))
