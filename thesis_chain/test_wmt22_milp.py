@@ -17,8 +17,9 @@ class ExactHumanMILPTests(unittest.TestCase):
             self.assertEqual(minimum,2 if shared else 4)
             self.assertLess(gap,1e-8)
             self.assertTrue(statement(c,a.buy(groups),"strict_model",target))
-            self.assertFalse(statement(c,a.buy(groups[:-1]),"strict_model",target)
-                           if len(groups)==1 else False)
+            for candidate_group in groups:
+                smaller=tuple(g for g in groups if g!=candidate_group)
+                self.assertFalse(statement(c,a.buy(smaller),"strict_model",target))
 
     def test_complement_nontrivial_tie_and_defeat(self):
         scores=np.array([[[2,0,1],[2,1,0],[0,1,0],[2,0,0]],
