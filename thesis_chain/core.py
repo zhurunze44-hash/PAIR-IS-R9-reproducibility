@@ -13,6 +13,7 @@ from fractions import Fraction
 from typing import Mapping
 
 BINARY = (0, 1)
+TERNARY = (-1, 0, 1)
 
 
 @dataclass(frozen=True)
@@ -25,7 +26,7 @@ class Slot:
     def __post_init__(self):
         if not self.key or not self.protocol:
             raise ValueError("slot identity and protocol required")
-        if self.kind not in ("shared_binary", "independent_binary"):
+        if self.kind not in ("shared_binary", "independent_binary", "independent_ternary_pair"):
             raise ValueError("unsupported completion contract")
 
 
@@ -74,6 +75,11 @@ class Contract:
                 raise ValueError("shared-label action vectors must be binary")
             if s.kind == "independent_binary" and s.actions:
                 raise ValueError("independent scores must not carry action vectors")
+            if s.kind == "independent_ternary_pair":
+                if (len(s.actions) != 2 or
+                        any(type(i) is not int for i in s.actions) or
+                        not (0 <= s.actions[0] < s.actions[1] < len(self.models))):
+                    raise ValueError("ternary vote needs a canonical model pair")
         for g in self.groups:
             if not g.key or not g.slots or type(g.price) is not int or g.price < 0:
                 raise ValueError("bad group id/price/contents")
@@ -110,11 +116,14 @@ class Archive:
             if s.kind == "shared_binary":
                 if type(value) is not int or value not in BINARY:
                     raise ValueError("unqualified/unknown cannot be treated as HC negative")
-            else:
+            elif s.kind == "independent_binary":
                 if not isinstance(value, (tuple, list)) or len(value) != len(contract.models):
                     raise ValueError("wrong human score vector")
                 if any(type(t) is not int or t not in BINARY for t in value):
                     raise ValueError("human score outside declared alphabet")
+            else:
+                if type(value) is not int or value not in TERNARY:
+                    raise ValueError("illegal observed ternary pair vote")
         self._contract = contract
         self._truth = {k: (tuple(v) if isinstance(v, list) else v) for k, v in truth.items()}
 
@@ -175,10 +184,13 @@ def _check_evidence(contract: Contract, evidence: Evidence):
         if slot.kind == "shared_binary":
             if type(value) is not int or value not in BINARY:
                 raise ValueError("illegal observed shared binary label")
-        elif not isinstance(value, (tuple, list)) or (
-                len(value) != len(contract.models)) or any(
-                type(z) is not int or z not in BINARY for z in value):
-            raise ValueError("illegal observed per-model score vector")
+        elif slot.kind == "independent_binary":
+            if not isinstance(value, (tuple, list)) or (
+                    len(value) != len(contract.models)) or any(
+                    type(z) is not int or z not in BINARY for z in value):
+                raise ValueError("illegal observed per-model score vector")
+        elif type(value) is not int or value not in TERNARY:
+            raise ValueError("illegal observed ternary pair vote")
 
 
 def _check_paid_groups(contract: Contract, evidence: Evidence, paid):
@@ -194,10 +206,12 @@ def _check_paid_groups(contract: Contract, evidence: Evidence, paid):
 
 def pair_interval(contract: Contract, evidence: Evidence,
                   protocol: str, a: int, b: int):
-    """Sharp contrast interval for the declared independent binary completions.
+    """Sharp contrast intervals for typed binary or independent ternary votes.
 
-    The SAME unknown PPI label is shared across all models' action scores;
-    a human-score slot has independently completable model cells.
+    PPI: the SAME binary HC label is shared across all frozen model actions.
+    Binary human scores: each model score is independently completable.
+    ACL ternary: each unpurchased pair-vote cell is independently completable,
+    which can be a relaxation of a common underlying score-vector completion.
     """
     _check_evidence(contract, evidence)
     if (protocol not in contract.protocols or type(a) is not int or type(b) is not int
@@ -214,15 +228,24 @@ def pair_interval(contract: Contract, evidence: Evidence,
                 d = slot.actions[a] - slot.actions[b]
                 lo += d * v
                 hi += d * v
-            else:
+            elif slot.kind == "independent_binary":
                 d = v[a] - v[b]
                 lo += d
                 hi += d
+            else:
+                first, second = slot.actions
+                sign = (1 if (a,b)==(first,second)
+                        else -1 if (a,b)==(second,first) else 0)
+                lo += sign*v
+                hi += sign*v
         elif slot.kind == "shared_binary":
             d = slot.actions[a] - slot.actions[b]
             lo += min(0, d)
             hi += max(0, d)
-        else:
+        elif slot.kind == "independent_binary":
+            lo -= 1
+            hi += 1
+        elif (a,b)==slot.actions or (b,a)==slot.actions:
             lo -= 1
             hi += 1
     return lo, hi
@@ -260,13 +283,15 @@ def strict_action_winner(contract: Contract, evidence: Evidence, model: str):
 
 
 def no_common_strict_winner(contract: Contract, evidence: Evidence):
-    """Exact when all slots are independent per-model binary ratings.
+    """No common strict winner under explicitly factorized completion.
 
-    Not a valid exact equivalence for arbitrary coupled pairwise votes or
-    shared-label PPI actions, so we reject those contracts here.
+    Exact for (i) per-model independent binary ratings or (ii) independent
+    per-pair ternary votes. These are distinct contracts. Not exact for
+    an arbitrary coupled / transitive underlying score-vector completion.
     """
-    if any(s.kind != "independent_binary" for s in contract.slots):
-        raise ValueError("no-common characterization requires independent score cells")
+    kinds = {s.kind for s in contract.slots}
+    if kinds not in ({"independent_binary"}, {"independent_ternary_pair"}):
+        raise ValueError("no-common requires one recognized independent alphabet")
     for a in range(len(contract.models)):
         # If a can win in EVERY protocol, a may be a common strict winner.
         if all(all(pair_interval(contract, evidence, p, a, b)[1] > 0
@@ -306,6 +331,8 @@ def robust_erasure(contract: Contract, evidence: Evidence, paid, kind, model=Non
 
 def robust_one_cell_flip(contract: Contract, evidence: Evidence, kind, model=None):
     """Exact at most one already purchased binary scalar flip, not one group."""
+    if any(s.kind == "independent_ternary_pair" for s in contract.slots):
+        raise ValueError("ternary vote recoding is not a binary-score flip")
     if not statement(contract, evidence, kind, model):
         return False
     for key, val in evidence.values.items():
