@@ -292,6 +292,12 @@ def no_common_strict_winner(contract: Contract, evidence: Evidence):
     kinds = {s.kind for s in contract.slots}
     if kinds not in ({"independent_binary"}, {"independent_ternary_pair"}):
         raise ValueError("no-common requires one recognized independent alphabet")
+    if kinds == {"independent_ternary_pair"}:
+        required = set(combinations(range(len(contract.models)), 2))
+        for protocol in contract.protocols:
+            declared = {s.actions for s in contract.slots if s.protocol == protocol}
+            if not required <= declared:
+                raise ValueError("unrepresented model pairs are UNKNOWN, not fixed ties")
     for a in range(len(contract.models)):
         # If a can win in EVERY protocol, a may be a common strict winner.
         if all(all(pair_interval(contract, evidence, p, a, b)[1] > 0
