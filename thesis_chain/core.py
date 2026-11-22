@@ -181,10 +181,13 @@ def pair_reference_witness(x_ref, x_eval, contrast, h, y_ref, y_eval,
 
 
 def _check_evidence(contract: Contract, evidence: Evidence):
-    if not set(evidence.values) <= set(contract.slot_map):
+    # Single index build per call: avoid O(S^2) validation for full
+    # 12-model WMT evidence (27,324 pair votes).
+    slot_index = contract.slot_map
+    if not set(evidence.values) <= set(slot_index):
         raise ValueError("foreign evidence slot")
     for key, value in evidence.values.items():
-        slot = contract.slot_map[key]
+        slot = slot_index[key]
         if slot.kind == "shared_binary":
             if type(value) is not int or value not in BINARY:
                 raise ValueError("illegal observed shared binary label")
