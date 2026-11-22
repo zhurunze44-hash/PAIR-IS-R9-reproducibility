@@ -18,7 +18,7 @@ jobs:
           python -m pip install 'scipy>=1.12,<2'
       - name: Independent adversarial, registered reference, completion and cost tests
         run: |
-          python -m unittest thesis_chain.test_chain thesis_chain.test_adversarial thesis_chain.test_pair_kg thesis_chain.test_acl_ternary -v
+          python -m unittest thesis_chain.test_chain thesis_chain.test_adversarial thesis_chain.test_pair_kg thesis_chain.test_acl_ternary thesis_chain.test_wmt22_milp -v
           python -m thesis_chain.demo
       - name: Check out frozen public PPI original structural producer
         run: |
