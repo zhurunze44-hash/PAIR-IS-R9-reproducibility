@@ -10,7 +10,7 @@ import argparse,collections,hashlib,itertools,json
 from pathlib import Path
 import numpy as np
 from scipy.optimize import milp,Bounds,LinearConstraint
-from .core import Contract,Slot,Group,Archive,Evidence,statement,pair_interval
+from .core import Contract,Slot,Group,Archive,Evidence,statement,pair_interval,robust_erasure
 
 EXPECTED_GIT_BLOBS={
     "en-de.ESA-1.seg.score":"d4b9bbd8b1d4e60ade00d7ffc7c57ddbe3410b01",
@@ -113,7 +113,9 @@ def cost_matrix(c,scores,win):
                 matrix[row,index]=gains[i]
     return matrix,rowlabels
 
-def exact_cost(c,scores,win):
+def exact_cost(c,scores,win,fault_groups=0):
+    if fault_groups not in (0,1):
+        raise ValueError("only one arbitrary paid item-group fault is implemented")
     A,rows=cost_matrix(c,scores,win)
     n=scores.shape[1]
     # Complementary exact formulation. y_g=1 means group g is NOT bought.
@@ -121,9 +123,25 @@ def exact_cost(c,scores,win):
     # groups whose total lost worst-case gains <= D-1.
     # This is algebraically identical to minimizing bought x=1-y above,
     # but tiny residual budgets make it much easier to certify optimality.
-    slack=A.sum(axis=1)-(n+1.0)
+    # One group can change its observed pair-vote arbitrarily in {-1,0,1}.
+    # Its maximum damage to any pair margin is 2. Every nominal strict
+    # certificate needs at least one paid gain-2 group for each rival,
+    # because N groups with gains <=1 cannot reach N+1. Thus one-group
+    # arbitrary-recoding robustness is EXACTLY threshold N+3, provided
+    # each physical group contains at most one pair-vote per protocol/rival.
+    if fault_groups:
+        for group in c.groups:
+            for p in c.protocols:
+                for a in range(len(c.models)):
+                    for b in range(a+1,len(c.models)):
+                        if sum(c.slot_map[k].protocol==p and
+                               c.slot_map[k].actions==(a,b)
+                               for k in group.slots)>1:
+                            raise ValueError("group contains multiple votes for one pair")
+    threshold=n+1.0+2*fault_groups
+    slack=A.sum(axis=1)-threshold
     if np.any(slack < -1e-8):
-        raise AssertionError("full scores cannot certify declared strict winner")
+        return None,(),None,A
     forced=np.any(A>slack[:,None]+1e-8,axis=0)
     prices=np.array([g.price for g in c.groups],dtype=float)
     out=milp(c=-prices,
@@ -198,8 +216,23 @@ def run(root,max_models=None):
             remaining=[g.key for g in c.groups if g.key!=cand]
             if statement(c,a.buy(remaining),"strict_model",MODEL):
                 raise AssertionError(("fault witness contradicted",cand))
+        robust_cost,robust_selected,robust_gap,_=exact_cost(c,scores,win,fault_groups=1)
+        if robust_cost is not None:
+            robuste=a.buy(robust_selected)
+            if not robust_erasure(c,robuste,robust_selected,
+                                  "strict_model",MODEL,radius=1):
+                raise AssertionError(("false one-group robustness optimal witness",shared))
+            if robust_cost < cost:
+                raise AssertionError("robust proof cheaper than ordinary")
+        else:
+            # Monotone logical information cannot rescue a fixed full-board
+            # conclusion failing a one-group arbitrary recoding.
+            robust_gap=None
         result["billing_contracts"]["shared" if shared else "separate"]={
             "price":cost,"mip_gap":gap,"optimal_group_count":len(chosen),
+            "one_group_robust_price":robust_cost,
+            "one_group_robust_mip_gap":robust_gap,
+            "one_group_robust_minimum_witness_groups":len(robust_selected),
             "chronological_first_certificate_group_count":chronological_cost,
             "number_of_available_groups":len(c.groups),
             "observed_vote_cells":len(c.slots),
