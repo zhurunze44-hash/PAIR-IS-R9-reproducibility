@@ -109,10 +109,14 @@ class Evidence:
 class Archive:
     """Full frozen archive accessible to hindsight evaluator, NOT the certifier."""
     def __init__(self, contract: Contract, truth: Mapping[str, object]):
-        if set(truth) != set(contract.slot_map):
+        # Reuse an immutable local index. Rebuilding slot_map for each cell
+        # accidentally turns a 12-model, 207-item score board into O(S^2)
+        # construction even before certificate checks.
+        slot_index = contract.slot_map
+        if set(truth) != set(slot_index):
             raise ValueError("full frozen archive must match eligible slots exactly")
         for key, value in truth.items():
-            s = contract.slot_map[key]
+            s = slot_index[key]
             if s.kind == "shared_binary":
                 if type(value) is not int or value not in BINARY:
                     raise ValueError("unqualified/unknown cannot be treated as HC negative")
